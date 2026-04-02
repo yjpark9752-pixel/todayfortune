@@ -83,6 +83,19 @@ def update():
     except Exception as e:
         log.error(f"Japanese tti failed: {e}")
 
+    # Save date-stamped copies for history
+    from datetime import datetime
+    date_str = datetime.now().strftime("%Y-%m-%d")
+    history_dir = DATA_DIR / "history"
+    history_dir.mkdir(exist_ok=True)
+    import shutil
+    for fname in ["en.json", "ja.json", "ko.json", "ko_zodiac.json", "en_tti.json", "ja_tti.json"]:
+        src = DATA_DIR / fname
+        if src.exists():
+            dst = history_dir / f"{fname.replace('.json', '')}_{date_str}.json"
+            shutil.copy2(src, dst)
+    log.info(f"History saved for {date_str}")
+
     log.info("Site data updated!")
 
 
