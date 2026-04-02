@@ -3,108 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>오늘의 운세 & 행운의 숫자 | TodayFortune</title>
-    <meta name="description" content="12띠별, 12별자리 오늘의 운세와 행운의 숫자. 매일 업데이트!">
-    <meta name="keywords" content="오늘의운세, 띠별운세, 별자리운세, 행운의숫자, 로또번호, 운세">
-    <link rel="alternate" hreflang="en" href="/">
-    <link rel="alternate" hreflang="ja" href="/ja/">
-    <link rel="alternate" hreflang="ko" href="/ko/">
+    <title>오늘의 운세 & 로또 행운의 숫자 | TodayFortune</title>
+    <meta name="description" content="12띠별, 12별자리 오늘의 운세와 로또 행운의 숫자. 매일 업데이트!">
+    <link rel="alternate" hreflang="en" href="/"><link rel="alternate" hreflang="ja" href="/ja/"><link rel="alternate" hreflang="ko" href="/ko/">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCDG5LDW5W"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-TCDG5LDW5W");</script>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, 'Apple SD Gothic Neo', sans-serif; background: linear-gradient(135deg, #0a0a2e 0%, #1a1a4e 50%, #0a0a2e 100%); color: #fff; min-height: 100vh; }
-        header { text-align: center; padding: 40px 20px 20px; background: rgba(0,0,0,0.3); }
-        header h1 { font-size: 2.5em; color: #ffdd57; margin-bottom: 10px; }
-        header p { color: #aaa; font-size: 1.1em; }
-        .date { color: #ffdd57; font-size: 1.2em; margin-top: 10px; }
-        .lang-nav { text-align: center; padding: 10px; background: rgba(0,0,0,0.2); }
-        .lang-nav a { color: #aaa; text-decoration: none; margin: 0 15px; font-size: 0.9em; }
-        .lang-nav a.active { color: #ffdd57; font-weight: bold; }
-        .tab-nav { text-align: center; padding: 20px; }
-        .tab-nav button { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2); padding: 10px 25px; margin: 0 5px; border-radius: 25px; cursor: pointer; font-size: 1em; }
-        .tab-nav button.active { background: #ffdd57; color: #000; border-color: #ffdd57; }
-        .signs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 20px; padding: 30px 20px; max-width: 1200px; margin: 0 auto; }
-        .sign-card { background: rgba(255,255,255,0.05); border-radius: 16px; padding: 25px; border: 1px solid rgba(255,255,255,0.1); transition: transform 0.2s; }
-        .sign-card:hover { transform: translateY(-5px); }
-        .sign-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
-        .sign-emoji { font-size: 2.5em; }
-        .sign-name { font-size: 1.5em; color: #ffdd57; }
-        .sign-dates { color: #888; font-size: 0.9em; }
-        .sign-content { line-height: 1.7; margin-bottom: 15px; color: #ddd; }
-        .sign-advice { background: rgba(255,221,87,0.1); border-left: 3px solid #ffdd57; padding: 10px 15px; margin-bottom: 15px; border-radius: 0 8px 8px 0; }
-        .sign-advice-label { color: #ffdd57; font-weight: bold; font-size: 0.9em; }
-        .lucky-info { display: flex; flex-wrap: wrap; gap: 10px; }
-        .lucky-tag { background: rgba(255,221,87,0.15); color: #ffdd57; padding: 5px 12px; border-radius: 20px; font-size: 0.85em; }
-        .youtube-cta { text-align: center; padding: 40px 20px; background: rgba(255,221,87,0.05); }
-        .youtube-cta a { display: inline-block; background: #ff0000; color: #fff; padding: 15px 30px; border-radius: 30px; text-decoration: none; font-size: 1.1em; font-weight: bold; }
-        footer { text-align: center; padding: 30px; color: #666; font-size: 0.8em; }
-        footer a { color: #888; }
-        @media (max-width: 600px) { header h1 { font-size: 1.8em; } .signs-grid { grid-template-columns: 1fr; padding: 15px; } .tab-nav button { padding: 8px 15px; font-size: 0.9em; } }
+        *{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,'Apple SD Gothic Neo',sans-serif;background:linear-gradient(180deg,#0d0d2b 0%,#1a1a4e 40%,#0d0d2b 100%);color:#fff;min-height:100vh}.lang-nav{text-align:center;padding:12px;background:rgba(0,0,0,0.4)}.lang-nav a{color:#888;text-decoration:none;margin:0 15px;font-size:.9em}.lang-nav a.active{color:#ffdd57;font-weight:bold}header{text-align:center;padding:35px 20px 15px}header h1{font-size:2.2em;color:#ffdd57;margin-bottom:5px}header p{color:#999;font-size:1em}.lottery-banner{max-width:700px;margin:15px auto;background:linear-gradient(135deg,rgba(255,215,0,0.15),rgba(255,100,100,0.1));border:1px solid rgba(255,215,0,0.3);border-radius:12px;padding:15px 20px;text-align:center}.lottery-label{color:#ffdd57;font-size:.85em;font-weight:bold;margin-bottom:8px}.lottery-numbers{font-size:1.3em;font-weight:bold;letter-spacing:2px}.lottery-numbers .ball{display:inline-block;width:38px;height:38px;line-height:38px;border-radius:50%;background:rgba(255,255,255,0.15);margin:0 3px;font-size:.9em}.lottery-numbers .bonus-ball{background:rgba(255,100,100,0.3);color:#ff6b6b}.lottery-date{color:#777;font-size:.75em;margin-top:8px}.date-nav{text-align:center;padding:15px 10px;overflow-x:auto;white-space:nowrap}.date-btn{display:inline-block;padding:10px 16px;margin:0 4px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:10px;color:#aaa;cursor:pointer;font-size:.85em;transition:all .2s}.date-btn:hover{background:rgba(255,255,255,0.12);color:#fff}.date-btn.active{background:rgba(255,221,87,0.2);border-color:#ffdd57;color:#ffdd57;font-weight:bold}.date-btn .day{display:block;font-size:1.1em;font-weight:bold}.date-btn .weekday{display:block;font-size:.75em;margin-top:2px}.tab-nav{text-align:center;padding:15px}.tab-btn{background:rgba(255,255,255,0.08);color:#ccc;border:1px solid rgba(255,255,255,0.15);padding:10px 28px;margin:0 5px;border-radius:25px;cursor:pointer;font-size:.95em;transition:all .2s}.tab-btn.active{background:#ffdd57;color:#111;border-color:#ffdd57;font-weight:bold}.signs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:18px;padding:20px;max-width:1200px;margin:0 auto}.sign-card{background:rgba(255,255,255,0.04);border-radius:14px;padding:22px;border:1px solid rgba(255,255,255,0.08);transition:all .3s}.sign-card:hover{transform:translateY(-4px);background:rgba(255,255,255,0.07);border-color:rgba(255,221,87,0.3)}.sign-header{display:flex;align-items:center;gap:14px;margin-bottom:14px}.sign-emoji{font-size:2.4em}.sign-name{font-size:1.4em;color:#ffdd57;font-weight:bold}.sign-dates{color:#777;font-size:.85em}.sign-content{line-height:1.7;margin-bottom:14px;color:#ccc;font-size:.95em}.sign-advice{background:rgba(255,221,87,0.08);border-left:3px solid #ffdd57;padding:10px 14px;margin-bottom:14px;border-radius:0 10px 10px 0}.sign-advice-label{color:#ffdd57;font-weight:bold;font-size:.8em}.sign-advice-text{margin-top:4px;color:#ddd;font-size:.9em}.lucky-info{display:flex;flex-wrap:wrap;gap:8px}.lucky-tag{background:rgba(255,221,87,0.1);color:#ffdd57;padding:5px 12px;border-radius:20px;font-size:.8em}.youtube-cta{text-align:center;padding:40px 20px}.youtube-cta p{color:#888;margin-bottom:15px}.youtube-cta a{display:inline-block;background:linear-gradient(135deg,#ff0000,#cc0000);color:#fff;padding:14px 35px;border-radius:30px;text-decoration:none;font-size:1em;font-weight:bold}footer{text-align:center;padding:25px;color:#555;font-size:.75em}footer a{color:#777;text-decoration:none}@media(max-width:600px){header h1{font-size:1.7em}.signs-grid{grid-template-columns:1fr;padding:12px}}
     </style>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TCDG5LDW5W"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-TCDG5LDW5W");</script>
 </head>
 <body>
-    <div class="lang-nav">
-        <a href="/">English</a>
-        <a href="/ja/">日本語</a>
-        <a href="/ko/" class="active">한국어</a>
-    </div>
-    <header>
-        <h1>오늘의 운세</h1>
-        <p>띠별 & 별자리 운세와 행운의 숫자</p>
-        <div class="date" id="today-date"></div>
-    </header>
-    <div class="tab-nav">
-        <button class="active" onclick="loadTab('tti', this)">띠별 운세</button>
-        <button onclick="loadTab('zodiac', this)">별자리 운세</button>
-    </div>
-    <div class="signs-grid" id="horoscopes">
-        <div class="sign-card"><p style="text-align:center;color:#888;padding:40px;">오늘의 운세를 불러오는 중...</p></div>
-    </div>
-    <div class="youtube-cta">
-        <p style="margin-bottom:15px;color:#ddd;">매일 운세를 영상으로 확인하세요!</p>
-        <a href="https://www.youtube.com/@DailyZodiacFortune" target="_blank">유튜브 구독하기</a>
-    </div>
-    <footer>
-        <p>&copy; 2026 TodayFortune.net | <a href="/">English</a> | <a href="/ja/">日本語</a></p>
-        <p style="margin-top:10px;">오락 목적으로만 제공됩니다.</p>
-    </footer>
+    <div class="lang-nav"><a href="/">English</a><a href="/ja/">日本語</a><a href="/ko/" class="active">한국어</a></div>
+    <header><h1>오늘의 운세</h1><p>띠별 & 별자리 운세와 로또 행운의 숫자</p></header>
+    <div class="lottery-banner"><div class="lottery-label">최근 로또 당첨번호</div><div class="lottery-numbers" id="lottery-nums">로딩 중...</div><div class="lottery-date" id="lottery-date"></div></div>
+    <div class="date-nav" id="date-nav"></div>
+    <div class="tab-nav"><button class="tab-btn active" onclick="switchTab('tti',this)">띠별 운세</button><button class="tab-btn" onclick="switchTab('zodiac',this)">별자리 운세</button></div>
+    <div class="signs-grid" id="horoscopes"><div class="sign-card"><p style="text-align:center;color:#666;padding:30px;">운세를 불러오는 중...</p></div></div>
+    <div class="youtube-cta"><p>매일 운세를 영상으로 확인하세요!</p><a href="https://www.youtube.com/@DailyZodiacFortune" target="_blank">유튜브 구독하기</a></div>
+    <footer><p>&copy; 2026 TodayFortune.net | <a href="/">English</a> | <a href="/ja/">日本語</a> | <a href="/privacy.html">Privacy</a></p></footer>
     <script>
-        const today = new Date();
-        document.getElementById('today-date').textContent = `${today.getFullYear()}년 ${today.getMonth()+1}월 ${today.getDate()}일`;
-
-        function loadTab(type, el) {
-            document.querySelectorAll('.tab-nav button').forEach(b => b.classList.remove('active'));
-            if (el) el.classList.add('active');
-            const file = type === 'zodiac' ? '../data/ko_zodiac.json' : '../data/ko.json';
-            fetch(file)
-                .then(r => r.json())
-                .then(data => {
-                    const grid = document.getElementById('horoscopes');
-                    grid.innerHTML = data.map(h => `
-                        <div class="sign-card">
-                            <div class="sign-header">
-                                <span class="sign-emoji">${h.emoji || ''}</span>
-                                <div>
-                                    <div class="sign-name">${h.name}</div>
-                                    <div class="sign-dates">${h.dates || h.years || ''}</div>
-                                </div>
-                            </div>
-                            <div class="sign-content">${h.content}</div>
-                            <div class="sign-advice">
-                                <div class="sign-advice-label">오늘의 조언</div>
-                                ${h.advice}
-                            </div>
-                            <div class="lucky-info">
-                                <span class="lucky-tag">로또 추천: ${Array.isArray(h.lucky_numbers) ? h.lucky_numbers.join(', ') : h.lucky_numbers}</span>
-                                ${h.lucky_color ? `<span class="lucky-tag">행운의 색: ${h.lucky_color}</span>` : ''}
-                            </div>
-                        </div>
-                    `).join('');
-                })
-                .catch(() => { document.getElementById('horoscopes').innerHTML = '<p style="text-align:center;color:#888;padding:40px;">곧 공개됩니다!</p>'; });
-        }
-        loadTab('tti', document.querySelector('.tab-nav button'));
+        let currentDate=new Date().toISOString().slice(0,10),currentTab='tti';
+        fetch('../data/weekly/index.json').then(r=>r.json()).then(dates=>{
+            document.getElementById('date-nav').innerHTML=dates.map(d=>`<span class="date-btn ${d.date===currentDate?'active':''}" onclick="selectDate('${d.date}',this)"><span class="day">${d.display_ko.split('(')[0]}</span><span class="weekday">${d.weekday_kr}</span></span>`).join('');loadData();
+        }).catch(()=>loadData());
+        function selectDate(d,el){currentDate=d;document.querySelectorAll('.date-btn').forEach(b=>b.classList.remove('active'));if(el)el.classList.add('active');loadData();}
+        function switchTab(t,el){currentTab=t;document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));if(el)el.classList.add('active');loadData();}
+        function loadData(){const p=currentTab==='zodiac'?'ko_zodiac':'ko';fetch(`../data/weekly/${p}_${currentDate}.json`).then(r=>{if(!r.ok)throw 0;return r.json()}).catch(()=>fetch(`../data/${p}.json`).then(r=>r.json())).then(d=>renderCards(d)).catch(()=>{document.getElementById('horoscopes').innerHTML='<p style="text-align:center;color:#666;padding:30px;">데이터가 없습니다</p>';});}
+        function renderCards(data){document.getElementById('horoscopes').innerHTML=data.map(h=>`<div class="sign-card"><div class="sign-header"><span class="sign-emoji">${h.emoji||''}</span><div><div class="sign-name">${h.name}</div><div class="sign-dates">${h.dates||h.years||''}</div></div></div><div class="sign-content">${h.content}</div><div class="sign-advice"><div class="sign-advice-label">오늘의 조언</div><div class="sign-advice-text">${h.advice}</div></div><div class="lucky-info"><span class="lucky-tag">로또 추천: ${Array.isArray(h.lucky_numbers)?h.lucky_numbers.join(', '):h.lucky_numbers}</span>${h.lucky_color?`<span class="lucky-tag">행운의 색: ${h.lucky_color}</span>`:''}</div></div>`).join('');}
+        fetch('../data/lottery.json').then(r=>r.json()).then(d=>{const n=d.korean_lotto;document.getElementById('lottery-nums').innerHTML=n.numbers.map(x=>`<span class="ball">${x}</span>`).join('')+`<span class="ball bonus-ball">+${n.bonus}</span>`;document.getElementById('lottery-date').textContent=`제${n.round}회 (${n.date})`;}).catch(()=>{document.getElementById('lottery-nums').innerHTML='<span style="color:#888;font-size:.8em">곧 업데이트</span>';});
     </script>
 </body>
 </html>

@@ -1,0 +1,65 @@
+[
+  {
+    "date": "2026-04-03",
+    "weekday": "Fri",
+    "weekday_kr": "금",
+    "weekday_ja": "金",
+    "display_en": "Apr 03 (Fri)",
+    "display_ja": "4/3(金)",
+    "display_ko": "4/3(금)"
+  },
+  {
+    "date": "2026-04-04",
+    "weekday": "Sat",
+    "weekday_kr": "토",
+    "weekday_ja": "土",
+    "display_en": "Apr 04 (Sat)",
+    "display_ja": "4/4(土)",
+    "display_ko": "4/4(토)"
+  },
+  {
+    "date": "2026-04-05",
+    "weekday": "Sun",
+    "weekday_kr": "일",
+    "weekday_ja": "日",
+    "display_en": "Apr 05 (Sun)",
+    "display_ja": "4/5(日)",
+    "display_ko": "4/5(일)"
+  },
+  {
+    "date": "2026-04-06",
+    "weekday": "Mon",
+    "weekday_kr": "월",
+    "weekday_ja": "月",
+    "display_en": "Apr 06 (Mon)",
+    "display_ja": "4/6(月)",
+    "display_ko": "4/6(월)"
+  },
+  {
+    "date": "2026-04-07",
+    "weekday": "Tue",
+    "weekday_kr": "화",
+    "weekday_ja": "火",
+    "display_en": "Apr 07 (Tue)",
+    "display_ja": "4/7(火)",
+    "display_ko": "4/7(화)"
+  },
+  {
+    "date": "2026-04-08",
+    "weekday": "Wed",
+    "weekday_kr": "수",
+    "weekday_ja": "水",
+    "display_en": "Apr 08 (Wed)",
+    "display_ja": "4/8(水)",
+    "display_ko": "4/8(수)"
+  },
+  {
+    "date": "2026-04-09",
+    "weekday": "Thu",
+    "weekday_kr": "목",
+    "weekday_ja": "木",
+    "display_en": "Apr 09 (Thu)",
+    "display_ja": "4/9(木)",
+    "display_ko": "4/9(목)"
+  }
+]

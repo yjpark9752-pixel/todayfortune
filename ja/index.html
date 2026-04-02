@@ -3,109 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>今日の星座占い＆ラッキーナンバー | TodayFortune</title>
+    <title>今日の星座占い＆ロト6ラッキーナンバー | TodayFortune</title>
     <meta name="description" content="12星座の毎日の運勢とロト6ラッキーナンバー。毎日更新！">
-    <meta name="keywords" content="占い, 星座占い, 今日の運勢, ロト6, ラッキーナンバー, 12星座">
-    <link rel="alternate" hreflang="en" href="/">
-    <link rel="alternate" hreflang="ko" href="/ko/">
-    <link rel="alternate" hreflang="ja" href="/ja/">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="alternate" hreflang="en" href="/"><link rel="alternate" hreflang="ko" href="/ko/"><link rel="alternate" hreflang="ja" href="/ja/">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCDG5LDW5W"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-TCDG5LDW5W");</script>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif; background: linear-gradient(135deg, #0a0a2e 0%, #1a1a4e 50%, #0a0a2e 100%); color: #fff; min-height: 100vh; }
-        header { text-align: center; padding: 40px 20px 20px; background: rgba(0,0,0,0.3); }
-        header h1 { font-size: 2.5em; color: #ffdd57; margin-bottom: 10px; }
-        header p { color: #aaa; font-size: 1.1em; }
-        .date { color: #ffdd57; font-size: 1.2em; margin-top: 10px; }
-        .lang-nav { text-align: center; padding: 10px; background: rgba(0,0,0,0.2); }
-        .lang-nav a { color: #aaa; text-decoration: none; margin: 0 15px; font-size: 0.9em; }
-        .lang-nav a.active { color: #ffdd57; font-weight: bold; }
-        .signs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 20px; padding: 30px 20px; max-width: 1200px; margin: 0 auto; }
-        .sign-card { background: rgba(255,255,255,0.05); border-radius: 16px; padding: 25px; border: 1px solid rgba(255,255,255,0.1); transition: transform 0.2s; }
-        .sign-card:hover { transform: translateY(-5px); }
-        .sign-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
-        .sign-emoji { font-size: 2.5em; }
-        .sign-name { font-size: 1.5em; color: #ffdd57; }
-        .sign-dates { color: #888; font-size: 0.9em; }
-        .sign-content { line-height: 1.7; margin-bottom: 15px; color: #ddd; }
-        .sign-advice { background: rgba(255,221,87,0.1); border-left: 3px solid #ffdd57; padding: 10px 15px; margin-bottom: 15px; border-radius: 0 8px 8px 0; }
-        .sign-advice-label { color: #ffdd57; font-weight: bold; font-size: 0.9em; }
-        .lucky-info { display: flex; flex-wrap: wrap; gap: 10px; }
-        .lucky-tag { background: rgba(255,221,87,0.15); color: #ffdd57; padding: 5px 12px; border-radius: 20px; font-size: 0.85em; }
-        .youtube-cta { text-align: center; padding: 40px 20px; background: rgba(255,221,87,0.05); }
-        .youtube-cta a { display: inline-block; background: #ff0000; color: #fff; padding: 15px 30px; border-radius: 30px; text-decoration: none; font-size: 1.1em; font-weight: bold; }
-        footer { text-align: center; padding: 30px; color: #666; font-size: 0.8em; }
-        footer a { color: #888; }
-        @media (max-width: 600px) { header h1 { font-size: 1.8em; } .signs-grid { grid-template-columns: 1fr; padding: 15px; } }
+        *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif;background:linear-gradient(180deg,#0d0d2b 0%,#1a1a4e 40%,#0d0d2b 100%);color:#fff;min-height:100vh}.lang-nav{text-align:center;padding:12px;background:rgba(0,0,0,0.4)}.lang-nav a{color:#888;text-decoration:none;margin:0 15px;font-size:.9em}.lang-nav a.active{color:#ffdd57;font-weight:bold}header{text-align:center;padding:35px 20px 15px}header h1{font-size:2.2em;color:#ffdd57;margin-bottom:5px}header p{color:#999;font-size:1em}.lottery-banner{max-width:700px;margin:15px auto;background:linear-gradient(135deg,rgba(255,215,0,0.15),rgba(255,100,100,0.1));border:1px solid rgba(255,215,0,0.3);border-radius:12px;padding:15px 20px;text-align:center}.lottery-label{color:#ffdd57;font-size:.85em;font-weight:bold;margin-bottom:8px}.lottery-numbers{font-size:1.3em;font-weight:bold;letter-spacing:2px}.lottery-numbers .ball{display:inline-block;width:38px;height:38px;line-height:38px;border-radius:50%;background:rgba(255,255,255,0.15);margin:0 3px;font-size:.9em}.lottery-date{color:#777;font-size:.75em;margin-top:8px}.date-nav{text-align:center;padding:15px 10px;overflow-x:auto;white-space:nowrap}.date-btn{display:inline-block;padding:10px 16px;margin:0 4px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:10px;color:#aaa;cursor:pointer;font-size:.85em;transition:all .2s;text-decoration:none}.date-btn:hover{background:rgba(255,255,255,0.12);color:#fff}.date-btn.active{background:rgba(255,221,87,0.2);border-color:#ffdd57;color:#ffdd57;font-weight:bold}.date-btn .day{display:block;font-size:1.1em;font-weight:bold}.date-btn .weekday{display:block;font-size:.75em;margin-top:2px}.tab-nav{text-align:center;padding:15px}.tab-btn{background:rgba(255,255,255,0.08);color:#ccc;border:1px solid rgba(255,255,255,0.15);padding:10px 28px;margin:0 5px;border-radius:25px;cursor:pointer;font-size:.95em;transition:all .2s}.tab-btn.active{background:#ffdd57;color:#111;border-color:#ffdd57;font-weight:bold}.signs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:18px;padding:20px;max-width:1200px;margin:0 auto}.sign-card{background:rgba(255,255,255,0.04);border-radius:14px;padding:22px;border:1px solid rgba(255,255,255,0.08);transition:all .3s}.sign-card:hover{transform:translateY(-4px);background:rgba(255,255,255,0.07);border-color:rgba(255,221,87,0.3)}.sign-header{display:flex;align-items:center;gap:14px;margin-bottom:14px}.sign-emoji{font-size:2.4em}.sign-name{font-size:1.4em;color:#ffdd57;font-weight:bold}.sign-dates{color:#777;font-size:.85em}.sign-content{line-height:1.7;margin-bottom:14px;color:#ccc;font-size:.95em}.sign-advice{background:rgba(255,221,87,0.08);border-left:3px solid #ffdd57;padding:10px 14px;margin-bottom:14px;border-radius:0 10px 10px 0}.sign-advice-label{color:#ffdd57;font-weight:bold;font-size:.8em}.sign-advice-text{margin-top:4px;color:#ddd;font-size:.9em}.lucky-info{display:flex;flex-wrap:wrap;gap:8px}.lucky-tag{background:rgba(255,221,87,0.1);color:#ffdd57;padding:5px 12px;border-radius:20px;font-size:.8em}.youtube-cta{text-align:center;padding:40px 20px}.youtube-cta p{color:#888;margin-bottom:15px}.youtube-cta a{display:inline-block;background:linear-gradient(135deg,#ff0000,#cc0000);color:#fff;padding:14px 35px;border-radius:30px;text-decoration:none;font-size:1em;font-weight:bold}footer{text-align:center;padding:25px;color:#555;font-size:.75em}footer a{color:#777;text-decoration:none}@media(max-width:600px){header h1{font-size:1.7em}.signs-grid{grid-template-columns:1fr;padding:12px}}
     </style>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TCDG5LDW5W"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-TCDG5LDW5W");</script>
 </head>
 <body>
-    <div class="lang-nav">
-        <a href="/">English</a>
-        <a href="/ja/" class="active">日本語</a>
-        <a href="/ko/">한국어</a>
-    </div>
-    <header>
-        <h1>今日の星座占い</h1>
-        <p>12星座の運勢とロト6ラッキーナンバー</p>
-        <div class="date" id="today-date"></div>
-    </header>
-    <div style="text-align:center;padding:20px;">
-        <button class="active" onclick="loadTab('zodiac', this)" style="background:#ffdd57;color:#000;border:1px solid #ffdd57;padding:10px 25px;margin:0 5px;border-radius:25px;cursor:pointer;font-size:1em;">星座占い</button>
-        <button onclick="loadTab('tti', this)" style="background:rgba(255,255,255,0.1);color:#fff;border:1px solid rgba(255,255,255,0.2);padding:10px 25px;margin:0 5px;border-radius:25px;cursor:pointer;font-size:1em;">韓国干支占い</button>
-    </div>
-    <div class="signs-grid" id="horoscopes">
-        <div class="sign-card"><p style="text-align:center;color:#888;padding:40px;">今日の運勢を読み込み中...</p></div>
-    </div>
-    <div class="youtube-cta">
-        <p style="margin-bottom:15px;color:#ddd;">毎日の星座占いを動画でチェック！</p>
-        <a href="https://www.youtube.com/@DailyZodiacFortune" target="_blank">YouTubeでチャンネル登録</a>
-    </div>
-    <footer>
-        <p>&copy; 2026 TodayFortune.net | <a href="/">English</a> | <a href="/ko/">한국어</a></p>
-        <p style="margin-top:10px;">娯楽目的のみ。</p>
-    </footer>
+    <div class="lang-nav"><a href="/">English</a><a href="/ja/" class="active">日本語</a><a href="/ko/">한국어</a></div>
+    <header><h1>今日の星座占い</h1><p>毎日の運勢＆ロト6ラッキーナンバー</p></header>
+    <div class="lottery-banner"><div class="lottery-label">最新ロト6当選番号</div><div class="lottery-numbers" id="lottery-nums">読み込み中...</div><div class="lottery-date" id="lottery-date"></div></div>
+    <div class="date-nav" id="date-nav"></div>
+    <div class="tab-nav"><button class="tab-btn active" onclick="switchTab('zodiac',this)">星座占い</button><button class="tab-btn" onclick="switchTab('tti',this)">韓国干支占い</button></div>
+    <div class="signs-grid" id="horoscopes"><div class="sign-card"><p style="text-align:center;color:#666;padding:30px;">読み込み中...</p></div></div>
+    <div class="youtube-cta"><p>毎日の占いを動画でチェック！</p><a href="https://www.youtube.com/@DailyZodiacFortune" target="_blank">チャンネル登録</a></div>
+    <footer><p>&copy; 2026 TodayFortune.net | <a href="/">English</a> | <a href="/ko/">한국어</a> | <a href="/privacy.html">Privacy</a></p></footer>
     <script>
-        const today = new Date();
-        document.getElementById('today-date').textContent = `${today.getFullYear()}年${today.getMonth()+1}月${today.getDate()}日`;
-        function loadTab(type, el) {
-            document.querySelectorAll('button').forEach(b => {
-                b.style.background = 'rgba(255,255,255,0.1)';
-                b.style.color = '#fff';
-                b.style.borderColor = 'rgba(255,255,255,0.2)';
-            });
-            if (el) { el.style.background = '#ffdd57'; el.style.color = '#000'; el.style.borderColor = '#ffdd57'; }
-            const file = type === 'tti' ? '../data/ja_tti.json' : '../data/ja.json';
-            fetch(file)
-                .then(r => r.json())
-                .then(data => {
-                    const grid = document.getElementById('horoscopes');
-                    grid.innerHTML = data.map(h => `
-                        <div class="sign-card">
-                            <div class="sign-header">
-                                <span class="sign-emoji">${h.emoji || ''}</span>
-                                <div>
-                                    <div class="sign-name">${h.name}</div>
-                                    <div class="sign-dates">${h.dates || h.years || ''}</div>
-                                </div>
-                            </div>
-                            <div class="sign-content">${h.content}</div>
-                            <div class="sign-advice">
-                                <div class="sign-advice-label">アドバイス</div>
-                                ${h.advice}
-                            </div>
-                            <div class="lucky-info">
-                                <span class="lucky-tag">ロト6: ${Array.isArray(h.lucky_numbers) ? h.lucky_numbers.join(', ') : h.lucky_numbers}</span>
-                                ${h.lucky_color ? `<span class="lucky-tag">カラー: ${h.lucky_color}</span>` : ''}
-                            </div>
-                        </div>
-                    `).join('');
-                })
-                .catch(() => { document.getElementById('horoscopes').innerHTML = '<p style="text-align:center;color:#888;padding:40px;">まもなく公開されます！</p>'; });
-        }
-        loadTab('zodiac', document.querySelector('button'));
+        let currentDate=new Date().toISOString().slice(0,10),currentTab='zodiac';
+        fetch('../data/weekly/index.json').then(r=>r.json()).then(dates=>{
+            document.getElementById('date-nav').innerHTML=dates.map(d=>`<span class="date-btn ${d.date===currentDate?'active':''}" onclick="selectDate('${d.date}',this)"><span class="day">${d.display_ja.split('(')[0]}</span><span class="weekday">${d.weekday_ja}</span></span>`).join('');loadData();
+        }).catch(()=>loadData());
+        function selectDate(d,el){currentDate=d;document.querySelectorAll('.date-btn').forEach(b=>b.classList.remove('active'));if(el)el.classList.add('active');loadData();}
+        function switchTab(t,el){currentTab=t;document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));if(el)el.classList.add('active');loadData();}
+        function loadData(){const p=currentTab==='tti'?'ja_tti':'ja';fetch(`../data/weekly/${p}_${currentDate}.json`).then(r=>{if(!r.ok)throw 0;return r.json()}).catch(()=>fetch(`../data/${p}.json`).then(r=>r.json())).then(d=>renderCards(d)).catch(()=>{document.getElementById('horoscopes').innerHTML='<p style="text-align:center;color:#666;padding:30px;">データがありません</p>';});}
+        function renderCards(data){document.getElementById('horoscopes').innerHTML=data.map(h=>`<div class="sign-card"><div class="sign-header"><span class="sign-emoji">${h.emoji||''}</span><div><div class="sign-name">${h.name}</div><div class="sign-dates">${h.dates||h.years||''}</div></div></div><div class="sign-content">${h.content}</div><div class="sign-advice"><div class="sign-advice-label">アドバイス</div><div class="sign-advice-text">${h.advice}</div></div><div class="lucky-info"><span class="lucky-tag">ロト6: ${Array.isArray(h.lucky_numbers)?h.lucky_numbers.join(', '):h.lucky_numbers}</span>${h.lucky_color?`<span class="lucky-tag">カラー: ${h.lucky_color}</span>`:''}</div></div>`).join('');}
+        fetch('../data/lottery.json').then(r=>r.json()).then(d=>{const n=d.loto6;document.getElementById('lottery-nums').innerHTML=n.numbers.map(x=>`<span class="ball">${x}</span>`).join('');document.getElementById('lottery-date').textContent='抽選: '+n.date;}).catch(()=>{document.getElementById('lottery-nums').innerHTML='<span style="color:#888;font-size:.8em">まもなく</span>';});
     </script>
 </body>
 </html>
