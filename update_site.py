@@ -51,6 +51,38 @@ def update():
         json.dump(ko_z_data, f, ensure_ascii=False, indent=2)
     log.info(f"Korean zodiac: {len(ko_z_data)} signs")
 
+    # English tti (Korean animal zodiac in English)
+    log.info("Generating English tti...")
+    import asyncio, aiohttp
+    from config import GEMINI_URL
+    async def _call(prompt):
+        payload = {'contents': [{'parts': [{'text': prompt}]}], 'generationConfig': {'temperature': 0.9, 'maxOutputTokens': 8192}}
+        async with aiohttp.ClientSession() as s:
+            async with s.post(GEMINI_URL, json=payload) as r:
+                data = await r.json()
+        raw = data['candidates'][0]['content']['parts'][0]['text'].strip()
+        if raw.startswith('```'): raw = raw.split('\n',1)[1]
+        if raw.endswith('```'): raw = raw.rsplit('```',1)[0]
+        return json.loads(raw.strip())
+
+    try:
+        en_tti = asyncio.run(_call('Generate today\'s horoscope for 12 Korean Animal Zodiac signs in English. JSON array: [{"name":"Mouse","emoji":"🐭","years":"1960,1972,1984,1996,2008,2020","content":"...","lucky_numbers":[1,2,3,4,5,6],"advice":"..."}] Signs: Mouse,Cow,Tiger,Rabbit,Dragon,Snake,Horse,Sheep,Monkey,Rooster,Dog,Pig. JSON only.'))
+        with open(DATA_DIR / "en_tti.json", "w") as f:
+            json.dump(en_tti, f, ensure_ascii=False, indent=2)
+        log.info(f"English tti: {len(en_tti)} signs")
+    except Exception as e:
+        log.error(f"English tti failed: {e}")
+
+    # Japanese tti
+    log.info("Generating Japanese tti...")
+    try:
+        ja_tti = asyncio.run(_call('韓国の12支の今日の運勢を日本語で。JSON配列: [{"name":"ネズミ年","emoji":"🐭","years":"1960,1972,1984,1996,2008,2020","content":"...","lucky_numbers":[1,2,3,4,5,6],"advice":"..."}] 12支: ネズミ,牛,トラ,うさぎ,龍,ヘビ,馬,羊,猿,鶏,犬,豚。JSONのみ。'))
+        with open(DATA_DIR / "ja_tti.json", "w") as f:
+            json.dump(ja_tti, f, ensure_ascii=False, indent=2)
+        log.info(f"Japanese tti: {len(ja_tti)} signs")
+    except Exception as e:
+        log.error(f"Japanese tti failed: {e}")
+
     log.info("Site data updated!")
 
 

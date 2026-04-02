@@ -127,6 +127,11 @@
         <div class="date" id="today-date"></div>
     </header>
 
+    <div class="tab-nav">
+        <button class="active" onclick="loadTab('zodiac', this)" style="background:rgba(255,255,255,0.1);color:#fff;border:1px solid rgba(255,255,255,0.2);padding:10px 25px;margin:0 5px;border-radius:25px;cursor:pointer;font-size:1em;">Zodiac Signs</button>
+        <button onclick="loadTab('tti', this)" style="background:rgba(255,255,255,0.1);color:#fff;border:1px solid rgba(255,255,255,0.2);padding:10px 25px;margin:0 5px;border-radius:25px;cursor:pointer;font-size:1em;">Korean Animal Zodiac</button>
+    </div>
+
     <div class="signs-grid" id="horoscopes">
         <div class="sign-card">
             <p style="text-align:center; color:#888; padding:40px;">Loading today's horoscopes...</p>
@@ -149,35 +154,44 @@
         const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
         document.getElementById('today-date').textContent = today.toLocaleDateString('en-US', options);
 
-        // Load horoscopes from JSON
-        fetch('./data/en.json')
-            .then(r => r.json())
-            .then(data => {
-                const grid = document.getElementById('horoscopes');
-                grid.innerHTML = data.map(h => `
-                    <div class="sign-card">
-                        <div class="sign-header">
-                            <span class="sign-emoji">${h.emoji || ''}</span>
-                            <div>
-                                <div class="sign-name">${h.name}</div>
-                                <div class="sign-dates">${h.dates || ''}</div>
+        function loadTab(type, el) {
+            document.querySelectorAll('.tab-nav button').forEach(b => {
+                b.style.background = 'rgba(255,255,255,0.1)';
+                b.style.color = '#fff';
+                b.style.borderColor = 'rgba(255,255,255,0.2)';
+            });
+            if (el) { el.style.background = '#ffdd57'; el.style.color = '#000'; el.style.borderColor = '#ffdd57'; }
+            const file = type === 'tti' ? './data/en_tti.json' : './data/en.json';
+            fetch(file)
+                .then(r => r.json())
+                .then(data => {
+                    const grid = document.getElementById('horoscopes');
+                    grid.innerHTML = data.map(h => `
+                        <div class="sign-card">
+                            <div class="sign-header">
+                                <span class="sign-emoji">${h.emoji || ''}</span>
+                                <div>
+                                    <div class="sign-name">${h.name}</div>
+                                    <div class="sign-dates">${h.dates || h.years || ''}</div>
+                                </div>
+                            </div>
+                            <div class="sign-content">${h.content}</div>
+                            <div class="sign-advice">
+                                <div class="sign-advice-label">Daily Advice</div>
+                                ${h.advice}
+                            </div>
+                            <div class="lucky-info">
+                                <span class="lucky-tag">Lucky Numbers: ${Array.isArray(h.lucky_numbers) ? h.lucky_numbers.join(', ') : h.lucky_numbers}</span>
+                                ${h.lucky_color ? `<span class="lucky-tag">Color: ${h.lucky_color}</span>` : ''}
                             </div>
                         </div>
-                        <div class="sign-content">${h.content}</div>
-                        <div class="sign-advice">
-                            <div class="sign-advice-label">Daily Advice</div>
-                            ${h.advice}
-                        </div>
-                        <div class="lucky-info">
-                            <span class="lucky-tag">Mega Millions: ${Array.isArray(h.lucky_numbers) ? h.lucky_numbers.slice(0,5).join(', ') + ' + MB ' + h.lucky_numbers[5] : h.lucky_numbers}</span>
-                            ${h.lucky_color ? `<span class="lucky-tag">Color: ${h.lucky_color}</span>` : ''}
-                        </div>
-                    </div>
-                `).join('');
-            })
-            .catch(() => {
-                document.getElementById('horoscopes').innerHTML = '<p style="text-align:center;color:#888;padding:40px;">Horoscopes will be available soon!</p>';
-            });
+                    `).join('');
+                })
+                .catch(() => {
+                    document.getElementById('horoscopes').innerHTML = '<p style="text-align:center;color:#888;padding:40px;">Horoscopes will be available soon!</p>';
+                });
+        }
+        loadTab('zodiac', document.querySelector('.tab-nav button'));
     </script>
 </body>
 </html>
