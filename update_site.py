@@ -66,7 +66,7 @@ def update():
         return json.loads(raw.strip())
 
     try:
-        en_tti = asyncio.run(_call('Generate today\'s horoscope for 12 Korean Animal Zodiac signs in English. JSON array: [{"name":"Mouse","emoji":"🐭","years":"1960,1972,1984,1996,2008,2020","content":"...","lucky_numbers":[1,2,3,4,5,6],"advice":"..."}] Signs: Mouse,Cow,Tiger,Rabbit,Dragon,Snake,Horse,Sheep,Monkey,Rooster,Dog,Pig. JSON only.'))
+        en_tti = asyncio.run(_call('Generate today\'s horoscope for 12 Korean Animal Zodiac signs in English. JSON array: [{"name":"Mouse","emoji":"🐭","years":"1960,1972,1984,1996,2008,2020","content":"...","lucky_numbers":[12,28,35,49,67,14],"lucky_color":"Gold","advice":"..."}] lucky_numbers: 5 main numbers (1-70) + 1 Mega Ball (1-25) = 6 numbers total. Signs: Mouse,Cow,Tiger,Rabbit,Dragon,Snake,Horse,Sheep,Monkey,Rooster,Dog,Pig. JSON only.'))
         with open(DATA_DIR / "en_tti.json", "w") as f:
             json.dump(en_tti, f, ensure_ascii=False, indent=2)
         log.info(f"English tti: {len(en_tti)} signs")
@@ -76,7 +76,7 @@ def update():
     # Japanese tti
     log.info("Generating Japanese tti...")
     try:
-        ja_tti = asyncio.run(_call('韓国の12支の今日の運勢を日本語で。JSON配列: [{"name":"ネズミ年","emoji":"🐭","years":"1960,1972,1984,1996,2008,2020","content":"...","lucky_numbers":[1,2,3,4,5,6],"advice":"..."}] 12支: ネズミ,牛,トラ,うさぎ,龍,ヘビ,馬,羊,猿,鶏,犬,豚。JSONのみ。'))
+        ja_tti = asyncio.run(_call('韓国の12支の今日の運勢を日本語で。JSON配列: [{"name":"ネズミ年","emoji":"🐭","years":"1960,1972,1984,1996,2008,2020","content":"...","lucky_numbers":[3,12,25,33,41,7],"lucky_color":"ゴールド","advice":"..."}] lucky_numbers: ロト6推薦番号(1-43の整数6個)。12支: ネズミ,牛,トラ,うさぎ,龍,ヘビ,馬,羊,猿,鶏,犬,豚。JSONのみ。'))
         with open(DATA_DIR / "ja_tti.json", "w") as f:
             json.dump(ja_tti, f, ensure_ascii=False, indent=2)
         log.info(f"Japanese tti: {len(ja_tti)} signs")
