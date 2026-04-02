@@ -181,7 +181,7 @@
                                 ${h.advice}
                             </div>
                             <div class="lucky-info">
-                                <span class="lucky-tag">Lucky Numbers: ${Array.isArray(h.lucky_numbers) ? h.lucky_numbers.join(', ') : h.lucky_numbers}</span>
+                                <span class="lucky-tag">Mega Millions: ${Array.isArray(h.lucky_numbers) && h.lucky_numbers.length >= 6 ? h.lucky_numbers.slice(0,5).join(', ') + ' + MB ' + h.lucky_numbers[5] : (Array.isArray(h.lucky_numbers) ? h.lucky_numbers.join(', ') : h.lucky_numbers)}</span>
                                 ${h.lucky_color ? `<span class="lucky-tag">Color: ${h.lucky_color}</span>` : ''}
                             </div>
                         </div>
