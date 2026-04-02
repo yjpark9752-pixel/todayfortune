@@ -150,7 +150,7 @@
         document.getElementById('today-date').textContent = today.toLocaleDateString('en-US', options);
 
         // Load horoscopes from JSON
-        fetch('/data/en.json')
+        fetch('./data/en.json')
             .then(r => r.json())
             .then(data => {
                 const grid = document.getElementById('horoscopes');

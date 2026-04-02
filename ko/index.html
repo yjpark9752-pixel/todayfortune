@@ -74,7 +74,7 @@
         function loadTab(type) {
             document.querySelectorAll('.tab-nav button').forEach(b => b.classList.remove('active'));
             event.target.classList.add('active');
-            const file = type === 'zodiac' ? '/data/ko_zodiac.json' : '/data/ko.json';
+            const file = type === 'zodiac' ? '../data/ko_zodiac.json' : '../data/ko.json';
             fetch(file)
                 .then(r => r.json())
                 .then(data => {

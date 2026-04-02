@@ -64,7 +64,7 @@
     <script>
         const today = new Date();
         document.getElementById('today-date').textContent = `${today.getFullYear()}年${today.getMonth()+1}月${today.getDate()}日`;
-        fetch('/data/ja.json')
+        fetch('../data/ja.json')
             .then(r => r.json())
             .then(data => {
                 const grid = document.getElementById('horoscopes');
