@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘의 운세 & 행운의 숫자 | TodayFortune</title>
+    <meta name="description" content="12띠별, 12별자리 오늘의 운세와 행운의 숫자. 매일 업데이트!">
+    <meta name="keywords" content="오늘의운세, 띠별운세, 별자리운세, 행운의숫자, 로또번호, 운세">
+    <link rel="alternate" hreflang="en" href="/">
+    <link rel="alternate" hreflang="ja" href="/ja/">
+    <link rel="alternate" hreflang="ko" href="/ko/">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, 'Apple SD Gothic Neo', sans-serif; background: linear-gradient(135deg, #0a0a2e 0%, #1a1a4e 50%, #0a0a2e 100%); color: #fff; min-height: 100vh; }
+        header { text-align: center; padding: 40px 20px 20px; background: rgba(0,0,0,0.3); }
+        header h1 { font-size: 2.5em; color: #ffdd57; margin-bottom: 10px; }
+        header p { color: #aaa; font-size: 1.1em; }
+        .date { color: #ffdd57; font-size: 1.2em; margin-top: 10px; }
+        .lang-nav { text-align: center; padding: 10px; background: rgba(0,0,0,0.2); }
+        .lang-nav a { color: #aaa; text-decoration: none; margin: 0 15px; font-size: 0.9em; }
+        .lang-nav a.active { color: #ffdd57; font-weight: bold; }
+        .tab-nav { text-align: center; padding: 20px; }
+        .tab-nav button { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2); padding: 10px 25px; margin: 0 5px; border-radius: 25px; cursor: pointer; font-size: 1em; }
+        .tab-nav button.active { background: #ffdd57; color: #000; border-color: #ffdd57; }
+        .signs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 20px; padding: 30px 20px; max-width: 1200px; margin: 0 auto; }
+        .sign-card { background: rgba(255,255,255,0.05); border-radius: 16px; padding: 25px; border: 1px solid rgba(255,255,255,0.1); transition: transform 0.2s; }
+        .sign-card:hover { transform: translateY(-5px); }
+        .sign-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+        .sign-emoji { font-size: 2.5em; }
+        .sign-name { font-size: 1.5em; color: #ffdd57; }
+        .sign-dates { color: #888; font-size: 0.9em; }
+        .sign-content { line-height: 1.7; margin-bottom: 15px; color: #ddd; }
+        .sign-advice { background: rgba(255,221,87,0.1); border-left: 3px solid #ffdd57; padding: 10px 15px; margin-bottom: 15px; border-radius: 0 8px 8px 0; }
+        .sign-advice-label { color: #ffdd57; font-weight: bold; font-size: 0.9em; }
+        .lucky-info { display: flex; flex-wrap: wrap; gap: 10px; }
+        .lucky-tag { background: rgba(255,221,87,0.15); color: #ffdd57; padding: 5px 12px; border-radius: 20px; font-size: 0.85em; }
+        .youtube-cta { text-align: center; padding: 40px 20px; background: rgba(255,221,87,0.05); }
+        .youtube-cta a { display: inline-block; background: #ff0000; color: #fff; padding: 15px 30px; border-radius: 30px; text-decoration: none; font-size: 1.1em; font-weight: bold; }
+        footer { text-align: center; padding: 30px; color: #666; font-size: 0.8em; }
+        footer a { color: #888; }
+        @media (max-width: 600px) { header h1 { font-size: 1.8em; } .signs-grid { grid-template-columns: 1fr; padding: 15px; } .tab-nav button { padding: 8px 15px; font-size: 0.9em; } }
+    </style>
+</head>
+<body>
+    <div class="lang-nav">
+        <a href="/">English</a>
+        <a href="/ja/">日本語</a>
+        <a href="/ko/" class="active">한국어</a>
+    </div>
+    <header>
+        <h1>오늘의 운세</h1>
+        <p>띠별 & 별자리 운세와 행운의 숫자</p>
+        <div class="date" id="today-date"></div>
+    </header>
+    <div class="tab-nav">
+        <button class="active" onclick="loadTab('tti')">띠별 운세</button>
+        <button onclick="loadTab('zodiac')">별자리 운세</button>
+    </div>
+    <div class="signs-grid" id="horoscopes">
+        <div class="sign-card"><p style="text-align:center;color:#888;padding:40px;">오늘의 운세를 불러오는 중...</p></div>
+    </div>
+    <div class="youtube-cta">
+        <p style="margin-bottom:15px;color:#ddd;">매일 운세를 영상으로 확인하세요!</p>
+        <a href="https://www.youtube.com/@DailyZodiacFortune" target="_blank">유튜브 구독하기</a>
+    </div>
+    <footer>
+        <p>&copy; 2026 TodayFortune.net | <a href="/">English</a> | <a href="/ja/">日本語</a></p>
+        <p style="margin-top:10px;">오락 목적으로만 제공됩니다.</p>
+    </footer>
+    <script>
+        const today = new Date();
+        document.getElementById('today-date').textContent = `${today.getFullYear()}년 ${today.getMonth()+1}월 ${today.getDate()}일`;
+
+        function loadTab(type) {
+            document.querySelectorAll('.tab-nav button').forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+            const file = type === 'zodiac' ? '/data/ko_zodiac.json' : '/data/ko.json';
+            fetch(file)
+                .then(r => r.json())
+                .then(data => {
+                    const grid = document.getElementById('horoscopes');
+                    grid.innerHTML = data.map(h => `
+                        <div class="sign-card">
+                            <div class="sign-header">
+                                <span class="sign-emoji">${h.emoji || ''}</span>
+                                <div>
+                                    <div class="sign-name">${h.name}</div>
+                                    <div class="sign-dates">${h.dates || h.years || ''}</div>
+                                </div>
+                            </div>
+                            <div class="sign-content">${h.content}</div>
+                            <div class="sign-advice">
+                                <div class="sign-advice-label">오늘의 조언</div>
+                                ${h.advice}
+                            </div>
+                            <div class="lucky-info">
+                                <span class="lucky-tag">행운의 숫자: ${Array.isArray(h.lucky_numbers) ? h.lucky_numbers.join(', ') : h.lucky_numbers}</span>
+                                ${h.lucky_color ? `<span class="lucky-tag">행운의 색: ${h.lucky_color}</span>` : ''}
+                            </div>
+                        </div>
+                    `).join('');
+                })
+                .catch(() => { document.getElementById('horoscopes').innerHTML = '<p style="text-align:center;color:#888;padding:40px;">곧 공개됩니다!</p>'; });
+        }
+        loadTab('tti');
+    </script>
+</body>
+</html>

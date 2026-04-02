@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>今日の星座占い＆ラッキーナンバー | TodayFortune</title>
+    <meta name="description" content="12星座の毎日の運勢とロト6ラッキーナンバー。毎日更新！">
+    <meta name="keywords" content="占い, 星座占い, 今日の運勢, ロト6, ラッキーナンバー, 12星座">
+    <link rel="alternate" hreflang="en" href="/">
+    <link rel="alternate" hreflang="ko" href="/ko/">
+    <link rel="alternate" hreflang="ja" href="/ja/">
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif; background: linear-gradient(135deg, #0a0a2e 0%, #1a1a4e 50%, #0a0a2e 100%); color: #fff; min-height: 100vh; }
+        header { text-align: center; padding: 40px 20px 20px; background: rgba(0,0,0,0.3); }
+        header h1 { font-size: 2.5em; color: #ffdd57; margin-bottom: 10px; }
+        header p { color: #aaa; font-size: 1.1em; }
+        .date { color: #ffdd57; font-size: 1.2em; margin-top: 10px; }
+        .lang-nav { text-align: center; padding: 10px; background: rgba(0,0,0,0.2); }
+        .lang-nav a { color: #aaa; text-decoration: none; margin: 0 15px; font-size: 0.9em; }
+        .lang-nav a.active { color: #ffdd57; font-weight: bold; }
+        .signs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 20px; padding: 30px 20px; max-width: 1200px; margin: 0 auto; }
+        .sign-card { background: rgba(255,255,255,0.05); border-radius: 16px; padding: 25px; border: 1px solid rgba(255,255,255,0.1); transition: transform 0.2s; }
+        .sign-card:hover { transform: translateY(-5px); }
+        .sign-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+        .sign-emoji { font-size: 2.5em; }
+        .sign-name { font-size: 1.5em; color: #ffdd57; }
+        .sign-dates { color: #888; font-size: 0.9em; }
+        .sign-content { line-height: 1.7; margin-bottom: 15px; color: #ddd; }
+        .sign-advice { background: rgba(255,221,87,0.1); border-left: 3px solid #ffdd57; padding: 10px 15px; margin-bottom: 15px; border-radius: 0 8px 8px 0; }
+        .sign-advice-label { color: #ffdd57; font-weight: bold; font-size: 0.9em; }
+        .lucky-info { display: flex; flex-wrap: wrap; gap: 10px; }
+        .lucky-tag { background: rgba(255,221,87,0.15); color: #ffdd57; padding: 5px 12px; border-radius: 20px; font-size: 0.85em; }
+        .youtube-cta { text-align: center; padding: 40px 20px; background: rgba(255,221,87,0.05); }
+        .youtube-cta a { display: inline-block; background: #ff0000; color: #fff; padding: 15px 30px; border-radius: 30px; text-decoration: none; font-size: 1.1em; font-weight: bold; }
+        footer { text-align: center; padding: 30px; color: #666; font-size: 0.8em; }
+        footer a { color: #888; }
+        @media (max-width: 600px) { header h1 { font-size: 1.8em; } .signs-grid { grid-template-columns: 1fr; padding: 15px; } }
+    </style>
+</head>
+<body>
+    <div class="lang-nav">
+        <a href="/">English</a>
+        <a href="/ja/" class="active">日本語</a>
+        <a href="/ko/">한국어</a>
+    </div>
+    <header>
+        <h1>今日の星座占い</h1>
+        <p>12星座の運勢とロト6ラッキーナンバー</p>
+        <div class="date" id="today-date"></div>
+    </header>
+    <div class="signs-grid" id="horoscopes">
+        <div class="sign-card"><p style="text-align:center;color:#888;padding:40px;">今日の運勢を読み込み中...</p></div>
+    </div>
+    <div class="youtube-cta">
+        <p style="margin-bottom:15px;color:#ddd;">毎日の星座占いを動画でチェック！</p>
+        <a href="https://www.youtube.com/@DailyZodiacFortune" target="_blank">YouTubeでチャンネル登録</a>
+    </div>
+    <footer>
+        <p>&copy; 2026 TodayFortune.net | <a href="/">English</a> | <a href="/ko/">한국어</a></p>
+        <p style="margin-top:10px;">娯楽目的のみ。</p>
+    </footer>
+    <script>
+        const today = new Date();
+        document.getElementById('today-date').textContent = `${today.getFullYear()}年${today.getMonth()+1}月${today.getDate()}日`;
+        fetch('/data/ja.json')
+            .then(r => r.json())
+            .then(data => {
+                const grid = document.getElementById('horoscopes');
+                grid.innerHTML = data.map(h => `
+                    <div class="sign-card">
+                        <div class="sign-header">
+                            <span class="sign-emoji">${h.emoji || ''}</span>
+                            <div>
+                                <div class="sign-name">${h.name}</div>
+                                <div class="sign-dates">${h.dates || ''}</div>
+                            </div>
+                        </div>
+                        <div class="sign-content">${h.content}</div>
+                        <div class="sign-advice">
+                            <div class="sign-advice-label">アドバイス</div>
+                            ${h.advice}
+                        </div>
+                        <div class="lucky-info">
+                            <span class="lucky-tag">ロト6: ${Array.isArray(h.lucky_numbers) ? h.lucky_numbers.join(', ') : h.lucky_numbers}</span>
+                            ${h.lucky_color ? `<span class="lucky-tag">カラー: ${h.lucky_color}</span>` : ''}
+                        </div>
+                    </div>
+                `).join('');
+            })
+            .catch(() => { document.getElementById('horoscopes').innerHTML = '<p style="text-align:center;color:#888;padding:40px;">まもなく公開されます！</p>'; });
+    </script>
+</body>
+</html>
