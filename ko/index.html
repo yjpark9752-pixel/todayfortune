@@ -53,8 +53,8 @@
         <div class="date" id="today-date"></div>
     </header>
     <div class="tab-nav">
-        <button class="active" onclick="loadTab('tti')">띠별 운세</button>
-        <button onclick="loadTab('zodiac')">별자리 운세</button>
+        <button class="active" onclick="loadTab('tti', this)">띠별 운세</button>
+        <button onclick="loadTab('zodiac', this)">별자리 운세</button>
     </div>
     <div class="signs-grid" id="horoscopes">
         <div class="sign-card"><p style="text-align:center;color:#888;padding:40px;">오늘의 운세를 불러오는 중...</p></div>
@@ -71,9 +71,9 @@
         const today = new Date();
         document.getElementById('today-date').textContent = `${today.getFullYear()}년 ${today.getMonth()+1}월 ${today.getDate()}일`;
 
-        function loadTab(type) {
+        function loadTab(type, el) {
             document.querySelectorAll('.tab-nav button').forEach(b => b.classList.remove('active'));
-            event.target.classList.add('active');
+            if (el) el.classList.add('active');
             const file = type === 'zodiac' ? '../data/ko_zodiac.json' : '../data/ko.json';
             fetch(file)
                 .then(r => r.json())
