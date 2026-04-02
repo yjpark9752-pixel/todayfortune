@@ -2,157 +2,193 @@
   {
     "name": "Mouse",
     "emoji": "🐭",
-    "years": "1960,1972,1984,1996,2008,2020",
-    "content": "Today brings an excellent opportunity for collaboration. Your quick wit and adaptability will shine in group settings. Don't be afraid to take the lead on a new project or idea. Financial matters look stable, but avoid impulse purchases.",
+    "years": "1960, 1972, 1984, 1996, 2008, 2020",
+    "content": "A period of vibrant energy awaits, Mouse. Your sharp wit and adaptability will open new doors, particularly in professional ventures. Embrace networking opportunities for unexpected gains.",
     "lucky_numbers": [
-      3,
-      8,
-      12,
-      21
+      5,
+      18,
+      33,
+      50,
+      62,
+      11
     ],
-    "advice": "Trust your instincts, especially when dealing with new connections. Networking will be highly beneficial today."
+    "lucky_color": "Silver",
+    "advice": "Trust your instincts in important decisions."
   },
   {
     "name": "Cow",
     "emoji": "🐮",
-    "years": "1961,1973,1985,1997,2009,2021",
-    "content": "A day for steady progress and focused work. Your dedication will be recognized, especially in professional endeavors. It's a good time to tackle tasks that require patience and attention to detail. Personal relationships may need a bit more nurturing.",
+    "years": "1961, 1973, 1985, 1997, 2009, 2021",
+    "content": "Steady progress is the theme for Cows. Your hard work will yield tangible results, especially in long-term projects. Focus on building strong foundations and maintaining your disciplined approach.",
     "lucky_numbers": [
-      2,
       9,
-      18,
-      27
+      24,
+      41,
+      55,
+      68,
+      7
     ],
-    "advice": "Prioritize your tasks and focus on one thing at a time. Consistency is key to achieving your goals today."
+    "lucky_color": "Green",
+    "advice": "Be patient; your efforts will pay off."
   },
   {
     "name": "Tiger",
     "emoji": "🐯",
-    "years": "1962,1974,1986,1998,2010,2022",
-    "content": "Energy levels are high, making today perfect for assertive action. Take the initiative in areas where you want to see change. Be mindful of potential disagreements; channel your strength into constructive conversations rather than confrontation. A small risk could pay off.",
+    "years": "1962, 1974, 1986, 1998, 2010, 2022",
+    "content": "Tigers are set for a dynamic phase, filled with opportunities to assert leadership. Don't shy away from taking calculated risks, as boldness will be rewarded. Channel your energy into ambitious goals.",
     "lucky_numbers": [
-      1,
-      5,
       13,
-      22
+      27,
+      39,
+      51,
+      65,
+      19
     ],
-    "advice": "Embrace your adventurous spirit, but remember to think before you leap. A calculated move is better than a reckless one."
+    "lucky_color": "Red",
+    "advice": "Embrace change and lead with confidence."
   },
   {
     "name": "Rabbit",
     "emoji": "🐰",
-    "years": "1963,1975,1987,1999,2011,2023",
-    "content": "Today emphasizes harmony and peaceful interactions. It's a good day to resolve minor conflicts or smooth over misunderstandings. Creative pursuits will bring joy and satisfaction. Listen to others carefully; you might find unexpected solutions.",
+    "years": "1963, 1975, 1987, 1999, 2011, 2023",
+    "content": "A period of peace and creativity shines for Rabbits. Focus on harmonious relationships and nurturing your artistic side. Your gentle nature will attract positive influences and opportunities for collaboration.",
     "lucky_numbers": [
-      4,
-      7,
-      16,
-      25
+      2,
+      17,
+      30,
+      44,
+      58,
+      8
     ],
-    "advice": "Seek balance in all your dealings. Your gentle approach will open doors where others might struggle."
+    "lucky_color": "Pink",
+    "advice": "Seek balance in all aspects of life."
   },
   {
     "name": "Dragon",
-    "emoji": "🐉",
-    "years": "1964,1976,1988,2000,2012,2024",
-    "content": "Expect a burst of inspiration and charisma today. This is an opportune time to lead or present your ideas. Your natural confidence will attract positive attention. However, guard against overconfidence and ensure your plans are grounded in reality.",
+    "emoji": "🐲",
+    "years": "1964, 1976, 1988, 2000, 2012, 2024",
+    "content": "Dragons will experience a surge of power and good fortune. This is an excellent time for grand plans and significant achievements. Your natural charisma will open many doors.",
     "lucky_numbers": [
-      6,
-      10,
-      19,
-      28
+      1,
+      21,
+      34,
+      48,
+      60,
+      22
     ],
-    "advice": "Use your powerful presence wisely. Inspire others, but also be open to constructive feedback."
+    "lucky_color": "Gold",
+    "advice": "Seize opportunities with courage and conviction."
   },
   {
     "name": "Snake",
     "emoji": "🐍",
-    "years": "1965,1977,1989,2001,2013",
-    "content": "A day for contemplation and introspection. You may find clarity on long-standing issues by spending time alone. Your intuition is particularly strong, so pay attention to your gut feelings. Avoid making hasty decisions, especially in financial matters.",
+    "years": "1965, 1977, 1989, 2001, 2013, 2025",
+    "content": "Wisdom and intuition guide Snakes through a period of insightful revelations. Trust your instincts, especially in complex situations, as hidden truths will emerge. Personal growth is strongly favored.",
     "lucky_numbers": [
       7,
-      11,
       20,
-      29
+      31,
+      45,
+      63,
+      15
     ],
-    "advice": "Trust your inner wisdom. Sometimes the best solutions come from quiet reflection."
+    "lucky_color": "Purple",
+    "advice": "Reflect deeply before making major moves."
   },
   {
     "name": "Horse",
     "emoji": "🐴",
-    "years": "1966,1978,1990,2002,2014",
-    "content": "An active and dynamic day awaits you. Opportunities for travel or new experiences might arise. Embrace spontaneity, but also ensure you're not overextending yourself. Social interactions are favored; you'll enjoy meeting new people or reconnecting with old friends.",
+    "years": "1966, 1978, 1990, 2002, 2014, 2026",
+    "content": "Horses are poised for adventure and freedom. Embrace new experiences and don't be afraid to explore uncharted territories. Your enthusiastic spirit will inspire those around you.",
     "lucky_numbers": [
-      5,
-      14,
-      23,
-      30
+      10,
+      25,
+      38,
+      52,
+      66,
+      17
     ],
-    "advice": "Seize the day with enthusiasm, but remember to pace yourself. Balance your energy between work and play."
+    "lucky_color": "Orange",
+    "advice": "Follow your passions and stay true to your spirit."
   },
   {
     "name": "Sheep",
     "emoji": "🐑",
-    "years": "1967,1979,1991,2003,2015",
-    "content": "Creativity flows easily today, making it ideal for artistic pursuits or problem-solving. Your empathetic nature will be appreciated by those around you. It's a good day for nurturing relationships and offering support. Avoid getting bogged down by minor criticisms.",
+    "years": "1967, 1979, 1991, 2003, 2015, 2027",
+    "content": "A gentle and nurturing phase awaits Sheep. Focus on creative pursuits and strengthening familial bonds. Your compassion will attract kindness and support from unexpected sources.",
     "lucky_numbers": [
-      2,
-      8,
-      17,
-      26
+      3,
+      16,
+      29,
+      43,
+      59,
+      6
     ],
-    "advice": "Let your compassionate side shine. Your kindness can make a big difference today."
+    "lucky_color": "Beige",
+    "advice": "Cultivate harmony in your surroundings."
   },
   {
     "name": "Monkey",
     "emoji": "🐒",
-    "years": "1968,1980,1992,2004,2016",
-    "content": "Expect a day filled with intellectual stimulation and witty exchanges. Your cleverness will help you navigate any challenges. It's a great time for learning something new or engaging in lively discussions. Be careful not to overcommit or spread yourself too thin.",
+    "years": "1968, 1980, 1992, 2004, 2016, 2028",
+    "content": "Monkeys will thrive in a period of innovation and problem-solving. Your quick wit and resourcefulness will lead to breakthroughs, especially in intellectual endeavors. Embrace learning new skills.",
     "lucky_numbers": [
-      4,
-      9,
-      15,
-      24
+      11,
+      26,
+      37,
+      53,
+      69,
+      20
     ],
-    "advice": "Use your intelligence to your advantage, but remember to listen as much as you speak."
+    "lucky_color": "Blue",
+    "advice": "Stay curious and adaptable to new ideas."
   },
   {
     "name": "Rooster",
     "emoji": "🐔",
-    "years": "1969,1981,1993,2005,2017",
-    "content": "Today, your meticulous nature will be highly beneficial. Focus on organizing and refining details in your work or personal life. Opportunities for recognition may arise if you present your ideas clearly and confidently. Be open to constructive criticism.",
+    "years": "1969, 1981, 1993, 2005, 2017, 2029",
+    "content": "Roosters are set for a period of recognition and meticulous organization. Your keen eye for detail will be particularly valuable in professional settings. Don't hesitate to showcase your talents.",
     "lucky_numbers": [
-      1,
-      6,
-      10,
-      19
+      4,
+      19,
+      32,
+      46,
+      61,
+      10
     ],
-    "advice": "Pay attention to the small things; they can make a big difference. Your precision will be rewarded."
+    "lucky_color": "White",
+    "advice": "Pay attention to details and express yourself clearly."
   },
   {
     "name": "Dog",
     "emoji": "🐶",
-    "years": "1970,1982,1994,2006,2018",
-    "content": "Loyalty and honesty are your strongest assets today. Trust your intuition when it comes to people. It's a good day to strengthen bonds with loved ones or offer support to a friend in need. Avoid gossip or misunderstandings by being direct and clear.",
+    "years": "1970, 1982, 1994, 2006, 2018, 2030",
+    "content": "Loyalty and integrity are key for Dogs during this period. Strengthen existing relationships and build new ones based on trust. Your honest nature will attract genuine connections and support.",
     "lucky_numbers": [
-      3,
-      8,
-      11,
-      20
+      6,
+      23,
+      36,
+      47,
+      64,
+      13
     ],
-    "advice": "Stand firm in your principles and be a reliable friend. Your integrity will shine through."
+    "lucky_color": "Brown",
+    "advice": "Value your relationships and stay true to your principles."
   },
   {
     "name": "Pig",
     "emoji": "🐷",
-    "years": "1971,1983,1995,2007,2019",
-    "content": "A day for enjoying the good things in life. Treat yourself to a small pleasure or spend quality time with those you cherish. Financial dealings look promising, but avoid extravagance. Your generous spirit will attract positive energy.",
+    "years": "1971, 1983, 1995, 2007, 2019, 2031",
+    "content": "Pigs are in for a period of abundance and contentment. Enjoy the fruits of your labor and indulge in well-deserved comforts. Generosity towards others will amplify your blessings.",
     "lucky_numbers": [
-      4,
-      7,
-      16,
-      25
+      8,
+      22,
+      35,
+      49,
+      70,
+      24
     ],
-    "advice": "Embrace joy and gratitude. Share your good fortune, but also ensure your own well-being."
+    "lucky_color": "Dark Blue",
+    "advice": "Appreciate life's simple pleasures and share your good fortune."
   }
 ]
