@@ -134,7 +134,12 @@
         document.getElementById('checkBtn').disabled=!(myData&&partnerData);
     }
 
-    function checkCompatibility(){
+    
+        const loveTips=['深い感情的なつながりがあります。お互いのニーズを直感的に理解し、温かい絆を築いていきます。','二人の間には強い引力があります。ケミストリーは否定できず、情熱が自然に流れます。','この組み合わせでは、愛はゆっくりですが確実に育ちます。時間をかければ美しい深さを発見できます。','お互いのロマンチックな面を最大限に引き出す組み合わせです。時の試練に耐える愛です。','愛の言語が異なるかもしれませんが、努力がすべての違いを生みます。コミュニケーションが鍵です。'];
+        const friendTips=['友人として、誰もが羨むダイナミックデュオです。一緒にいるエネルギーは周りに伝染します。','相互の信頼と尊敬の上に築かれた友情です。どんな状況でもお互いを頼りにできます。','お互いに成長を促す関係で、刺激的で意味のある友情です。','一緒にいると笑いが絶えません。本当の喜びをもたらす友情です。','お互いを完璧に補完します - 一方が弱いところで他方が強いです。'];
+        const bizTips=['ビジネスでは強力なチームを組みます。合わせたスキルが成功のすべての基盤をカバーします。','プロフェッショナルなケミストリーが優れています。一緒なら不可能に見えるプロジェクトも達成できます。','二人のビジネスベンチャーには大きな可能性があります。お互いの判断を信じて挑戦しましょう。','リスクと慎重さのバランスが良い組み合わせです。賢明で戦略的なビジネス決定に強いです。','仕事のスタイルが異なるかもしれませんが、それが強みです。異なる視点がより良い結果を生みます。'];
+
+        function checkCompatibility(){
         if(!myData||!partnerData)return;
         const m=myData, p=partnerData;
 
@@ -146,14 +151,8 @@
 
         const color=total>75?'#ff6b9d':total>50?'#ffdd57':'#4ecdc4';
 
-        const tips=[
-            `${m.zodiac.name} and ${p.zodiac.name} create a magnetic connection. Your ${m.tti.name} and ${p.tti.name} energies balance each other beautifully!`,
-            `The ${m.zodiac.name}-${p.zodiac.name} pairing thrives on mutual respect. As ${m.tti.name} and ${p.tti.name}, you bring complementary strengths!`,
-            `${m.tti.name} meets ${p.tti.name} - an interesting dynamic! Your ${m.zodiac.name} intuition guides this ${p.zodiac.name} connection.`,
-            `A ${m.zodiac.name} and ${p.zodiac.name} duo with ${m.tti.name}-${p.tti.name} energy. Communication is your superpower together!`,
-            `${m.tti.name}'s determination paired with ${p.tti.name}'s creativity makes this ${m.zodiac.name}-${p.zodiac.name} match special!`,
-        ];
-        const tip=tips[seed%tips.length];
+        
+        
 
         const d=document.getElementById('result');
         d.style.display='block';
@@ -174,7 +173,11 @@
                 <div class="score-label"><span>ビジネス</span><span>${biz}%</span></div>
                 <div class="score-bar"><div class="score-fill" style="width:${biz}%;background:#a29bfe"></div></div>
             </div>
-            <div class="result-text">${tip}</div>
+            <div class="result-text">
+                <p style="margin-bottom:10px"><b style="color:#ff6b9d">恋愛:</b> ${loveTips[seed%loveTips.length]}</p>
+                <p style="margin-bottom:10px"><b style="color:#4ecdc4">友情:</b> ${friendTips[seed%friendTips.length]}</p>
+                <p><b style="color:#a29bfe">ビジネス:</b> ${bizTips[seed%bizTips.length]}</p>
+            </div>
             <div class="share-row">
                 <a class="share-btn" style="background:#1DA1F2" href="https://twitter.com/intent/tweet?text=${encodeURIComponent(`My compatibility with my partner: ${total}%! ${m.zodiac.name}(${m.tti.name}) × ${p.zodiac.name}(${p.tti.name}) #TodayFortune #zodiac`)}&url=https://todayfortune.net/compatibility.html" target="_blank">Twitter</a>
                 <a class="share-btn" style="background:#000;border:1px solid #333" href="https://www.threads.net/intent/post?text=${encodeURIComponent(`My compatibility: ${total}%! ${m.zodiac.emoji}${m.tti.emoji} × ${p.zodiac.emoji}${p.tti.emoji} #TodayFortune`)}" target="_blank">Threads</a><a class="share-btn" style="background:#06C755" href="https://line.me/R/share?text=相性テスト結果！ todayfortune.net/ja/compatibility.html" target="_blank">LINE</a>

@@ -134,7 +134,12 @@
         document.getElementById('checkBtn').disabled=!(myData&&partnerData);
     }
 
-    function checkCompatibility(){
+    
+        const loveTips=['감정적으로 깊은 연결이 있습니다. 서로의 필요를 직관적으로 이해하고 따뜻한 유대를 만들어갑니다.','두 사람 사이에 강한 끌림이 있어요. 케미가 좋고 자연스럽게 열정이 흐릅니다.','이 조합에서 사랑은 천천히 하지만 확실하게 자랍니다. 시간을 주면 아름다운 깊이를 발견할 거예요.','서로의 로맨틱한 면을 최고로 끌어내는 조합입니다. 시간이 지나도 변치 않는 사랑이에요.','사랑의 언어가 다를 수 있지만, 노력이 모든 차이를 만듭니다. 소통이 핵심이에요.'];
+        const friendTips=['친구로서 모두가 부러워하는 다이나믹 듀오예요. 함께하는 에너지가 전염성이 있어요.','상호 신뢰와 존중 위에 세워진 우정입니다. 어떤 상황에서도 서로를 믿을 수 있어요.','서로 성장하도록 도전하는 관계라 흥미롭고 의미 있는 우정이에요.','함께 있으면 웃음이 끊이지 않아요. 진정한 기쁨을 주는 우정입니다.','서로를 완벽하게 보완해요 - 한쪽이 약한 곳에서 다른 쪽이 강합니다.'];
+        const bizTips=['비즈니스에서 강력한 팀을 이룹니다. 합쳐진 능력이 성공의 모든 기반을 커버해요.','전문적인 케미가 훌륭합니다. 함께라면 불가능해 보이는 프로젝트도 해낼 수 있어요.','두 사람의 사업적 잠재력이 큽니다. 서로의 판단을 믿고 도전하세요.','리스크와 신중함의 균형을 잘 맞추는 조합이에요. 전략적인 비즈니스 결정에 강합니다.','업무 스타일이 다를 수 있지만 그게 바로 강점이에요. 다른 관점이 더 나은 결과를 만듭니다.'];
+
+        function checkCompatibility(){
         if(!myData||!partnerData)return;
         const m=myData, p=partnerData;
 
@@ -146,14 +151,8 @@
 
         const color=total>75?'#ff6b9d':total>50?'#ffdd57':'#4ecdc4';
 
-        const tips=[
-            `${m.zodiac.name} 의 만남! 서로를 끌어당기는 매력적인 조합이에요. 서로의 에너지가 아름답게 균형을 이룹니다!`,
-            `서로에 대한 존중이 빛나는 조합이에요. 상호 보완적인 강점을 가지고 있습니다!`,
-            `${m.tti.name} 의 만남은 흥미로운 에너지를 만들어요! 직관이 이 관계를 이끌어갑니다.`,
-            `함께하면 소통이 슈퍼파워가 되는 조합이에요!`,
-            `${m.tti.name}'s 의 결단력과 창의성이 만나 특별한 케미를 만들어요!`,
-        ];
-        const tip=tips[seed%tips.length];
+        
+        
 
         const d=document.getElementById('result');
         d.style.display='block';
@@ -174,7 +173,11 @@
                 <div class="score-label"><span>비즈니스</span><span>${biz}%</span></div>
                 <div class="score-bar"><div class="score-fill" style="width:${biz}%;background:#a29bfe"></div></div>
             </div>
-            <div class="result-text">${tip}</div>
+            <div class="result-text">
+                <p style="margin-bottom:10px"><b style="color:#ff6b9d">사랑:</b> ${loveTips[seed%loveTips.length]}</p>
+                <p style="margin-bottom:10px"><b style="color:#4ecdc4">우정:</b> ${friendTips[seed%friendTips.length]}</p>
+                <p><b style="color:#a29bfe">비즈니스:</b> ${bizTips[seed%bizTips.length]}</p>
+            </div>
             <div class="share-row">
                 <a class="share-btn" style="background:#1DA1F2" href="https://twitter.com/intent/tweet?text=${encodeURIComponent(`My compatibility with my partner: ${total}%! ${m.zodiac.name}(${m.tti.name}) × ${p.zodiac.name}(${p.tti.name}) #TodayFortune #zodiac`)}&url=https://todayfortune.net/compatibility.html" target="_blank">Twitter</a>
                 <a class="share-btn" style="background:#000;border:1px solid #333" href="https://www.threads.net/intent/post?text=${encodeURIComponent(`My compatibility: ${total}%! ${m.zodiac.emoji}${m.tti.emoji} × ${p.zodiac.emoji}${p.tti.emoji} #TodayFortune`)}" target="_blank">Threads</a>

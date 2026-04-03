@@ -134,7 +134,12 @@
         document.getElementById('checkBtn').disabled=!(myData&&partnerData);
     }
 
-    function checkCompatibility(){
+    
+        const loveTips=['Your emotional connection runs deep. You understand each other\'s needs intuitively and create a warm, nurturing bond.','There\'s a magnetic attraction between you two. Your chemistry is undeniable, and passion flows naturally.','Love grows slowly but steadily in this pairing. Give it time, and you\'ll discover a beautiful depth.','You bring out the best in each other romantically. This is a connection that can stand the test of time.','Your love language may differ, but the effort you put in makes all the difference. Communication is key.'];
+        const friendTips=['As friends, you\'re the dynamic duo everyone envies. Your energy together is contagious and uplifting.','Your friendship is built on mutual trust and respect. You can count on each other through thick and thin.','You challenge each other to grow, which makes this friendship both exciting and meaningful.','Laughter comes easy when you\'re together. This is a friendship that brings genuine joy.','You complement each other perfectly - where one is weak, the other is strong.'];
+        const bizTips=['In business, you make a powerful team. Your combined skills cover all the bases for success.','Your professional chemistry is excellent. Together, you can tackle projects that seem impossible alone.','Business ventures between you two have great potential. Trust each other\'s judgment and go for it.','You balance risk and caution well together. This makes for smart, strategic business decisions.','Your work styles may differ, but that\'s your strength. Different perspectives lead to better outcomes.'];
+
+        function checkCompatibility(){
         if(!myData||!partnerData)return;
         const m=myData, p=partnerData;
 
@@ -146,14 +151,8 @@
 
         const color=total>75?'#ff6b9d':total>50?'#ffdd57':'#4ecdc4';
 
-        const tips=[
-            `${m.zodiac.name} and ${p.zodiac.name} create a magnetic connection. Your ${m.tti.name} and ${p.tti.name} energies balance each other beautifully!`,
-            `The ${m.zodiac.name}-${p.zodiac.name} pairing thrives on mutual respect. As ${m.tti.name} and ${p.tti.name}, you bring complementary strengths!`,
-            `${m.tti.name} meets ${p.tti.name} - an interesting dynamic! Your ${m.zodiac.name} intuition guides this ${p.zodiac.name} connection.`,
-            `A ${m.zodiac.name} and ${p.zodiac.name} duo with ${m.tti.name}-${p.tti.name} energy. Communication is your superpower together!`,
-            `${m.tti.name}'s determination paired with ${p.tti.name}'s creativity makes this ${m.zodiac.name}-${p.zodiac.name} match special!`,
-        ];
-        const tip=tips[seed%tips.length];
+        
+        
 
         const d=document.getElementById('result');
         d.style.display='block';
@@ -174,7 +173,11 @@
                 <div class="score-label"><span>Business</span><span>${biz}%</span></div>
                 <div class="score-bar"><div class="score-fill" style="width:${biz}%;background:#a29bfe"></div></div>
             </div>
-            <div class="result-text">${tip}</div>
+            <div class="result-text">
+                <p style="margin-bottom:10px"><b style="color:#ff6b9d">Love:</b> ${loveTips[seed%loveTips.length]}</p>
+                <p style="margin-bottom:10px"><b style="color:#4ecdc4">Friendship:</b> ${friendTips[seed%friendTips.length]}</p>
+                <p><b style="color:#a29bfe">Business:</b> ${bizTips[seed%bizTips.length]}</p>
+            </div>
             <div class="share-row">
                 <a class="share-btn" style="background:#1DA1F2" href="https://twitter.com/intent/tweet?text=${encodeURIComponent(`My compatibility with my partner: ${total}%! ${m.zodiac.name}(${m.tti.name}) × ${p.zodiac.name}(${p.tti.name}) #TodayFortune #zodiac`)}&url=https://todayfortune.net/compatibility.html" target="_blank">Twitter</a>
                 <a class="share-btn" style="background:#000;border:1px solid #333" href="https://www.threads.net/intent/post?text=${encodeURIComponent(`My compatibility: ${total}%! ${m.zodiac.emoji}${m.tti.emoji} × ${p.zodiac.emoji}${p.tti.emoji} #TodayFortune`)}" target="_blank">Threads</a>
