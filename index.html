@@ -242,7 +242,6 @@
                     <div class="share-row">
                         <a class="share-btn share-twitter" href="https://twitter.com/intent/tweet?text=${encodeURIComponent(h.name+': '+h.content.slice(0,80)+'... #TodayFortune #horoscope')}&url=https://todayfortune.net" target="_blank">Twitter</a>
                         <a class="share-btn share-threads" href="https://www.threads.net/intent/post?text=${encodeURIComponent(h.name+': '+h.content.slice(0,80)+'... #TodayFortune')}" target="_blank">Threads</a>
-                        <a class="share-btn share-insta" href="#" onclick="navigator.clipboard.writeText(this.dataset.txt);this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',2000);return false;" data-txt="${h.name}: ${(h.content||'').replace(/"/g,"'")} #TodayFortune todayfortune.net">Copy</a>
                     </div>
                 </div>
             `).join('');

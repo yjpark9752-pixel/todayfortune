@@ -76,25 +76,25 @@
 
     <script>
     const zodiacData=[
-        {name:"Capricorn",emoji:"♑",start:[1,1],end:[1,19]},
-        {name:"Aquarius",emoji:"♒",start:[1,20],end:[2,18]},
-        {name:"Pisces",emoji:"♓",start:[2,19],end:[3,20]},
-        {name:"Aries",emoji:"♈",start:[3,21],end:[4,19]},
-        {name:"Taurus",emoji:"♉",start:[4,20],end:[5,20]},
-        {name:"Gemini",emoji:"♊",start:[5,21],end:[6,20]},
-        {name:"Cancer",emoji:"♋",start:[6,21],end:[7,22]},
-        {name:"Leo",emoji:"♌",start:[7,23],end:[8,22]},
-        {name:"Virgo",emoji:"♍",start:[8,23],end:[9,22]},
-        {name:"Libra",emoji:"♎",start:[9,23],end:[10,22]},
-        {name:"Scorpio",emoji:"♏",start:[10,23],end:[11,21]},
-        {name:"Sagittarius",emoji:"♐",start:[11,22],end:[12,21]},
-        {name:"Capricorn",emoji:"♑",start:[12,22],end:[12,31]}
+        {name:"염소자리",emoji:"♑",start:[1,1],end:[1,19]},
+        {name:"물병자리",emoji:"♒",start:[1,20],end:[2,18]},
+        {name:"물고기자리",emoji:"♓",start:[2,19],end:[3,20]},
+        {name:"양자리",emoji:"♈",start:[3,21],end:[4,19]},
+        {name:"황소자리",emoji:"♉",start:[4,20],end:[5,20]},
+        {name:"쌍둥이자리",emoji:"♊",start:[5,21],end:[6,20]},
+        {name:"게자리",emoji:"♋",start:[6,21],end:[7,22]},
+        {name:"사자자리",emoji:"♌",start:[7,23],end:[8,22]},
+        {name:"처녀자리",emoji:"♍",start:[8,23],end:[9,22]},
+        {name:"천칭자리",emoji:"♎",start:[9,23],end:[10,22]},
+        {name:"전갈자리",emoji:"♏",start:[10,23],end:[11,21]},
+        {name:"궁수자리",emoji:"♐",start:[11,22],end:[12,21]},
+        {name:"염소자리",emoji:"♑",start:[12,22],end:[12,31]}
     ];
     const ttiData=[
-        {name:"Mouse",emoji:"🐭"},{name:"Cow",emoji:"🐮"},{name:"Tiger",emoji:"🐯"},
-        {name:"Rabbit",emoji:"🐰"},{name:"Dragon",emoji:"🐲"},{name:"Snake",emoji:"🐍"},
-        {name:"Horse",emoji:"🐴"},{name:"Sheep",emoji:"🐑"},{name:"Monkey",emoji:"🐵"},
-        {name:"Rooster",emoji:"🐔"},{name:"Dog",emoji:"🐶"},{name:"Pig",emoji:"🐷"}
+        {name:"쥐띠",emoji:"🐭"},{name:"소띠",emoji:"🐮"},{name:"호랑이띠",emoji:"🐯"},
+        {name:"토끼띠",emoji:"🐰"},{name:"용띠",emoji:"🐲"},{name:"뱀띠",emoji:"🐍"},
+        {name:"말띠",emoji:"🐴"},{name:"양띠",emoji:"🐑"},{name:"원숭이띠",emoji:"🐵"},
+        {name:"닭띠",emoji:"🐔"},{name:"개띠",emoji:"🐶"},{name:"돼지띠",emoji:"🐷"}
     ];
 
     let myData=null, partnerData=null;
@@ -148,11 +148,11 @@
         const color=total>75?'#ff6b9d':total>50?'#ffdd57':'#4ecdc4';
 
         const tips=[
-            `${m.zodiac.name} and ${p.zodiac.name} create a magnetic connection. Your ${m.tti.name} and ${p.tti.name} energies balance each other beautifully!`,
-            `The ${m.zodiac.name}-${p.zodiac.name} pairing thrives on mutual respect. As ${m.tti.name} and ${p.tti.name}, you bring complementary strengths!`,
-            `${m.tti.name} meets ${p.tti.name} - an interesting dynamic! Your ${m.zodiac.name} intuition guides this ${p.zodiac.name} connection.`,
-            `A ${m.zodiac.name} and ${p.zodiac.name} duo with ${m.tti.name}-${p.tti.name} energy. Communication is your superpower together!`,
-            `${m.tti.name}'s determination paired with ${p.tti.name}'s creativity makes this ${m.zodiac.name}-${p.zodiac.name} match special!`,
+            `${m.zodiac.name} 의 만남! 서로를 끌어당기는 매력적인 조합이에요. 서로의 에너지가 아름답게 균형을 이룹니다!`,
+            `서로에 대한 존중이 빛나는 조합이에요. 상호 보완적인 강점을 가지고 있습니다!`,
+            `${m.tti.name} 의 만남은 흥미로운 에너지를 만들어요! 직관이 이 관계를 이끌어갑니다.`,
+            `함께하면 소통이 슈퍼파워가 되는 조합이에요!`,
+            `${m.tti.name}'s 의 결단력과 창의성이 만나 특별한 케미를 만들어요!`,
         ];
         const tip=tips[seed%tips.length];
 
