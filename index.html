@@ -85,6 +85,12 @@
         .sign-advice-label { color: #ffdd57; font-weight: bold; font-size: 0.8em; text-transform: uppercase; letter-spacing: 1px; }
         .sign-advice-text { margin-top: 4px; color: #ddd; font-size: 0.9em; }
         .lucky-info { display: flex; flex-wrap: wrap; gap: 8px; }
+        .share-row { display: flex; gap: 6px; margin-top: 12px; }
+        .share-btn { padding: 5px 12px; border-radius: 15px; font-size: .75em; text-decoration: none; color: #fff; transition: opacity .2s; }
+        .share-btn:hover { opacity: 0.8; }
+        .share-twitter { background: #1DA1F2; }
+        .share-threads { background: #000; border: 1px solid #333; }
+        .share-insta { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
         .lucky-tag {
             background: rgba(255,221,87,0.1); color: #ffdd57;
             padding: 5px 12px; border-radius: 20px; font-size: 0.8em;
@@ -231,6 +237,11 @@
                     <div class="lucky-info">
                         <span class="lucky-tag">Mega Millions: ${Array.isArray(h.lucky_numbers) && h.lucky_numbers.length >= 6 ? h.lucky_numbers.slice(0,5).join(', ') + ' + MB ' + h.lucky_numbers[5] : (Array.isArray(h.lucky_numbers) ? h.lucky_numbers.join(', ') : h.lucky_numbers)}</span>
                         ${h.lucky_color ? `<span class="lucky-tag">Color: ${h.lucky_color}</span>` : ''}
+                    </div>
+                    <div class="share-row">
+                        <a class="share-btn share-twitter" href="https://twitter.com/intent/tweet?text=${encodeURIComponent(h.name+': '+h.content.slice(0,80)+'... #TodayFortune #horoscope')}&url=https://todayfortune.net" target="_blank">Twitter</a>
+                        <a class="share-btn share-threads" href="https://www.threads.net/intent/post?text=${encodeURIComponent(h.name+': '+h.content.slice(0,80)+'... #TodayFortune')}" target="_blank">Threads</a>
+                        <a class="share-btn share-insta" href="https://www.instagram.com/" target="_blank">Instagram</a>
                     </div>
                 </div>
             `).join('');
