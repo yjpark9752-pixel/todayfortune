@@ -160,6 +160,33 @@
         <button class="tab-btn" onclick="switchTab('tti', this)">Korean Animal Zodiac</button>
     </div>
 
+    <!-- Birthday finder -->
+    <div style="max-width:700px;margin:10px auto;text-align:center;background:rgba(255,255,255,0.04);border-radius:12px;padding:15px;border:1px solid rgba(255,255,255,0.08)">
+        <span style="color:#999;font-size:.9em">Find your sign:</span>
+        <input type="date" id="bday-input" onchange="findMySign()" style="padding:8px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.08);color:#fff;font-size:.9em;margin-left:8px">
+        <div id="my-sign-result" style="margin-top:10px;font-size:1.1em;display:none"></div>
+    </div>
+    <script>
+    const zodiacList=[{n:"Aries",e:"♈",s:[3,21],d:[4,19]},{n:"Taurus",e:"♉",s:[4,20],d:[5,20]},{n:"Gemini",e:"♊",s:[5,21],d:[6,20]},{n:"Cancer",e:"♋",s:[6,21],d:[7,22]},{n:"Leo",e:"♌",s:[7,23],d:[8,22]},{n:"Virgo",e:"♍",s:[8,23],d:[9,22]},{n:"Libra",e:"♎",s:[9,23],d:[10,22]},{n:"Scorpio",e:"♏",s:[10,23],d:[11,21]},{n:"Sagittarius",e:"♐",s:[11,22],d:[12,21]},{n:"Capricorn",e:"♑",s:[12,22],d:[12,31]},{n:"Capricorn",e:"♑",s:[1,1],d:[1,19]},{n:"Aquarius",e:"♒",s:[1,20],d:[2,18]},{n:"Pisces",e:"♓",s:[2,19],d:[3,20]}];
+    const ttiList=["Mouse 🐭","Cow 🐮","Tiger 🐯","Rabbit 🐰","Dragon 🐲","Snake 🐍","Horse 🐴","Sheep 🐑","Monkey 🐵","Rooster 🐔","Dog 🐶","Pig 🐷"];
+    function findMySign(){
+        const v=document.getElementById('bday-input').value;if(!v)return;
+        const d=new Date(v),m=d.getMonth()+1,day=d.getDate(),y=d.getFullYear();
+        let zodiac=zodiacList[0];for(const z of zodiacList){if((m>z.s[0]||(m===z.s[0]&&day>=z.s[1]))&&(m<z.d[0]||(m===z.d[0]&&day<=z.d[1]))){zodiac=z;break;}}
+        const tti=ttiList[((y-4)%12+12)%12];
+        const r=document.getElementById('my-sign-result');
+        r.style.display='block';
+        r.innerHTML=`<span style="font-size:1.5em">${zodiac.e}</span> <b style="color:#ffdd57">${zodiac.n}</b> + <b style="color:#4ecdc4">${tti}</b>`;
+        // Auto switch to matching tab and scroll
+        const isZodiac=currentTab==='zodiac';
+        setTimeout(()=>{
+            const cards=document.querySelectorAll('.sign-name');
+            const target=isZodiac?zodiac.n:tti.split(' ')[0];
+            cards.forEach(c=>{if(c.textContent===target){c.closest('.sign-card').style.border='2px solid #ffdd57';c.closest('.sign-card').scrollIntoView({behavior:'smooth',block:'center'});}else{c.closest('.sign-card').style.border='1px solid rgba(255,255,255,0.08)';}});
+        },300);
+    }
+    </script>
+
     <div class="signs-grid" id="horoscopes">
         <div class="sign-card"><p style="text-align:center;color:#666;padding:30px;">Loading horoscopes...</p></div>
     </div>
