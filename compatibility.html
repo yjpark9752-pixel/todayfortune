@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zodiac Compatibility Test | TodayFortune</title>
-    <meta name="description" content="Free zodiac compatibility test! Check love, friendship & business compatibility with your partner.">
+    <meta name="description" content="Free zodiac compatibility test! Enter your birthday to check love, friendship & business compatibility.">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCDG5LDW5W"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-TCDG5LDW5W");</script>
     <style>
@@ -17,26 +17,27 @@
         header h1{font-size:2em;color:#ffdd57;margin-bottom:5px}
         header p{color:#999;font-size:1em}
         .container{max-width:600px;margin:20px auto;padding:0 20px}
-        .selector{background:rgba(255,255,255,0.05);border-radius:14px;padding:25px;margin-bottom:15px;border:1px solid rgba(255,255,255,0.08)}
-        .selector label{display:block;color:#ffdd57;font-weight:bold;margin-bottom:10px;font-size:1.1em}
-        .type-toggle{display:flex;gap:8px;margin-bottom:15px}
-        .type-toggle button{flex:1;padding:8px;border-radius:20px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.05);color:#ccc;cursor:pointer;font-size:.9em}
-        .type-toggle button.active{background:#ffdd57;color:#111;border-color:#ffdd57;font-weight:bold}
-        .sign-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-        .sign-btn{padding:10px 5px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);color:#ccc;cursor:pointer;text-align:center;font-size:.85em;transition:all .2s}
-        .sign-btn:hover{background:rgba(255,255,255,0.1)}
-        .sign-btn.selected{background:rgba(255,221,87,0.2);border-color:#ffdd57;color:#ffdd57;font-weight:bold}
-        .sign-btn .emoji{display:block;font-size:1.5em;margin-bottom:3px}
+        .input-box{background:rgba(255,255,255,0.05);border-radius:14px;padding:25px;margin-bottom:15px;border:1px solid rgba(255,255,255,0.08)}
+        .input-box label{display:block;color:#ffdd57;font-weight:bold;margin-bottom:12px;font-size:1.1em}
+        .input-box input{width:100%;padding:12px 15px;border-radius:10px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.08);color:#fff;font-size:1em}
+        .auto-result{margin-top:12px;padding:10px;border-radius:8px;background:rgba(255,221,87,0.1);display:none}
+        .auto-result .emoji{font-size:1.5em}
+        .auto-result .info{color:#ffdd57;font-weight:bold}
         .check-btn{display:block;width:100%;padding:15px;background:linear-gradient(135deg,#ff6b9d,#c77dff);color:#fff;border:none;border-radius:25px;font-size:1.2em;font-weight:bold;cursor:pointer;margin:20px 0;transition:transform .2s}
         .check-btn:hover{transform:scale(1.03)}
         .check-btn:disabled{opacity:0.5;cursor:not-allowed}
         .result{background:rgba(255,255,255,0.05);border-radius:14px;padding:25px;border:1px solid rgba(255,255,255,0.08);display:none}
-        .result h2{color:#ffdd57;text-align:center;margin-bottom:15px}
-        .score-bar{height:20px;background:rgba(255,255,255,0.1);border-radius:10px;margin:8px 0;overflow:hidden}
+        .result h2{color:#ffdd57;text-align:center;margin-bottom:5px}
+        .result .big-score{text-align:center;font-size:3em;font-weight:bold;margin:10px 0}
+        .score-section{margin:15px 0}
+        .score-label{display:flex;justify-content:space-between;font-size:.9em;color:#ccc;margin-bottom:4px}
+        .score-bar{height:20px;background:rgba(255,255,255,0.1);border-radius:10px;overflow:hidden;margin-bottom:12px}
         .score-fill{height:100%;border-radius:10px;transition:width 1s}
-        .score-label{display:flex;justify-content:space-between;font-size:.9em;color:#ccc}
-        .result-text{margin-top:15px;line-height:1.7;color:#ddd;font-size:.95em}
-        .share-btn{display:inline-block;margin-top:15px;padding:10px 25px;background:rgba(255,255,255,0.1);color:#fff;border-radius:20px;text-decoration:none;font-size:.9em}
+        .result-text{margin-top:15px;line-height:1.7;color:#ddd;font-size:.95em;text-align:center}
+        .share-row{display:flex;justify-content:center;gap:8px;margin-top:15px}
+        .share-btn{padding:8px 18px;border-radius:20px;font-size:.85em;text-decoration:none;color:#fff}
+        .vs-display{text-align:center;padding:15px;font-size:1.3em}
+        .vs-display .emoji{font-size:2em}
         footer{text-align:center;padding:25px;color:#555;font-size:.75em}
         footer a{color:#777;text-decoration:none}
     </style>
@@ -48,24 +49,24 @@
     </div>
     <header>
         <h1>Zodiac Compatibility</h1>
-        <p>Check your love, friendship & business compatibility!</p>
+        <p>Enter your birthday to check compatibility!</p>
     </header>
     <div class="container">
-        <div class="selector">
-            <label>You</label>
-            <div class="type-toggle">
-                <button class="active" onclick="switchType('me','zodiac',this)">Zodiac</button>
-                <button onclick="switchType('me','tti',this)">Korean Animal</button>
+        <div class="input-box">
+            <label>Your Birthday</label>
+            <input type="date" id="myBday" onchange="calcSign('my')">
+            <div class="auto-result" id="myResult">
+                <span class="emoji" id="myEmoji"></span>
+                <span class="info" id="myInfo"></span>
             </div>
-            <div class="sign-grid" id="me-signs"></div>
         </div>
-        <div class="selector">
-            <label>Partner</label>
-            <div class="type-toggle">
-                <button class="active" onclick="switchType('partner','zodiac',this)">Zodiac</button>
-                <button onclick="switchType('partner','tti',this)">Korean Animal</button>
+        <div class="input-box">
+            <label>Partner's Birthday</label>
+            <input type="date" id="partnerBday" onchange="calcSign('partner')">
+            <div class="auto-result" id="partnerResult">
+                <span class="emoji" id="partnerEmoji"></span>
+                <span class="info" id="partnerInfo"></span>
             </div>
-            <div class="sign-grid" id="partner-signs"></div>
         </div>
         <button class="check-btn" id="checkBtn" onclick="checkCompatibility()" disabled>Check Compatibility!</button>
         <div class="result" id="result"></div>
@@ -74,88 +75,114 @@
     <footer><p>&copy; 2026 TodayFortune.net | <a href="/privacy.html">Privacy</a></p></footer>
 
     <script>
-    const zodiacSigns=[
-        {name:"Aries",emoji:"♈"},{name:"Taurus",emoji:"♉"},{name:"Gemini",emoji:"♊"},
-        {name:"Cancer",emoji:"♋"},{name:"Leo",emoji:"♌"},{name:"Virgo",emoji:"♍"},
-        {name:"Libra",emoji:"♎"},{name:"Scorpio",emoji:"♏"},{name:"Sagittarius",emoji:"♐"},
-        {name:"Capricorn",emoji:"♑"},{name:"Aquarius",emoji:"♒"},{name:"Pisces",emoji:"♓"}
+    const zodiacData=[
+        {name:"Capricorn",emoji:"♑",start:[1,1],end:[1,19]},
+        {name:"Aquarius",emoji:"♒",start:[1,20],end:[2,18]},
+        {name:"Pisces",emoji:"♓",start:[2,19],end:[3,20]},
+        {name:"Aries",emoji:"♈",start:[3,21],end:[4,19]},
+        {name:"Taurus",emoji:"♉",start:[4,20],end:[5,20]},
+        {name:"Gemini",emoji:"♊",start:[5,21],end:[6,20]},
+        {name:"Cancer",emoji:"♋",start:[6,21],end:[7,22]},
+        {name:"Leo",emoji:"♌",start:[7,23],end:[8,22]},
+        {name:"Virgo",emoji:"♍",start:[8,23],end:[9,22]},
+        {name:"Libra",emoji:"♎",start:[9,23],end:[10,22]},
+        {name:"Scorpio",emoji:"♏",start:[10,23],end:[11,21]},
+        {name:"Sagittarius",emoji:"♐",start:[11,22],end:[12,21]},
+        {name:"Capricorn",emoji:"♑",start:[12,22],end:[12,31]}
     ];
-    const ttiSigns=[
+    const ttiData=[
         {name:"Mouse",emoji:"🐭"},{name:"Cow",emoji:"🐮"},{name:"Tiger",emoji:"🐯"},
         {name:"Rabbit",emoji:"🐰"},{name:"Dragon",emoji:"🐲"},{name:"Snake",emoji:"🐍"},
         {name:"Horse",emoji:"🐴"},{name:"Sheep",emoji:"🐑"},{name:"Monkey",emoji:"🐵"},
         {name:"Rooster",emoji:"🐔"},{name:"Dog",emoji:"🐶"},{name:"Pig",emoji:"🐷"}
     ];
 
-    let meSign=null,partnerSign=null;
+    let myData=null, partnerData=null;
 
-    function renderSigns(containerId,signs){
-        const c=document.getElementById(containerId);
-        c.innerHTML=signs.map(s=>`<div class="sign-btn" onclick="selectSign('${containerId}','${s.name}',this)"><span class="emoji">${s.emoji}</span>${s.name}</div>`).join('');
+    function getZodiac(m,d){
+        for(const z of zodiacData){
+            const afterStart=m>z.start[0]||(m===z.start[0]&&d>=z.start[1]);
+            const beforeEnd=m<z.end[0]||(m===z.end[0]&&d<=z.end[1]);
+            if(afterStart&&beforeEnd)return z;
+        }
+        return zodiacData[0];
     }
 
-    function switchType(who,type,btn){
-        btn.parentElement.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
-        btn.classList.add('active');
-        const id=who+'-signs';
-        renderSigns(id,type==='tti'?ttiSigns:zodiacSigns);
-        if(who==='me')meSign=null;else partnerSign=null;
-        updateBtn();
+    function getTti(year){
+        const idx=(year-4)%12;
+        return ttiData[idx>=0?idx:idx+12];
     }
 
-    function selectSign(containerId,name,el){
-        document.querySelectorAll(`#${containerId} .sign-btn`).forEach(b=>b.classList.remove('selected'));
-        el.classList.add('selected');
-        if(containerId.startsWith('me'))meSign=name;else partnerSign=name;
-        updateBtn();
-    }
+    function calcSign(who){
+        const input=document.getElementById(who==='my'?'myBday':'partnerBday');
+        if(!input.value)return;
+        const d=new Date(input.value);
+        const year=d.getFullYear(), month=d.getMonth()+1, day=d.getDate();
+        const zodiac=getZodiac(month,day);
+        const tti=getTti(year);
 
-    function updateBtn(){
-        document.getElementById('checkBtn').disabled=!(meSign&&partnerSign);
+        const data={zodiac,tti,year,month,day};
+        if(who==='my')myData=data; else partnerData=data;
+
+        const resultDiv=document.getElementById(who==='my'?'myResult':'partnerResult');
+        const emojiEl=document.getElementById(who==='my'?'myEmoji':'partnerEmoji');
+        const infoEl=document.getElementById(who==='my'?'myInfo':'partnerInfo');
+
+        emojiEl.textContent=zodiac.emoji+' '+tti.emoji;
+        infoEl.textContent=` ${zodiac.name} + ${tti.name} (${year})`;
+        resultDiv.style.display='block';
+
+        document.getElementById('checkBtn').disabled=!(myData&&partnerData);
     }
 
     function checkCompatibility(){
-        const seed=(meSign+partnerSign).split('').reduce((a,c)=>a+c.charCodeAt(0),0);
-        const r=n=>((seed*n+37)%100);
-        const love=Math.max(30,Math.min(99,r(7)));
-        const friend=Math.max(30,Math.min(99,r(13)));
-        const biz=Math.max(30,Math.min(99,r(23)));
-        const total=Math.round((love+friend+biz)/3);
+        if(!myData||!partnerData)return;
+        const m=myData, p=partnerData;
 
-        const loveColor=love>70?'#ff6b9d':'#ffdd57';
-        const friendColor=friend>70?'#4ecdc4':'#ffdd57';
-        const bizColor=biz>70?'#a29bfe':'#ffdd57';
+        // Calculate scores based on zodiac + tti combination
+        const seed=(m.zodiac.name+p.zodiac.name+m.tti.name+p.tti.name).split('').reduce((a,c)=>a+c.charCodeAt(0),0);
+        const r=n=>Math.max(25,Math.min(99,((seed*n+37)%75)+25));
+        const love=r(7), friend=r(13), biz=r(23);
+        const total=Math.round((love*0.4+friend*0.3+biz*0.3));
+
+        const color=total>75?'#ff6b9d':total>50?'#ffdd57':'#4ecdc4';
 
         const tips=[
-            "You complement each other's strengths!",
-            "Communication is key for this pairing.",
-            "Great energy when you work together!",
-            "Give each other space to grow.",
-            "A powerful connection with deep understanding.",
-            "Trust builds over time with this match.",
+            `${m.zodiac.name} and ${p.zodiac.name} create a magnetic connection. Your ${m.tti.name} and ${p.tti.name} energies balance each other beautifully!`,
+            `The ${m.zodiac.name}-${p.zodiac.name} pairing thrives on mutual respect. As ${m.tti.name} and ${p.tti.name}, you bring complementary strengths!`,
+            `${m.tti.name} meets ${p.tti.name} - an interesting dynamic! Your ${m.zodiac.name} intuition guides this ${p.zodiac.name} connection.`,
+            `A ${m.zodiac.name} and ${p.zodiac.name} duo with ${m.tti.name}-${p.tti.name} energy. Communication is your superpower together!`,
+            `${m.tti.name}'s determination paired with ${p.tti.name}'s creativity makes this ${m.zodiac.name}-${p.zodiac.name} match special!`,
         ];
         const tip=tips[seed%tips.length];
 
         const d=document.getElementById('result');
         d.style.display='block';
         d.innerHTML=`
-            <h2>${meSign} & ${partnerSign}</h2>
-            <h2 style="font-size:2.5em;color:${total>70?'#ff6b9d':'#ffdd57'}">${total}%</h2>
-            <div class="score-label"><span>Love</span><span>${love}%</span></div>
-            <div class="score-bar"><div class="score-fill" style="width:${love}%;background:${loveColor}"></div></div>
-            <div class="score-label"><span>Friendship</span><span>${friend}%</span></div>
-            <div class="score-bar"><div class="score-fill" style="width:${friend}%;background:${friendColor}"></div></div>
-            <div class="score-label"><span>Business</span><span>${biz}%</span></div>
-            <div class="score-bar"><div class="score-fill" style="width:${biz}%;background:${bizColor}"></div></div>
+            <div class="vs-display">
+                <span class="emoji">${m.zodiac.emoji}${m.tti.emoji}</span>
+                <span style="color:#ff6b9d;margin:0 10px">♥</span>
+                <span class="emoji">${p.zodiac.emoji}${p.tti.emoji}</span>
+            </div>
+            <h2>${m.zodiac.name} & ${p.zodiac.name}</h2>
+            <h2 style="font-size:.9em;color:#aaa">${m.tti.name} & ${p.tti.name}</h2>
+            <div class="big-score" style="color:${color}">${total}%</div>
+            <div class="score-section">
+                <div class="score-label"><span>Love</span><span>${love}%</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:${love}%;background:#ff6b9d"></div></div>
+                <div class="score-label"><span>Friendship</span><span>${friend}%</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:${friend}%;background:#4ecdc4"></div></div>
+                <div class="score-label"><span>Business</span><span>${biz}%</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:${biz}%;background:#a29bfe"></div></div>
+            </div>
             <div class="result-text">${tip}</div>
-            <div style="text-align:center"><a class="share-btn" href="https://twitter.com/intent/tweet?text=My+zodiac+compatibility+with+${partnerSign}+is+${total}%25!+Check+yours+at+todayfortune.net/compatibility.html" target="_blank">Share Result</a></div>
+            <div class="share-row">
+                <a class="share-btn" style="background:#1DA1F2" href="https://twitter.com/intent/tweet?text=${encodeURIComponent(`My compatibility with my partner: ${total}%! ${m.zodiac.name}(${m.tti.name}) × ${p.zodiac.name}(${p.tti.name}) #TodayFortune #zodiac`)}&url=https://todayfortune.net/compatibility.html" target="_blank">Twitter</a>
+                <a class="share-btn" style="background:#000;border:1px solid #333" href="https://www.threads.net/intent/post?text=${encodeURIComponent(`My compatibility: ${total}%! ${m.zodiac.emoji}${m.tti.emoji} × ${p.zodiac.emoji}${p.tti.emoji} #TodayFortune`)}" target="_blank">Threads</a>
+            </div>
         `;
         d.scrollIntoView({behavior:'smooth'});
     }
-
-    // Init
-    renderSigns('me-signs',zodiacSigns);
-    renderSigns('partner-signs',zodiacSigns);
     </script>
 </body>
 </html>
