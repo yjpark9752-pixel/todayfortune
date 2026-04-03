@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星座相性テスト | TodayFortune</title>
+    <meta name="description" content="Free zodiac compatibility test! Enter your birthday to check love, friendship & business compatibility.">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCDG5LDW5W"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-TCDG5LDW5W");</script>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:-apple-system,sans-serif;background:linear-gradient(180deg,#0d0d2b 0%,#1a1a4e 40%,#0d0d2b 100%);color:#fff;min-height:100vh}
+        .lang-nav{text-align:center;padding:12px;background:rgba(0,0,0,0.4)}
+        .lang-nav a{color:#888;text-decoration:none;margin:0 15px;font-size:.9em}
+        .lang-nav a.active{color:#ffdd57;font-weight:bold}
+        header{text-align:center;padding:35px 20px 15px}
+        header h1{font-size:2em;color:#ffdd57;margin-bottom:5px}
+        header p{color:#999;font-size:1em}
+        .container{max-width:600px;margin:20px auto;padding:0 20px}
+        .input-box{background:rgba(255,255,255,0.05);border-radius:14px;padding:25px;margin-bottom:15px;border:1px solid rgba(255,255,255,0.08)}
+        .input-box label{display:block;color:#ffdd57;font-weight:bold;margin-bottom:12px;font-size:1.1em}
+        .input-box input{width:100%;padding:12px 15px;border-radius:10px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.08);color:#fff;font-size:1em}
+        .auto-result{margin-top:12px;padding:10px;border-radius:8px;background:rgba(255,221,87,0.1);display:none}
+        .auto-result .emoji{font-size:1.5em}
+        .auto-result .info{color:#ffdd57;font-weight:bold}
+        .check-btn{display:block;width:100%;padding:15px;background:linear-gradient(135deg,#ff6b9d,#c77dff);color:#fff;border:none;border-radius:25px;font-size:1.2em;font-weight:bold;cursor:pointer;margin:20px 0;transition:transform .2s}
+        .check-btn:hover{transform:scale(1.03)}
+        .check-btn:disabled{opacity:0.5;cursor:not-allowed}
+        .result{background:rgba(255,255,255,0.05);border-radius:14px;padding:25px;border:1px solid rgba(255,255,255,0.08);display:none}
+        .result h2{color:#ffdd57;text-align:center;margin-bottom:5px}
+        .result .big-score{text-align:center;font-size:3em;font-weight:bold;margin:10px 0}
+        .score-section{margin:15px 0}
+        .score-label{display:flex;justify-content:space-between;font-size:.9em;color:#ccc;margin-bottom:4px}
+        .score-bar{height:20px;background:rgba(255,255,255,0.1);border-radius:10px;overflow:hidden;margin-bottom:12px}
+        .score-fill{height:100%;border-radius:10px;transition:width 1s}
+        .result-text{margin-top:15px;line-height:1.7;color:#ddd;font-size:.95em;text-align:center}
+        .share-row{display:flex;justify-content:center;gap:8px;margin-top:15px}
+        .share-btn{padding:8px 18px;border-radius:20px;font-size:.85em;text-decoration:none;color:#fff}
+        .vs-display{text-align:center;padding:15px;font-size:1.3em}
+        .vs-display .emoji{font-size:2em}
+        footer{text-align:center;padding:25px;color:#555;font-size:.75em}
+        footer a{color:#777;text-decoration:none}
+    </style>
+</head>
+<body>
+    <div class="lang-nav">
+        <a href="/ja/">Home</a>
+        <a href="/ja/compatibility.html" class="active">Compatibility</a>
+    </div>
+    <header>
+        <h1>星座相性テスト</h1>
+        <p>生年月日を入力して相性をチェック！</p>
+    </header>
+    <div class="container">
+        <div class="input-box">
+            <label>あなたの生年月日</label>
+            <input type="date" id="myBday" onchange="calcSign('my')">
+            <div class="auto-result" id="myResult">
+                <span class="emoji" id="myEmoji"></span>
+                <span class="info" id="myInfo"></span>
+            </div>
+        </div>
+        <div class="input-box">
+            <label>相手の生年月日</label>
+            <input type="date" id="partnerBday" onchange="calcSign('partner')">
+            <div class="auto-result" id="partnerResult">
+                <span class="emoji" id="partnerEmoji"></span>
+                <span class="info" id="partnerInfo"></span>
+            </div>
+        </div>
+        <button class="check-btn" id="checkBtn" onclick="checkCompatibility()" disabled>相性をチェック！</button>
+        <div class="result" id="result"></div>
+    </div>
+    <div style="text-align:center;padding:20px"><a href="/ja/" style="color:#ffdd57;text-decoration:none">← 今日の占いに戻る</a></div>
+    <footer><p>&copy; 2026 TodayFortune.net | <a href="/privacy.html">Privacy</a></p></footer>
+
+    <script>
+    const zodiacData=[
+        {name:"Capricorn",emoji:"♑",start:[1,1],end:[1,19]},
+        {name:"Aquarius",emoji:"♒",start:[1,20],end:[2,18]},
+        {name:"Pisces",emoji:"♓",start:[2,19],end:[3,20]},
+        {name:"Aries",emoji:"♈",start:[3,21],end:[4,19]},
+        {name:"Taurus",emoji:"♉",start:[4,20],end:[5,20]},
+        {name:"Gemini",emoji:"♊",start:[5,21],end:[6,20]},
+        {name:"Cancer",emoji:"♋",start:[6,21],end:[7,22]},
+        {name:"Leo",emoji:"♌",start:[7,23],end:[8,22]},
+        {name:"Virgo",emoji:"♍",start:[8,23],end:[9,22]},
+        {name:"Libra",emoji:"♎",start:[9,23],end:[10,22]},
+        {name:"Scorpio",emoji:"♏",start:[10,23],end:[11,21]},
+        {name:"Sagittarius",emoji:"♐",start:[11,22],end:[12,21]},
+        {name:"Capricorn",emoji:"♑",start:[12,22],end:[12,31]}
+    ];
+    const ttiData=[
+        {name:"Mouse",emoji:"🐭"},{name:"Cow",emoji:"🐮"},{name:"Tiger",emoji:"🐯"},
+        {name:"Rabbit",emoji:"🐰"},{name:"Dragon",emoji:"🐲"},{name:"Snake",emoji:"🐍"},
+        {name:"Horse",emoji:"🐴"},{name:"Sheep",emoji:"🐑"},{name:"Monkey",emoji:"🐵"},
+        {name:"Rooster",emoji:"🐔"},{name:"Dog",emoji:"🐶"},{name:"Pig",emoji:"🐷"}
+    ];
+
+    let myData=null, partnerData=null;
+
+    function getZodiac(m,d){
+        for(const z of zodiacData){
+            const afterStart=m>z.start[0]||(m===z.start[0]&&d>=z.start[1]);
+            const beforeEnd=m<z.end[0]||(m===z.end[0]&&d<=z.end[1]);
+            if(afterStart&&beforeEnd)return z;
+        }
+        return zodiacData[0];
+    }
+
+    function getTti(year){
+        const idx=(year-4)%12;
+        return ttiData[idx>=0?idx:idx+12];
+    }
+
+    function calcSign(who){
+        const input=document.getElementById(who==='my'?'myBday':'partnerBday');
+        if(!input.value)return;
+        const d=new Date(input.value);
+        const year=d.getFullYear(), month=d.getMonth()+1, day=d.getDate();
+        const zodiac=getZodiac(month,day);
+        const tti=getTti(year);
+
+        const data={zodiac,tti,year,month,day};
+        if(who==='my')myData=data; else partnerData=data;
+
+        const resultDiv=document.getElementById(who==='my'?'myResult':'partnerResult');
+        const emojiEl=document.getElementById(who==='my'?'myEmoji':'partnerEmoji');
+        const infoEl=document.getElementById(who==='my'?'myInfo':'partnerInfo');
+
+        emojiEl.textContent=zodiac.emoji+' '+tti.emoji;
+        infoEl.textContent=` ${zodiac.name} + ${tti.name} (${year})`;
+        resultDiv.style.display='block';
+
+        document.getElementById('checkBtn').disabled=!(myData&&partnerData);
+    }
+
+    function checkCompatibility(){
+        if(!myData||!partnerData)return;
+        const m=myData, p=partnerData;
+
+        // Calculate scores based on zodiac + tti combination
+        const seed=(m.zodiac.name+p.zodiac.name+m.tti.name+p.tti.name).split('').reduce((a,c)=>a+c.charCodeAt(0),0);
+        const r=n=>Math.max(25,Math.min(99,((seed*n+37)%75)+25));
+        const love=r(7), friend=r(13), biz=r(23);
+        const total=Math.round((love*0.4+friend*0.3+biz*0.3));
+
+        const color=total>75?'#ff6b9d':total>50?'#ffdd57':'#4ecdc4';
+
+        const tips=[
+            `${m.zodiac.name} and ${p.zodiac.name} create a magnetic connection. Your ${m.tti.name} and ${p.tti.name} energies balance each other beautifully!`,
+            `The ${m.zodiac.name}-${p.zodiac.name} pairing thrives on mutual respect. As ${m.tti.name} and ${p.tti.name}, you bring complementary strengths!`,
+            `${m.tti.name} meets ${p.tti.name} - an interesting dynamic! Your ${m.zodiac.name} intuition guides this ${p.zodiac.name} connection.`,
+            `A ${m.zodiac.name} and ${p.zodiac.name} duo with ${m.tti.name}-${p.tti.name} energy. Communication is your superpower together!`,
+            `${m.tti.name}'s determination paired with ${p.tti.name}'s creativity makes this ${m.zodiac.name}-${p.zodiac.name} match special!`,
+        ];
+        const tip=tips[seed%tips.length];
+
+        const d=document.getElementById('result');
+        d.style.display='block';
+        d.innerHTML=`
+            <div class="vs-display">
+                <span class="emoji">${m.zodiac.emoji}${m.tti.emoji}</span>
+                <span style="color:#ff6b9d;margin:0 10px">♥</span>
+                <span class="emoji">${p.zodiac.emoji}${p.tti.emoji}</span>
+            </div>
+            <h2>${m.zodiac.name} & ${p.zodiac.name}</h2>
+            <h2 style="font-size:.9em;color:#aaa">${m.tti.name} & ${p.tti.name}</h2>
+            <div class="big-score" style="color:${color}">${total}%</div>
+            <div class="score-section">
+                <div class="score-label"><span>恋愛</span><span>${love}%</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:${love}%;background:#ff6b9d"></div></div>
+                <div class="score-label"><span>友情</span><span>${friend}%</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:${friend}%;background:#4ecdc4"></div></div>
+                <div class="score-label"><span>ビジネス</span><span>${biz}%</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:${biz}%;background:#a29bfe"></div></div>
+            </div>
+            <div class="result-text">${tip}</div>
+            <div class="share-row">
+                <a class="share-btn" style="background:#1DA1F2" href="https://twitter.com/intent/tweet?text=${encodeURIComponent(`My compatibility with my partner: ${total}%! ${m.zodiac.name}(${m.tti.name}) × ${p.zodiac.name}(${p.tti.name}) #TodayFortune #zodiac`)}&url=https://todayfortune.net/compatibility.html" target="_blank">Twitter</a>
+                <a class="share-btn" style="background:#000;border:1px solid #333" href="https://www.threads.net/intent/post?text=${encodeURIComponent(`My compatibility: ${total}%! ${m.zodiac.emoji}${m.tti.emoji} × ${p.zodiac.emoji}${p.tti.emoji} #TodayFortune`)}" target="_blank">Threads</a><a class="share-btn" style="background:#06C755" href="https://line.me/R/share?text=相性テスト結果！ todayfortune.net/ja/compatibility.html" target="_blank">LINE</a>
+            </div>
+        `;
+        d.scrollIntoView({behavior:'smooth'});
+    }
+    </script>
+</body>
+</html>

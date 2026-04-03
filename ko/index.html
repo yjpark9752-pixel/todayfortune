@@ -14,14 +14,14 @@
 </head>
 <body>
     <div class="lang-nav"><a href="/">English</a><a href="/ja/">日本語</a><a href="/ko/" class="active">한국어</a></div>
-    <header><h1>오늘의 운세</h1><p>띠별 & 별자리 운세와 로또 행운의 숫자</p><a href="https://www.youtube.com/@DailyZodiacFortune" target="_blank" style="display:inline-block;margin-top:12px;background:linear-gradient(135deg,#ff0000,#cc0000);color:#fff;padding:8px 22px;border-radius:20px;text-decoration:none;font-size:.85em;font-weight:bold;">유튜브에서 보기</a></header>
+    <header><h1>오늘의 운세</h1><p>띠별 & 별자리 운세와 로또 행운의 숫자</p><a href="https://www.youtube.com/@DailyZodiacFortune" target="_blank" style="display:inline-block;margin-top:12px;background:linear-gradient(135deg,#ff0000,#cc0000);color:#fff;padding:8px 22px;border-radius:20px;text-decoration:none;font-size:.85em;font-weight:bold;">유튜브에서 보기</a> <a href="/ko/compatibility.html" style="display:inline-block;margin-top:8px;margin-left:8px;background:linear-gradient(135deg,#ff6b9d,#c77dff);color:#fff;padding:8px 22px;border-radius:20px;text-decoration:none;font-size:.85em;font-weight:bold;">궁합 테스트</a></header>
     <div class="lottery-banner"><div class="lottery-label">최근 로또 당첨번호</div><div class="lottery-numbers" id="lottery-nums">로딩 중...</div><div class="lottery-date" id="lottery-date"></div></div>
     <div style="max-width:700px;margin:10px auto;text-align:center;">
         <button onclick="generateLotto()" style="background:linear-gradient(135deg,#ffdd57,#f0c030);color:#111;border:none;padding:12px 28px;border-radius:25px;cursor:pointer;font-size:.95em;font-weight:bold;">행운의 로또번호 생성!</button>
         <div id="gen-result" style="margin-top:12px;font-size:1.2em;font-weight:bold;letter-spacing:2px;min-height:40px;"></div>
     </div>
     <script>
-    function generateLotto(){const nums=[];while(nums.length<6){const n=Math.floor(Math.random()*45)+1;if(!nums.includes(n))nums.push(n);}nums.sort((a,b)=>a-b);document.getElementById('gen-result').innerHTML=nums.map(n=>`<span style="display:inline-block;width:38px;height:38px;line-height:38px;border-radius:50%;background:rgba(255,255,255,0.15);margin:0 3px">${n}</span>`).join('');}
+    function generateLotto(){const nums=[];while(nums.length<6){const n=Math.floor(Math.random()*45)+1;if(!nums.includes(n))nums.push(n);}nums.sort((a,b)=>a-b);const s=nums.join(', ');document.getElementById('gen-result').innerHTML=nums.map(n=>`<span style="display:inline-block;width:38px;height:38px;line-height:38px;border-radius:50%;background:rgba(255,255,255,0.15);margin:0 3px">${n}</span>`).join('')+`<div style="display:flex;justify-content:center;gap:6px;margin-top:10px"><a style="padding:5px 12px;border-radius:15px;font-size:.75em;text-decoration:none;color:#fff;background:#1DA1F2" href="https://twitter.com/intent/tweet?text=${encodeURIComponent('오늘의 행운번호: '+s+' #TodayFortune #로또')}" target="_blank">Twitter</a><a style="padding:5px 12px;border-radius:15px;font-size:.75em;text-decoration:none;color:#fff;background:#00B900" href="https://story.kakao.com/share?url=https://todayfortune.net/ko/" target="_blank">카카오톡</a></div>`;}
     </script>
     <div class="date-nav" id="date-nav"></div>
     <div class="tab-nav"><button class="tab-btn active" onclick="switchTab('tti',this)">띠별 운세</button><button class="tab-btn" onclick="switchTab('zodiac',this)">별자리 운세</button></div>

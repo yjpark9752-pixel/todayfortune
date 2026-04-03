@@ -14,14 +14,14 @@
 </head>
 <body>
     <div class="lang-nav"><a href="/">English</a><a href="/ja/" class="active">日本語</a><a href="/ko/">한국어</a></div>
-    <header><h1>今日の星座占い</h1><p>毎日の運勢＆ロト6ラッキーナンバー</p><a href="https://www.youtube.com/@DailyZodiacFortune" target="_blank" style="display:inline-block;margin-top:12px;background:linear-gradient(135deg,#ff0000,#cc0000);color:#fff;padding:8px 22px;border-radius:20px;text-decoration:none;font-size:.85em;font-weight:bold;">YouTubeで見る</a></header>
+    <header><h1>今日の星座占い</h1><p>毎日の運勢＆ロト6ラッキーナンバー</p><a href="https://www.youtube.com/@DailyZodiacFortune" target="_blank" style="display:inline-block;margin-top:12px;background:linear-gradient(135deg,#ff0000,#cc0000);color:#fff;padding:8px 22px;border-radius:20px;text-decoration:none;font-size:.85em;font-weight:bold;">YouTubeで見る</a> <a href="/ja/compatibility.html" style="display:inline-block;margin-top:8px;margin-left:8px;background:linear-gradient(135deg,#ff6b9d,#c77dff);color:#fff;padding:8px 22px;border-radius:20px;text-decoration:none;font-size:.85em;font-weight:bold;">相性テスト</a></header>
     <div class="lottery-banner"><div class="lottery-label">最新ロト6当選番号</div><div class="lottery-numbers" id="lottery-nums">読み込み中...</div><div class="lottery-date" id="lottery-date"></div></div>
     <div style="max-width:700px;margin:10px auto;text-align:center;">
         <button onclick="generateLoto()" style="background:linear-gradient(135deg,#ffdd57,#f0c030);color:#111;border:none;padding:12px 28px;border-radius:25px;cursor:pointer;font-size:.95em;font-weight:bold;">ラッキーナンバー生成！</button>
         <div id="gen-result" style="margin-top:12px;font-size:1.2em;font-weight:bold;letter-spacing:2px;min-height:40px;"></div>
     </div>
     <script>
-    function generateLoto(){const nums=[];while(nums.length<6){const n=Math.floor(Math.random()*43)+1;if(!nums.includes(n))nums.push(n);}nums.sort((a,b)=>a-b);document.getElementById('gen-result').innerHTML=nums.map(n=>`<span style="display:inline-block;width:38px;height:38px;line-height:38px;border-radius:50%;background:rgba(255,255,255,0.15);margin:0 3px">${n}</span>`).join('');}
+    function generateLoto(){const nums=[];while(nums.length<6){const n=Math.floor(Math.random()*43)+1;if(!nums.includes(n))nums.push(n);}nums.sort((a,b)=>a-b);const s=nums.join(', ');document.getElementById('gen-result').innerHTML=nums.map(n=>`<span style="display:inline-block;width:38px;height:38px;line-height:38px;border-radius:50%;background:rgba(255,255,255,0.15);margin:0 3px">${n}</span>`).join('')+`<div style="display:flex;justify-content:center;gap:6px;margin-top:10px"><a style="padding:5px 12px;border-radius:15px;font-size:.75em;text-decoration:none;color:#fff;background:#1DA1F2" href="https://twitter.com/intent/tweet?text=${encodeURIComponent('ロト6ラッキーナンバー: '+s+' #TodayFortune #ロト6')}" target="_blank">Twitter</a><a style="padding:5px 12px;border-radius:15px;font-size:.75em;text-decoration:none;color:#fff;background:#06C755" href="https://line.me/R/share?text=${encodeURIComponent('ロト6ラッキーナンバー: '+s+' todayfortune.net/ja/')}" target="_blank">LINE</a></div>`;}
     </script>
     <div class="date-nav" id="date-nav"></div>
     <div class="tab-nav"><button class="tab-btn active" onclick="switchTab('zodiac',this)">星座占い</button><button class="tab-btn" onclick="switchTab('tti',this)">韓国干支占い</button></div>

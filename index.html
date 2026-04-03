@@ -146,7 +146,8 @@
     function generateMega(){
         const nums=[];while(nums.length<5){const n=Math.floor(Math.random()*70)+1;if(!nums.includes(n))nums.push(n);}
         nums.sort((a,b)=>a-b);const mb=Math.floor(Math.random()*25)+1;
-        document.getElementById('gen-result').innerHTML=nums.map(n=>`<span style="display:inline-block;width:38px;height:38px;line-height:38px;border-radius:50%;background:rgba(255,255,255,0.15);margin:0 3px">${n}</span>`).join('')+`<span style="display:inline-block;width:38px;height:38px;line-height:38px;border-radius:50%;background:rgba(255,215,0,0.3);color:#ffdd57;margin:0 3px">${mb}</span>`;
+        const numStr=nums.join(', ')+' + MB '+mb;
+        document.getElementById('gen-result').innerHTML=nums.map(n=>`<span style="display:inline-block;width:38px;height:38px;line-height:38px;border-radius:50%;background:rgba(255,255,255,0.15);margin:0 3px">${n}</span>`).join('')+`<span style="display:inline-block;width:38px;height:38px;line-height:38px;border-radius:50%;background:rgba(255,215,0,0.3);color:#ffdd57;margin:0 3px">${mb}</span><div style="display:flex;justify-content:center;gap:6px;margin-top:10px"><a style="padding:5px 12px;border-radius:15px;font-size:.75em;text-decoration:none;color:#fff;background:#1DA1F2" href="https://twitter.com/intent/tweet?text=${encodeURIComponent('My Mega Millions lucky numbers: '+numStr+' #TodayFortune #MegaMillions')}&url=https://todayfortune.net" target="_blank">Twitter</a><a style="padding:5px 12px;border-radius:15px;font-size:.75em;text-decoration:none;color:#fff;background:#000;border:1px solid #333" href="https://www.threads.net/intent/post?text=${encodeURIComponent('My lucky numbers: '+numStr+' #TodayFortune')}" target="_blank">Threads</a></div>`;
     }
     </script>
 
