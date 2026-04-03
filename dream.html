@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Interpretation - AI Dream Meaning & Lucky Numbers | TodayFortune</title>
+    <meta name="description" content="Free AI dream interpretation. Discover the meaning of your dreams, get lucky numbers for Mega Millions, and receive personalized advice.">
+    <meta name="keywords" content="dream interpretation, dream meaning, dream analysis, lucky numbers, mega millions, dream dictionary">
+    <link rel="alternate" hreflang="ja" href="/ja/dream.html">
+    <link rel="alternate" hreflang="ko" href="/ko/dream.html">
+    <link rel="alternate" hreflang="en" href="/dream.html">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCDG5LDW5W"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-TCDG5LDW5W");</script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(180deg, #0d0d2b 0%, #1a1a4e 40%, #0d0d2b 100%);
+            color: #fff; min-height: 100vh;
+        }
+        .lang-nav { text-align: center; padding: 12px; background: rgba(0,0,0,0.4); }
+        .lang-nav a { color: #888; text-decoration: none; margin: 0 15px; font-size: 0.9em; transition: color 0.2s; }
+        .lang-nav a:hover { color: #fff; }
+        .lang-nav a.active { color: #ffdd57; font-weight: bold; }
+
+        .page-nav { text-align: center; padding: 10px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+        .page-nav a {
+            background: rgba(255,255,255,0.08); color: #ccc; border: 1px solid rgba(255,255,255,0.15);
+            padding: 8px 20px; border-radius: 25px; text-decoration: none;
+            font-size: 0.85em; transition: all 0.2s;
+        }
+        .page-nav a:hover { background: rgba(255,255,255,0.15); color: #fff; }
+        .page-nav a.active { background: #ffdd57; color: #111; border-color: #ffdd57; font-weight: bold; }
+
+        header { text-align: center; padding: 35px 20px 15px; }
+        header h1 { font-size: 2.2em; color: #ffdd57; margin-bottom: 5px; letter-spacing: 1px; }
+        header p { color: #999; font-size: 1em; }
+
+        .dream-container { max-width: 700px; margin: 25px auto; padding: 0 20px; }
+
+        .dream-input-card {
+            background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px; padding: 28px; backdrop-filter: blur(10px);
+        }
+        .dream-input-card label { display: block; color: #ffdd57; font-size: 1.1em; font-weight: bold; margin-bottom: 12px; }
+        .dream-input-card textarea {
+            width: 100%; min-height: 120px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 12px; color: #fff; padding: 14px; font-size: 1em; resize: vertical;
+            font-family: inherit; outline: none; transition: border-color 0.2s;
+        }
+        .dream-input-card textarea::placeholder { color: #666; }
+        .dream-input-card textarea:focus { border-color: #ffdd57; }
+        .interpret-btn {
+            display: block; width: 100%; margin-top: 16px; padding: 14px;
+            background: linear-gradient(135deg, #ffdd57, #f0c030); color: #111;
+            border: none; border-radius: 12px; font-size: 1.1em; font-weight: bold;
+            cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .interpret-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,221,87,0.3); }
+        .interpret-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
+
+        .spinner { display: none; text-align: center; padding: 40px; }
+        .spinner.active { display: block; }
+        .spinner-circle {
+            width: 48px; height: 48px; border: 4px solid rgba(255,221,87,0.2);
+            border-top-color: #ffdd57; border-radius: 50%; margin: 0 auto 16px;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .spinner p { color: #999; }
+
+        .result-card {
+            display: none; margin-top: 24px;
+            background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px; padding: 28px; backdrop-filter: blur(10px);
+        }
+        .result-card.active { display: block; animation: fadeIn 0.5s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .result-section { margin-bottom: 20px; }
+        .result-section:last-child { margin-bottom: 0; }
+        .result-label { color: #ffdd57; font-weight: bold; font-size: 0.85em; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .result-meaning {
+            background: rgba(255,221,87,0.08); border-left: 3px solid #ffdd57;
+            padding: 14px 16px; border-radius: 0 12px 12px 0; color: #ddd; line-height: 1.7; font-size: 0.95em;
+        }
+        .lucky-numbers { display: flex; gap: 8px; flex-wrap: wrap; }
+        .lucky-ball {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 44px; height: 44px; border-radius: 50%;
+            background: rgba(255,221,87,0.15); color: #ffdd57;
+            font-weight: bold; font-size: 1.1em;
+        }
+        .lucky-color-box {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: rgba(255,255,255,0.08); padding: 8px 16px; border-radius: 20px; color: #ddd;
+        }
+        .result-advice {
+            background: rgba(255,255,255,0.05); padding: 14px 16px;
+            border-radius: 12px; color: #ccc; line-height: 1.7; font-size: 0.95em;
+        }
+
+        .share-row { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
+        .share-btn {
+            padding: 8px 18px; border-radius: 20px; font-size: 0.85em;
+            border: none; cursor: pointer; transition: opacity 0.2s; color: #fff;
+        }
+        .share-btn:hover { opacity: 0.8; }
+        .share-copy { background: rgba(255,221,87,0.2); color: #ffdd57; border: 1px solid rgba(255,221,87,0.3); }
+        .share-twitter { background: #1DA1F2; }
+
+        .error-msg { display: none; text-align: center; padding: 20px; color: #ff6b6b; }
+        .error-msg.active { display: block; }
+
+        footer { text-align: center; padding: 40px 20px 25px; color: #555; font-size: 0.75em; }
+        footer a { color: #777; text-decoration: none; }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.7em; }
+            .dream-container { padding: 0 12px; }
+            .dream-input-card, .result-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-nav">
+        <a href="/dream.html" class="active">EN</a>
+        <a href="/ja/dream.html">日本語</a>
+        <a href="/ko/dream.html">한국어</a>
+    </div>
+    <div class="page-nav">
+        <a href="/">Horoscope</a>
+        <a href="/compatibility.html">Compatibility</a>
+        <a href="/dream.html" class="active">Dream</a>
+    </div>
+    <header>
+        <h1>🌙 Dream Interpretation</h1>
+        <p>Discover the hidden meaning behind your dreams</p>
+    </header>
+
+    <div class="dream-container">
+        <div class="dream-input-card">
+            <label for="dreamText">What did you dream about?</label>
+            <textarea id="dreamText" placeholder="Describe your dream in detail... e.g. I was flying over a vast ocean at night, and suddenly I saw a bright light below the water..."></textarea>
+            <button class="interpret-btn" id="interpretBtn" onclick="interpretDream()">🔮 Interpret My Dream</button>
+        </div>
+
+        <div class="spinner" id="spinner">
+            <div class="spinner-circle"></div>
+            <p>Interpreting your dream...</p>
+        </div>
+
+        <div class="error-msg" id="errorMsg">
+            <p>⚠️ Something went wrong. Please try again.</p>
+        </div>
+
+        <div class="result-card" id="resultCard">
+            <div class="result-section">
+                <div class="result-label">Dream Meaning</div>
+                <div class="result-meaning" id="resultMeaning"></div>
+            </div>
+            <div class="result-section">
+                <div class="result-label">Mega Millions Lucky Numbers</div>
+                <div class="lucky-numbers" id="resultNumbers"></div>
+            </div>
+            <div class="result-section">
+                <div class="result-label">Lucky Color</div>
+                <div class="lucky-color-box" id="resultColor"></div>
+            </div>
+            <div class="result-section">
+                <div class="result-label">Advice</div>
+                <div class="result-advice" id="resultAdvice"></div>
+            </div>
+            <div class="share-row">
+                <button class="share-btn share-copy" onclick="copyShareLink()">📋 Copy Share Link</button>
+                <button class="share-btn share-twitter" onclick="shareTwitter()">Share on X</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 TodayFortune.net | <a href="/privacy.html">Privacy Policy</a></p>
+    </footer>
+
+    <script>
+        const API_KEY = 'AIzaSyDrqtC9T6dhw_J9GxeHcabs0EoY19lIBh8';
+        const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
+
+        // Auto-fill from query parameter
+        const params = new URLSearchParams(window.location.search);
+        const qDream = params.get('q');
+        if (qDream) {
+            document.getElementById('dreamText').value = decodeURIComponent(qDream);
+            document.getElementById('interpretBtn').textContent = '🔮 Get Interpretation';
+        }
+
+        async function interpretDream() {
+            const dreamText = document.getElementById('dreamText').value.trim();
+            if (!dreamText) { document.getElementById('dreamText').focus(); return; }
+
+            document.getElementById('spinner').classList.add('active');
+            document.getElementById('resultCard').classList.remove('active');
+            document.getElementById('errorMsg').classList.remove('active');
+            document.getElementById('interpretBtn').disabled = true;
+
+            const prompt = `You are a mystical dream interpreter. Analyze the following dream and respond ONLY with a valid JSON object (no markdown, no code fences). The JSON must have exactly these fields:
+- "meaning": a detailed interpretation of the dream (2-3 sentences, in English)
+- "lucky_numbers": an array of exactly 6 unique random integers between 1 and 70 inspired by the dream
+- "lucky_color": a single color name inspired by the dream (in English)
+- "advice": practical life advice based on the dream's symbolism (1-2 sentences, in English)
+
+The dream: "${dreamText.replace(/"/g, '\\"')}"`;
+
+            try {
+                const resp = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
+                });
+                if (!resp.ok) throw new Error('API error');
+                const data = await resp.json();
+                const text = data.candidates[0].content.parts[0].text;
+                const cleaned = text.replace(/```json\s*/g, '').replace(/```\s*/g, '').trim();
+                const result = JSON.parse(cleaned);
+                displayResult(result);
+            } catch (e) {
+                console.error(e);
+                document.getElementById('errorMsg').classList.add('active');
+            } finally {
+                document.getElementById('spinner').classList.remove('active');
+                document.getElementById('interpretBtn').disabled = false;
+            }
+        }
+
+        function displayResult(r) {
+            document.getElementById('resultMeaning').textContent = r.meaning;
+            document.getElementById('resultNumbers').innerHTML = r.lucky_numbers.map(n => `<div class="lucky-ball">${n}</div>`).join('');
+            document.getElementById('resultColor').textContent = '🎨 ' + r.lucky_color;
+            document.getElementById('resultAdvice').textContent = r.advice;
+            document.getElementById('resultCard').classList.add('active');
+            document.getElementById('resultCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function copyShareLink() {
+            const dream = document.getElementById('dreamText').value.trim();
+            const url = `${window.location.origin}/dream.html?q=${encodeURIComponent(dream)}`;
+            navigator.clipboard.writeText(url).then(() => {
+                const btn = document.querySelector('.share-copy');
+                btn.textContent = '✅ Copied!';
+                setTimeout(() => btn.textContent = '📋 Copy Share Link', 2000);
+            });
+        }
+
+        function shareTwitter() {
+            const dream = document.getElementById('dreamText').value.trim();
+            const url = `${window.location.origin}/dream.html?q=${encodeURIComponent(dream)}`;
+            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent('Check out my dream interpretation! 🌙')}&url=${encodeURIComponent(url)}`, '_blank');
+        }
+    </script>
+</body>
+</html>

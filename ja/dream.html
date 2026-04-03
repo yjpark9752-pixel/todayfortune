@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>夢占い - AI夢診断＆ラッキーナンバー | TodayFortune</title>
+    <meta name="description" content="無料AI夢占い。夢の意味を解明し、ロト6のラッキーナンバーとアドバイスをお届けします。">
+    <meta name="keywords" content="夢占い, 夢診断, 夢の意味, ラッキーナンバー, ロト6, 夢辞典">
+    <link rel="alternate" hreflang="en" href="/dream.html">
+    <link rel="alternate" hreflang="ja" href="/ja/dream.html">
+    <link rel="alternate" hreflang="ko" href="/ko/dream.html">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCDG5LDW5W"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-TCDG5LDW5W");</script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Hiragino Sans', sans-serif;
+            background: linear-gradient(180deg, #0d0d2b 0%, #1a1a4e 40%, #0d0d2b 100%);
+            color: #fff; min-height: 100vh;
+        }
+        .lang-nav { text-align: center; padding: 12px; background: rgba(0,0,0,0.4); }
+        .lang-nav a { color: #888; text-decoration: none; margin: 0 15px; font-size: 0.9em; transition: color 0.2s; }
+        .lang-nav a:hover { color: #fff; }
+        .lang-nav a.active { color: #ffdd57; font-weight: bold; }
+        .page-nav { text-align: center; padding: 10px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+        .page-nav a {
+            background: rgba(255,255,255,0.08); color: #ccc; border: 1px solid rgba(255,255,255,0.15);
+            padding: 8px 20px; border-radius: 25px; text-decoration: none;
+            font-size: 0.85em; transition: all 0.2s;
+        }
+        .page-nav a:hover { background: rgba(255,255,255,0.15); color: #fff; }
+        .page-nav a.active { background: #ffdd57; color: #111; border-color: #ffdd57; font-weight: bold; }
+        header { text-align: center; padding: 35px 20px 15px; }
+        header h1 { font-size: 2.2em; color: #ffdd57; margin-bottom: 5px; letter-spacing: 1px; }
+        header p { color: #999; font-size: 1em; }
+        .dream-container { max-width: 700px; margin: 25px auto; padding: 0 20px; }
+        .dream-input-card {
+            background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px; padding: 28px; backdrop-filter: blur(10px);
+        }
+        .dream-input-card label { display: block; color: #ffdd57; font-size: 1.1em; font-weight: bold; margin-bottom: 12px; }
+        .dream-input-card textarea {
+            width: 100%; min-height: 120px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 12px; color: #fff; padding: 14px; font-size: 1em; resize: vertical;
+            font-family: inherit; outline: none; transition: border-color 0.2s;
+        }
+        .dream-input-card textarea::placeholder { color: #666; }
+        .dream-input-card textarea:focus { border-color: #ffdd57; }
+        .interpret-btn {
+            display: block; width: 100%; margin-top: 16px; padding: 14px;
+            background: linear-gradient(135deg, #ffdd57, #f0c030); color: #111;
+            border: none; border-radius: 12px; font-size: 1.1em; font-weight: bold;
+            cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .interpret-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,221,87,0.3); }
+        .interpret-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
+        .spinner { display: none; text-align: center; padding: 40px; }
+        .spinner.active { display: block; }
+        .spinner-circle {
+            width: 48px; height: 48px; border: 4px solid rgba(255,221,87,0.2);
+            border-top-color: #ffdd57; border-radius: 50%; margin: 0 auto 16px;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .spinner p { color: #999; }
+        .result-card {
+            display: none; margin-top: 24px;
+            background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px; padding: 28px; backdrop-filter: blur(10px);
+        }
+        .result-card.active { display: block; animation: fadeIn 0.5s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .result-section { margin-bottom: 20px; }
+        .result-section:last-child { margin-bottom: 0; }
+        .result-label { color: #ffdd57; font-weight: bold; font-size: 0.85em; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .result-meaning {
+            background: rgba(255,221,87,0.08); border-left: 3px solid #ffdd57;
+            padding: 14px 16px; border-radius: 0 12px 12px 0; color: #ddd; line-height: 1.7; font-size: 0.95em;
+        }
+        .lucky-numbers { display: flex; gap: 8px; flex-wrap: wrap; }
+        .lucky-ball {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 44px; height: 44px; border-radius: 50%;
+            background: rgba(255,221,87,0.15); color: #ffdd57;
+            font-weight: bold; font-size: 1.1em;
+        }
+        .lucky-color-box {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: rgba(255,255,255,0.08); padding: 8px 16px; border-radius: 20px; color: #ddd;
+        }
+        .result-advice {
+            background: rgba(255,255,255,0.05); padding: 14px 16px;
+            border-radius: 12px; color: #ccc; line-height: 1.7; font-size: 0.95em;
+        }
+        .share-row { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
+        .share-btn {
+            padding: 8px 18px; border-radius: 20px; font-size: 0.85em;
+            border: none; cursor: pointer; transition: opacity 0.2s; color: #fff;
+        }
+        .share-btn:hover { opacity: 0.8; }
+        .share-copy { background: rgba(255,221,87,0.2); color: #ffdd57; border: 1px solid rgba(255,221,87,0.3); }
+        .share-twitter { background: #1DA1F2; }
+        .error-msg { display: none; text-align: center; padding: 20px; color: #ff6b6b; }
+        .error-msg.active { display: block; }
+        footer { text-align: center; padding: 40px 20px 25px; color: #555; font-size: 0.75em; }
+        footer a { color: #777; text-decoration: none; }
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.7em; }
+            .dream-container { padding: 0 12px; }
+            .dream-input-card, .result-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-nav">
+        <a href="/dream.html">EN</a>
+        <a href="/ja/dream.html" class="active">日本語</a>
+        <a href="/ko/dream.html">한국어</a>
+    </div>
+    <div class="page-nav">
+        <a href="/ja/">星占い</a>
+        <a href="/ja/compatibility.html">相性占い</a>
+        <a href="/ja/dream.html" class="active">夢占い</a>
+    </div>
+    <header>
+        <h1>🌙 夢占い</h1>
+        <p>あなたの夢に隠された意味を解き明かします</p>
+    </header>
+
+    <div class="dream-container">
+        <div class="dream-input-card">
+            <label for="dreamText">どんな夢を見ましたか？</label>
+            <textarea id="dreamText" placeholder="夢の内容を詳しく書いてください... 例：夜の広い海の上を飛んでいたら、水の下に明るい光が見えました..."></textarea>
+            <button class="interpret-btn" id="interpretBtn" onclick="interpretDream()">🔮 夢を占う</button>
+        </div>
+
+        <div class="spinner" id="spinner">
+            <div class="spinner-circle"></div>
+            <p>夢を解析中...</p>
+        </div>
+
+        <div class="error-msg" id="errorMsg">
+            <p>⚠️ エラーが発生しました。もう一度お試しください。</p>
+        </div>
+
+        <div class="result-card" id="resultCard">
+            <div class="result-section">
+                <div class="result-label">夢の意味</div>
+                <div class="result-meaning" id="resultMeaning"></div>
+            </div>
+            <div class="result-section">
+                <div class="result-label">ロト6 ラッキーナンバー</div>
+                <div class="lucky-numbers" id="resultNumbers"></div>
+            </div>
+            <div class="result-section">
+                <div class="result-label">ラッキーカラー</div>
+                <div class="lucky-color-box" id="resultColor"></div>
+            </div>
+            <div class="result-section">
+                <div class="result-label">アドバイス</div>
+                <div class="result-advice" id="resultAdvice"></div>
+            </div>
+            <div class="share-row">
+                <button class="share-btn share-copy" onclick="copyShareLink()">📋 リンクをコピー</button>
+                <button class="share-btn share-twitter" onclick="shareTwitter()">Xでシェア</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 TodayFortune.net | <a href="/privacy.html">プライバシーポリシー</a></p>
+    </footer>
+
+    <script>
+        const API_KEY = 'AIzaSyDrqtC9T6dhw_J9GxeHcabs0EoY19lIBh8';
+        const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
+
+        const params = new URLSearchParams(window.location.search);
+        const qDream = params.get('q');
+        if (qDream) {
+            document.getElementById('dreamText').value = decodeURIComponent(qDream);
+            document.getElementById('interpretBtn').textContent = '🔮 夢を診断する';
+        }
+
+        async function interpretDream() {
+            const dreamText = document.getElementById('dreamText').value.trim();
+            if (!dreamText) { document.getElementById('dreamText').focus(); return; }
+
+            document.getElementById('spinner').classList.add('active');
+            document.getElementById('resultCard').classList.remove('active');
+            document.getElementById('errorMsg').classList.remove('active');
+            document.getElementById('interpretBtn').disabled = true;
+
+            const prompt = `あなたは神秘的な夢占い師です。以下の夢を分析し、有効なJSONオブジェクトのみで回答してください（マークダウンやコードフェンスなし）。JSONには以下のフィールドが必要です：
+- "meaning": 夢の詳細な解釈（日本語で2〜3文）
+- "lucky_numbers": 夢にインスピレーションを受けた1〜43の間のユニークな整数6個の配列
+- "lucky_color": 夢にインスピレーションを受けた色の名前（日本語）
+- "advice": 夢の象徴に基づく実践的なアドバイス（日本語で1〜2文）
+
+夢の内容: "${dreamText.replace(/"/g, '\\"')}"`;
+
+            try {
+                const resp = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
+                });
+                if (!resp.ok) throw new Error('API error');
+                const data = await resp.json();
+                const text = data.candidates[0].content.parts[0].text;
+                const cleaned = text.replace(/```json\s*/g, '').replace(/```\s*/g, '').trim();
+                const result = JSON.parse(cleaned);
+                displayResult(result);
+            } catch (e) {
+                console.error(e);
+                document.getElementById('errorMsg').classList.add('active');
+            } finally {
+                document.getElementById('spinner').classList.remove('active');
+                document.getElementById('interpretBtn').disabled = false;
+            }
+        }
+
+        function displayResult(r) {
+            document.getElementById('resultMeaning').textContent = r.meaning;
+            document.getElementById('resultNumbers').innerHTML = r.lucky_numbers.map(n => `<div class="lucky-ball">${n}</div>`).join('');
+            document.getElementById('resultColor').textContent = '🎨 ' + r.lucky_color;
+            document.getElementById('resultAdvice').textContent = r.advice;
+            document.getElementById('resultCard').classList.add('active');
+            document.getElementById('resultCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function copyShareLink() {
+            const dream = document.getElementById('dreamText').value.trim();
+            const url = `${window.location.origin}/ja/dream.html?q=${encodeURIComponent(dream)}`;
+            navigator.clipboard.writeText(url).then(() => {
+                const btn = document.querySelector('.share-copy');
+                btn.textContent = '✅ コピーしました！';
+                setTimeout(() => btn.textContent = '📋 リンクをコピー', 2000);
+            });
+        }
+
+        function shareTwitter() {
+            const dream = document.getElementById('dreamText').value.trim();
+            const url = `${window.location.origin}/ja/dream.html?q=${encodeURIComponent(dream)}`;
+            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent('夢占いの結果をチェック！🌙')}&url=${encodeURIComponent(url)}`, '_blank');
+        }
+    </script>
+</body>
+</html>

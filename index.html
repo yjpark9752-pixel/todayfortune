@@ -206,6 +206,18 @@
         fetch('./data/weekly/index.json')
             .then(r => r.json())
             .then(dates => {
+                // Auto-select today's date, or nearest available date
+                const hasToday = dates.some(d => d.date === currentDate);
+                if (!hasToday && dates.length > 0) {
+                    // Find closest date to today (prefer today or future)
+                    const today = currentDate;
+                    let best = dates[dates.length - 1].date; // default to latest
+                    for (const d of dates) {
+                        if (d.date >= today) { best = d.date; break; }
+                        best = d.date; // keep latest past date
+                    }
+                    currentDate = best;
+                }
                 const nav = document.getElementById('date-nav');
                 nav.innerHTML = dates.map(d => `
                     <span class="date-btn ${d.date === currentDate ? 'active' : ''}" onclick="selectDate('${d.date}', this)">

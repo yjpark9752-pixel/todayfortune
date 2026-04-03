@@ -41,6 +41,8 @@
     <script>
         let currentDate=new Date().toISOString().slice(0,10),currentTab='zodiac';
         fetch('../data/weekly/index.json').then(r=>r.json()).then(dates=>{
+            const hasToday=dates.some(d=>d.date===currentDate);
+            if(!hasToday&&dates.length>0){let best=dates[dates.length-1].date;for(const d of dates){if(d.date>=currentDate){best=d.date;break;}best=d.date;}currentDate=best;}
             document.getElementById('date-nav').innerHTML=dates.map(d=>`<span class="date-btn ${d.date===currentDate?'active':''}" onclick="selectDate('${d.date}',this)"><span class="day">${d.display_ja.split('(')[0]}</span><span class="weekday">${d.weekday_ja}</span></span>`).join('');loadData();
         }).catch(()=>loadData());
         function selectDate(d,el){currentDate=d;document.querySelectorAll('.date-btn').forEach(b=>b.classList.remove('active'));if(el)el.classList.add('active');loadData();}
