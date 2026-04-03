@@ -16,6 +16,13 @@
     <div class="lang-nav"><a href="/">English</a><a href="/ja/" class="active">日本語</a><a href="/ko/">한국어</a></div>
     <header><h1>今日の星座占い</h1><p>毎日の運勢＆ロト6ラッキーナンバー</p><a href="https://www.youtube.com/@DailyZodiacFortune" target="_blank" style="display:inline-block;margin-top:12px;background:linear-gradient(135deg,#ff0000,#cc0000);color:#fff;padding:8px 22px;border-radius:20px;text-decoration:none;font-size:.85em;font-weight:bold;">YouTubeで見る</a></header>
     <div class="lottery-banner"><div class="lottery-label">最新ロト6当選番号</div><div class="lottery-numbers" id="lottery-nums">読み込み中...</div><div class="lottery-date" id="lottery-date"></div></div>
+    <div style="max-width:700px;margin:10px auto;text-align:center;">
+        <button onclick="generateLoto()" style="background:linear-gradient(135deg,#ffdd57,#f0c030);color:#111;border:none;padding:12px 28px;border-radius:25px;cursor:pointer;font-size:.95em;font-weight:bold;">ラッキーナンバー生成</button>
+        <div id="gen-result" style="margin-top:12px;font-size:1.2em;font-weight:bold;letter-spacing:2px;min-height:40px;"></div>
+    </div>
+    <script>
+    function generateLoto(){const nums=[];while(nums.length<6){const n=Math.floor(Math.random()*43)+1;if(!nums.includes(n))nums.push(n);}nums.sort((a,b)=>a-b);document.getElementById('gen-result').innerHTML=nums.map(n=>`<span style="display:inline-block;width:38px;height:38px;line-height:38px;border-radius:50%;background:rgba(255,255,255,0.15);margin:0 3px">${n}</span>`).join('');}
+    </script>
     <div class="date-nav" id="date-nav"></div>
     <div class="tab-nav"><button class="tab-btn active" onclick="switchTab('zodiac',this)">星座占い</button><button class="tab-btn" onclick="switchTab('tti',this)">韓国干支占い</button></div>
     <div class="signs-grid" id="horoscopes"><div class="sign-card"><p style="text-align:center;color:#666;padding:30px;">読み込み中...</p></div></div>

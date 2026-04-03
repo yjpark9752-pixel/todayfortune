@@ -130,6 +130,19 @@
         <div class="lottery-date" id="lottery-date"></div>
     </div>
 
+    <!-- Number Generator -->
+    <div style="max-width:700px;margin:10px auto;text-align:center;">
+        <button onclick="generateMega()" style="background:linear-gradient(135deg,#ffdd57,#f0c030);color:#111;border:none;padding:12px 28px;border-radius:25px;cursor:pointer;font-size:0.95em;font-weight:bold;transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">Generate My Lucky Numbers</button>
+        <div id="gen-result" style="margin-top:12px;font-size:1.2em;font-weight:bold;letter-spacing:2px;min-height:40px;"></div>
+    </div>
+    <script>
+    function generateMega(){
+        const nums=[];while(nums.length<5){const n=Math.floor(Math.random()*70)+1;if(!nums.includes(n))nums.push(n);}
+        nums.sort((a,b)=>a-b);const mb=Math.floor(Math.random()*25)+1;
+        document.getElementById('gen-result').innerHTML=nums.map(n=>`<span style="display:inline-block;width:38px;height:38px;line-height:38px;border-radius:50%;background:rgba(255,255,255,0.15);margin:0 3px">${n}</span>`).join('')+`<span style="display:inline-block;width:38px;height:38px;line-height:38px;border-radius:50%;background:rgba(255,215,0,0.3);color:#ffdd57;margin:0 3px">${mb}</span>`;
+    }
+    </script>
+
     <!-- Date Selector -->
     <div class="date-nav" id="date-nav"></div>
 
