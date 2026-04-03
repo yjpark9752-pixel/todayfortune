@@ -19,8 +19,7 @@
     <div class="date-nav" id="date-nav"></div>
     <div class="tab-nav"><button class="tab-btn active" onclick="switchTab('zodiac',this)">星座占い</button><button class="tab-btn" onclick="switchTab('tti',this)">韓国干支占い</button></div>
     <div class="signs-grid" id="horoscopes"><div class="sign-card"><p style="text-align:center;color:#666;padding:30px;">読み込み中...</p></div></div>
-    <div class="youtube-cta"><p>毎日の占いを動画でチェック！</p><a href="https://www.youtube.com/@DailyZodiacFortune" target="_blank">チャンネル登録</a></div>
-    <footer><p>&copy; 2026 TodayFortune.net | <a href="/">English</a> | <a href="/ko/">한국어</a> | <a href="/privacy.html">Privacy</a></p></footer>
+        <footer><p>&copy; 2026 TodayFortune.net | <a href="/">English</a> | <a href="/ko/">한국어</a> | <a href="/privacy.html">Privacy</a></p></footer>
     <script>
         let currentDate=new Date().toISOString().slice(0,10),currentTab='zodiac';
         fetch('../data/weekly/index.json').then(r=>r.json()).then(dates=>{
