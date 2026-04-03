@@ -54,7 +54,7 @@
     <div class="container">
         <div class="input-box">
             <label>Your Birthday</label>
-            <input type="date" id="myBday" onchange="calcSign('my')">
+            <div style="display:flex;gap:6px"><input type="number" id="myMonth" placeholder="Month" min="1" max="12" style="flex:1;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.08);color:#fff;font-size:1em;box-sizing:border-box" onchange="calcSign('my')"><input type="number" id="myDay" placeholder="Day" min="1" max="31" style="flex:1;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.08);color:#fff;font-size:1em;box-sizing:border-box" onchange="calcSign('my')"><input type="number" id="myYear" placeholder="Year" min="1940" max="2026" style="flex:1;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.08);color:#fff;font-size:1em;box-sizing:border-box" onchange="calcSign('my')"></div>
             <div class="auto-result" id="myResult">
                 <span class="emoji" id="myEmoji"></span>
                 <span class="info" id="myInfo"></span>
@@ -62,7 +62,7 @@
         </div>
         <div class="input-box">
             <label>Partner's Birthday</label>
-            <input type="date" id="partnerBday" onchange="calcSign('partner')">
+            <div style="display:flex;gap:6px"><input type="number" id="partnerMonth" placeholder="Month" min="1" max="12" style="flex:1;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.08);color:#fff;font-size:1em;box-sizing:border-box" onchange="calcSign('partner')"><input type="number" id="partnerDay" placeholder="Day" min="1" max="31" style="flex:1;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.08);color:#fff;font-size:1em;box-sizing:border-box" onchange="calcSign('partner')"><input type="number" id="partnerYear" placeholder="Year" min="1940" max="2026" style="flex:1;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.08);color:#fff;font-size:1em;box-sizing:border-box" onchange="calcSign('partner')"></div>
             <div class="auto-result" id="partnerResult">
                 <span class="emoji" id="partnerEmoji"></span>
                 <span class="info" id="partnerInfo"></span>
@@ -114,10 +114,9 @@
     }
 
     function calcSign(who){
-        const input=document.getElementById(who==='my'?'myBday':'partnerBday');
-        if(!input.value)return;
-        const d=new Date(input.value);
-        const year=d.getFullYear(), month=d.getMonth()+1, day=d.getDate();
+        
+                
+        const pfx=who==='my'?'my':'partner';const year=parseInt(document.getElementById(pfx+'Year').value),month=parseInt(document.getElementById(pfx+'Month').value),day=parseInt(document.getElementById(pfx+'Day').value);if(!year||!month||!day)return;
         const zodiac=getZodiac(month,day);
         const tti=getTti(year);
 
