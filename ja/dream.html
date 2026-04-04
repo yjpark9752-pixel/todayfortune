@@ -136,7 +136,8 @@
 
         <div class="spinner" id="spinner">
             <div class="spinner-circle"></div>
-            <p>夢を解析中...</p>
+            <p>🔮 AIが夢を占っています...</p>
+            <p style="color:#666;font-size:.8em;margin-top:8px">少々お待ちください（5〜10秒）</p>
         </div>
 
         <div class="error-msg" id="errorMsg">
@@ -163,6 +164,7 @@
             <div class="share-row">
                 <button class="share-btn share-copy" onclick="copyShareLink()">📋 リンクをコピー</button>
                 <button class="share-btn share-twitter" onclick="shareTwitter()">Xでシェア</button>
+                <button class="share-btn" style="background:#000;border:1px solid #333" onclick="shareThreads()">Threads</button>
             </div>
         </div>
     </div>
@@ -243,6 +245,11 @@
             const dream = document.getElementById('dreamText').value.trim();
             const url = `${window.location.origin}/ja/dream.html?q=${encodeURIComponent(dream)}`;
             window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent('夢占いの結果をチェック！🌙')}&url=${encodeURIComponent(url)}`, '_blank');
+        }
+        function shareThreads() {
+            const dream = document.getElementById('dreamText').value.trim();
+            const url = `${window.location.origin}/ja/dream.html?q=${encodeURIComponent(dream)}`;
+            window.open(`https://www.threads.net/intent/post?text=${encodeURIComponent('夢占いの結果をチェック！🌙 ' + url)}`, '_blank');
         }
     </script>
 </body>
