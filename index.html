@@ -115,6 +115,11 @@
             .lottery-numbers .ball { width: 32px; height: 32px; line-height: 32px; font-size: 0.8em; }
         }
     </style>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#ffdd57">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="/img/icon-192.png">
 </head>
 <body>
     <div class="lang-nav">
@@ -303,5 +308,25 @@
                 document.getElementById('lottery-nums').innerHTML = '<span style="color:#888;font-size:0.8em;">Coming soon</span>';
             });
     </script>
+<!-- PWA Install Banner -->
+<div id="pwa-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(13,13,43,0.97);border-top:2px solid #ffdd57;padding:14px 20px;z-index:9999;align-items:center;justify-content:space-between;">
+<div style="flex:1"><strong style="color:#ffdd57;">Install App</strong><br><span style="color:#ccc;font-size:.85em;" id="pwa-msg">Add to your home screen for quick access!</span></div>
+<button id="pwa-install-btn" onclick="pwaInstall()" style="background:#ffdd57;color:#111;border:none;padding:8px 18px;border-radius:20px;font-weight:bold;cursor:pointer;margin-right:8px;font-size:.85em;">Install</button>
+<button onclick="pwaClose()" style="background:none;border:none;color:#888;font-size:1.4em;cursor:pointer;">&times;</button>
+</div>
+<script>
+(function(){
+if(localStorage.getItem('pwa-dismissed')||window.matchMedia('(display-mode:standalone)').matches)return;
+var isIOS=/iPad|iPhone|iPod/.test(navigator.userAgent);
+var banner=document.getElementById('pwa-banner');
+var deferredPrompt=null;
+window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();deferredPrompt=e;banner.style.display='flex';});
+if(isIOS&&!navigator.standalone){document.getElementById('pwa-msg').textContent='Tap Share then "Add to Home Screen"';document.getElementById('pwa-install-btn').style.display='none';banner.style.display='flex';}
+window.pwaInstall=function(){if(deferredPrompt){deferredPrompt.prompt();deferredPrompt.userChoice.then(function(){deferredPrompt=null;banner.style.display='none';});}};
+window.pwaClose=function(){banner.style.display='none';localStorage.setItem('pwa-dismissed','1');};
+var mq=window.matchMedia('(max-width:768px)');if(!mq.matches)banner.style.display='none';
+mq.addListener(function(e){if(!e.matches)banner.style.display='none';});
+})();
+</script>
 </body>
 </html>
