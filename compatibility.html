@@ -185,8 +185,9 @@
                 <p><b style="color:#a29bfe">Business:</b> ${bizTips[seed%bizTips.length]}</p>
             </div>
             <div class="share-row">
-                <a class="share-btn" style="background:#1DA1F2" href="https://twitter.com/intent/tweet?text=${encodeURIComponent(`My compatibility with my partner: ${total}%! ${m.zodiac.name}(${m.tti.name}) × ${p.zodiac.name}(${p.tti.name}) #TodayFortune #zodiac`)}&url=https://todayfortune.net/compatibility.html" target="_blank">Twitter</a>
-                <a class="share-btn" style="background:#000;border:1px solid #333" href="https://www.threads.net/intent/post?text=${encodeURIComponent(`My compatibility: ${total}%! ${m.zodiac.emoji}${m.tti.emoji} × ${p.zodiac.emoji}${p.tti.emoji} #TodayFortune`)}" target="_blank">Threads</a>
+                <a class="share-btn" style="background:#1DA1F2" href="https://twitter.com/intent/tweet?text=${encodeURIComponent(`Our compatibility: ${total}%! ${m.zodiac.name} × ${p.zodiac.name} #TodayFortune #zodiac`)}&url=https://todayfortune.net/compatibility.html" target="_blank">Twitter</a>
+                <a class="share-btn" style="background:#000;border:1px solid #333" href="https://www.threads.net/intent/post?text=${encodeURIComponent(`Our compatibility: ${total}%! ${m.zodiac.emoji}${m.tti.emoji} × ${p.zodiac.emoji}${p.tti.emoji} #TodayFortune`)}" target="_blank">Threads</a>
+                <a class="share-btn" style="background:linear-gradient(135deg,#ff6b9d,#c77dff)" href="sms:?body=${encodeURIComponent(`I checked our compatibility and the results are amazing! 😍 See for yourself 👉 https://todayfortune.net/compatibility.html`)}" target="_blank">💌 Send to Partner</a>
             </div>
         `;
         d.scrollIntoView({behavior:'smooth'});
