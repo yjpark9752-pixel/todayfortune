@@ -342,5 +342,67 @@
             });
     </script>
 
+<!-- Notification Bell -->
+<div id="notif-bell" style="display:none;position:fixed;bottom:24px;right:24px;z-index:9999;cursor:pointer;background:rgba(255,221,87,0.15);border:1px solid rgba(255,221,87,0.4);border-radius:50%;width:52px;height:52px;text-align:center;line-height:52px;font-size:1.5em;backdrop-filter:blur(8px);transition:transform 0.2s,opacity 0.3s;opacity:0" onclick="requestNotifPermission()" title="Get daily horoscope reminders">🔔</div>
+<script>
+(function(){
+  const LANG = document.documentElement.lang === 'ja' ? 'ja' : document.documentElement.lang === 'ko' ? 'ko' : 'en';
+  const msgs = {
+    en: { body: "Check today's horoscope! 🌟", btn: "Get daily reminders" },
+    ja: { body: "今日の運勢をチェック！🌟", btn: "毎日リマインダーを受け取る" },
+    ko: { body: "오늘의 운세를 확인하세요! 🌟", btn: "매일 알림 받기" }
+  };
+  const m = msgs[LANG] || msgs.en;
+
+  // Register service worker
+  if ('serviceWorker' in navigator) {
+    const swPath = LANG === 'en' ? '/sw.js' : '/sw.js';
+    navigator.serviceWorker.register(swPath, { scope: '/' }).catch(() => {});
+  }
+
+  // Show bell if Notification API available and not yet granted
+  if ('Notification' in window) {
+    const bell = document.getElementById('notif-bell');
+    if (Notification.permission === 'default') {
+      bell.style.display = 'block';
+      setTimeout(() => { bell.style.opacity = '1'; }, 500);
+      bell.onmouseenter = () => bell.style.transform = 'scale(1.15)';
+      bell.onmouseleave = () => bell.style.transform = 'scale(1)';
+    } else if (Notification.permission === 'granted') {
+      showDailyNotification();
+    }
+  }
+
+  window.requestNotifPermission = function() {
+    Notification.requestPermission().then(p => {
+      if (p === 'granted') {
+        document.getElementById('notif-bell').style.display = 'none';
+        localStorage.setItem('tf_notif', 'granted');
+        showDailyNotification();
+      } else {
+        document.getElementById('notif-bell').style.display = 'none';
+      }
+    });
+  };
+
+  function showDailyNotification() {
+    const today = new Date().toISOString().slice(0, 10);
+    const lastShown = localStorage.getItem('tf_notif_last');
+    if (lastShown === today) return;
+    localStorage.setItem('tf_notif_last', today);
+    if (navigator.serviceWorker && navigator.serviceWorker.ready) {
+      navigator.serviceWorker.ready.then(reg => {
+        reg.showNotification('TodayFortune', {
+          body: m.body,
+          icon: '/img/icon-192.png',
+          badge: '/favicon-32.png',
+          data: { lang: LANG },
+          tag: 'daily-horoscope'
+        });
+      });
+    }
+  }
+})();
+</script>
 </body>
 </html>
