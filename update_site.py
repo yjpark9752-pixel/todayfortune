@@ -84,7 +84,7 @@ def update():
         log.error(f"Japanese tti failed: {e}")
 
     # Save date-stamped copies for history
-    from datetime import datetime
+    from datetime import datetime, timedelta
     date_str = datetime.now().strftime("%Y-%m-%d")
     history_dir = DATA_DIR / "history"
     history_dir.mkdir(exist_ok=True)
@@ -95,6 +95,71 @@ def update():
             dst = history_dir / f"{fname.replace('.json', '')}_{date_str}.json"
             shutil.copy2(src, dst)
     log.info(f"History saved for {date_str}")
+
+    # --- Weekly data: 3 past + today + 6 future = 10 days ---
+    log.info("=== Generating weekly data ===")
+    weekly_dir = DATA_DIR / "weekly"
+    weekly_dir.mkdir(exist_ok=True)
+
+    today = datetime.now()
+    # Date range: -3 to +6 (10 days total)
+    dates = [(today + timedelta(days=i)).strftime("%Y-%m-%d") for i in range(-3, 7)]
+    valid_dates = set(dates)
+
+    # Build date index
+    date_index = []
+    for d in dates:
+        dt = datetime.strptime(d, "%Y-%m-%d")
+        weekday = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"][dt.weekday()]
+        weekday_kr = ["월", "화", "수", "목", "금", "토", "일"][dt.weekday()]
+        weekday_ja = ["月", "火", "水", "木", "金", "土", "日"][dt.weekday()]
+        date_index.append({
+            "date": d,
+            "weekday": weekday,
+            "weekday_kr": weekday_kr,
+            "weekday_ja": weekday_ja,
+            "display_en": dt.strftime(f"%b %d ({weekday})"),
+            "display_ja": f"{dt.month}/{dt.day}({weekday_ja})",
+            "display_ko": f"{dt.month}/{dt.day}({weekday_kr})",
+        })
+    with open(weekly_dir / "index.json", "w") as f:
+        json.dump(date_index, f, ensure_ascii=False, indent=2)
+
+    # Delete files older than 3 days ago
+    import re
+    date_pattern = re.compile(r"_(\d{4}-\d{2}-\d{2})\.json$")
+    for fpath in weekly_dir.glob("*_????-??-??.json"):
+        m = date_pattern.search(fpath.name)
+        if m and m.group(1) not in valid_dates:
+            fpath.unlink()
+            log.info(f"Deleted old: {fpath.name}")
+
+    # Generate missing days using generate_weekly.py's generate_day
+    sys.path.insert(0, str(SITE_DIR))
+    from generate_weekly import generate_day
+    import time
+
+    configs = [
+        ("en", "zodiac", "en"),
+        ("en", "tti", "en_tti"),
+        ("ja", "zodiac", "ja"),
+        ("ja", "tti", "ja_tti"),
+        ("ko", "tti", "ko"),
+        ("ko", "zodiac", "ko_zodiac"),
+    ]
+
+    for d in dates:
+        for lang, sign_type, prefix in configs:
+            out_file = weekly_dir / f"{prefix}_{d}.json"
+            if out_file.exists():
+                continue
+            log.info(f"  Generating {prefix}_{d}...")
+            data = generate_day(d, lang, sign_type)
+            if data:
+                with open(out_file, "w") as f:
+                    json.dump(data, f, ensure_ascii=False, indent=2)
+                log.info(f"  {prefix}_{d}: {len(data)} signs")
+            time.sleep(2)
 
     log.info("Site data updated!")
 
