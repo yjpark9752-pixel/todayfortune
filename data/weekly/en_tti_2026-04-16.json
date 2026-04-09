@@ -1,0 +1,194 @@
+[
+  {
+    "name": "Mouse",
+    "emoji": "🐭",
+    "years": "1960, 1972, 1984, 1996, 2008, 2020",
+    "content": "Today, your sharp mind will find creative solutions to lingering problems. Networking is highly favored, bringing new connections that could prove beneficial. Keep an open mind to unconventional ideas.",
+    "lucky_numbers": [
+      9,
+      17,
+      34,
+      52,
+      68,
+      11
+    ],
+    "lucky_color": "Silver",
+    "advice": "Embrace spontaneity in your social life."
+  },
+  {
+    "name": "Cow",
+    "emoji": "🐂",
+    "years": "1961, 1973, 1985, 1997, 2009, 2021",
+    "content": "Your diligent efforts are about to bear fruit, especially in long-term projects. Stay focused on your goals and avoid distractions. A steady approach will lead to significant progress.",
+    "lucky_numbers": [
+      3,
+      21,
+      39,
+      45,
+      60,
+      23
+    ],
+    "lucky_color": "Emerald Green",
+    "advice": "Prioritize practical tasks over speculative ventures."
+  },
+  {
+    "name": "Tiger",
+    "emoji": "🐯",
+    "years": "1962, 1974, 1986, 1998, 2010, 2022",
+    "content": "A surge of confidence empowers you to take the lead in new initiatives. Don't shy away from expressing your bold ideas. Your natural charisma will win others over.",
+    "lucky_numbers": [
+      1,
+      13,
+      29,
+      44,
+      57,
+      7
+    ],
+    "lucky_color": "Royal Blue",
+    "advice": "Channel your energy into productive endeavors."
+  },
+  {
+    "name": "Rabbit",
+    "emoji": "🐰",
+    "years": "1963, 1975, 1987, 1999, 2011, 2023",
+    "content": "Your diplomatic skills will be particularly useful in resolving misunderstandings today. Seek harmony in your relationships and avoid unnecessary confrontations. A calm demeanor will be your strength.",
+    "lucky_numbers": [
+      6,
+      18,
+      30,
+      41,
+      65,
+      19
+    ],
+    "lucky_color": "Pastel Pink",
+    "advice": "Listen more than you speak to foster understanding."
+  },
+  {
+    "name": "Dragon",
+    "emoji": "🐲",
+    "years": "1964, 1976, 1988, 2000, 2012",
+    "content": "Expect a day filled with dynamic energy and opportunities for growth. Your ambition is heightened, pushing you towards significant achievements. Trust your instincts when making important decisions.",
+    "lucky_numbers": [
+      10,
+      25,
+      38,
+      55,
+      69,
+      2
+    ],
+    "lucky_color": "Gold",
+    "advice": "Don't hesitate to pursue your grandest aspirations."
+  },
+  {
+    "name": "Snake",
+    "emoji": "🐍",
+    "years": "1965, 1977, 1989, 2001, 2013",
+    "content": "Your intuition is particularly strong today, guiding you through complex situations. Pay attention to subtle cues and inner feelings. A period of deep reflection could bring clarity.",
+    "lucky_numbers": [
+      5,
+      16,
+      33,
+      48,
+      62,
+      14
+    ],
+    "lucky_color": "Deep Purple",
+    "advice": "Take time for introspection and trust your gut feelings."
+  },
+  {
+    "name": "Horse",
+    "emoji": "🐴",
+    "years": "1966, 1978, 1990, 2002, 2014",
+    "content": "A restless spirit might inspire you to seek new adventures or learning experiences. Embrace change and be open to spontaneous plans. Your enthusiasm is contagious and will attract positive interactions.",
+    "lucky_numbers": [
+      12,
+      27,
+      40,
+      53,
+      66,
+      8
+    ],
+    "lucky_color": "Bright Orange",
+    "advice": "Explore new horizons and don't be afraid to deviate from the routine."
+  },
+  {
+    "name": "Sheep",
+    "emoji": "🐏",
+    "years": "1967, 1979, 1991, 2003, 2015",
+    "content": "Creativity flows freely today, making it an excellent time for artistic pursuits or innovative problem-solving. Seek comfort and inspiration in your surroundings. Nurture your relationships with kindness.",
+    "lucky_numbers": [
+      4,
+      20,
+      36,
+      47,
+      63,
+      22
+    ],
+    "lucky_color": "Sky Blue",
+    "advice": "Express your artistic side and find beauty in everyday moments."
+  },
+  {
+    "name": "Monkey",
+    "emoji": "🐒",
+    "years": "1968, 1980, 1992, 2004, 2016",
+    "content": "Your quick wit and adaptability will help you navigate any challenges that arise. It's a favorable day for learning new skills or engaging in stimulating conversations. Keep an eye out for interesting opportunities.",
+    "lucky_numbers": [
+      11,
+      26,
+      31,
+      50,
+      64,
+      17
+    ],
+    "lucky_color": "Yellow",
+    "advice": "Engage your curiosity and seek out new information."
+  },
+  {
+    "name": "Rooster",
+    "emoji": "🐔",
+    "years": "1969, 1981, 1993, 2005, 2017",
+    "content": "Your attention to detail and organized approach will be highly valued today. It's a good time to tie up loose ends and ensure everything is in order. Your practical insights will prove beneficial.",
+    "lucky_numbers": [
+      7,
+      19,
+      32,
+      46,
+      59,
+      15
+    ],
+    "lucky_color": "Crimson Red",
+    "advice": "Focus on precision and organization in your tasks."
+  },
+  {
+    "name": "Dog",
+    "emoji": "🐶",
+    "years": "1970, 1982, 1994, 2006, 2018",
+    "content": "Loyalty and integrity are your guiding principles today, fostering trust in your relationships. Spend time with loved ones and strengthen your bonds. Your dependable nature will be a source of comfort for others.",
+    "lucky_numbers": [
+      2,
+      15,
+      28,
+      42,
+      58,
+      6
+    ],
+    "lucky_color": "Brown",
+    "advice": "Cherish your close relationships and offer support to those who need it."
+  },
+  {
+    "name": "Pig",
+    "emoji": "🐷",
+    "years": "1971, 1983, 1995, 2007, 2019",
+    "content": "A sense of contentment and good fortune surrounds you today. Enjoy the simple pleasures and be open to receiving unexpected blessings. Generosity will be rewarded in subtle ways.",
+    "lucky_numbers": [
+      8,
+      24,
+      37,
+      51,
+      70,
+      13
+    ],
+    "lucky_color": "Orange",
+    "advice": "Practice gratitude and share your good mood with others."
+  }
+]
