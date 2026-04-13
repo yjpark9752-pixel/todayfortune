@@ -1,40 +1,41 @@
 {
   "mega_millions": {
     "numbers": [
-      8,
-      15,
-      23,
-      41,
-      62
+      3,
+      18,
+      36,
+      42,
+      49
     ],
-    "mega_ball": 11,
-    "date": "April 4, 2026",
-    "jackpot": "$20 Million"
+    "mega_ball": 6,
+    "date": "April 10, 2026",
+    "jackpot": "$110 Million"
   },
   "loto6": {
     "numbers": [
+      2,
       3,
-      10,
-      18,
-      25,
-      33,
-      40
+      6,
+      9,
+      24,
+      36
     ],
-    "date": "2026/04/03",
+    "bonus": 5,
+    "date": "2026/04/02",
     "jackpot": "¥250,000,000"
   },
   "korean_lotto": {
     "numbers": [
-      5,
-      12,
-      20,
+      1,
+      2,
+      15,
       28,
-      35,
-      42
+      39,
+      45
     ],
-    "bonus": 17,
-    "date": "2026.04.04",
-    "round": 1163,
-    "jackpot": "225억원"
+    "bonus": 31,
+    "date": "2026.04.11",
+    "round": 1219,
+    "jackpot": "171억원"
   }
 }

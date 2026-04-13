@@ -78,7 +78,8 @@ def generate_week():
 
     today = datetime.now()
     dates = []
-    for i in range(7):
+    # 과거 3일 + 오늘 + 앞으로 7일 = 총 11일
+    for i in range(-3, 8):
         d = today + timedelta(days=i)
         dates.append(d.strftime("%Y-%m-%d"))
 

@@ -79,6 +79,7 @@
     <script>
         let currentDate=(()=>{const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');})(),currentTab='zodiac';
         fetch('../data/weekly/index.json').then(r=>r.json()).then(dates=>{
+            const past3=new Date(new Date(currentDate).getTime()-3*86400000).toISOString().slice(0,10);dates=dates.filter(d=>d.date>=past3);
             const hasToday=dates.some(d=>d.date===currentDate);
             if(!hasToday&&dates.length>0){let best=dates[dates.length-1].date;for(const d of dates){if(d.date>=currentDate){best=d.date;break;}best=d.date;}currentDate=best;}
             document.getElementById('date-nav').innerHTML=dates.map(d=>`<span class="date-btn ${d.date===currentDate?'active':''}" onclick="selectDate('${d.date}',this)"><span class="day">${d.display_ja.split('(')[0]}</span><span class="weekday">${d.weekday_ja}</span></span>`).join('');loadData();

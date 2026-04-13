@@ -245,15 +245,19 @@
         fetch('./data/weekly/index.json')
             .then(r => r.json())
             .then(dates => {
+                // Filter: past 3 days + today + future only
+                const todayStr = currentDate;
+                const past3 = new Date(new Date(todayStr).getTime() - 3 * 86400000).toISOString().slice(0,10);
+                dates = dates.filter(d => d.date >= past3);
+
                 // Auto-select today's date, or nearest available date
                 const hasToday = dates.some(d => d.date === currentDate);
                 if (!hasToday && dates.length > 0) {
-                    // Find closest date to today (prefer today or future)
                     const today = currentDate;
-                    let best = dates[dates.length - 1].date; // default to latest
+                    let best = dates[dates.length - 1].date;
                     for (const d of dates) {
                         if (d.date >= today) { best = d.date; break; }
-                        best = d.date; // keep latest past date
+                        best = d.date;
                     }
                     currentDate = best;
                 }
