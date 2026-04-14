@@ -324,6 +324,7 @@
                         ${h.lucky_color ? `<span class="lucky-tag">Color: ${h.lucky_color}</span>` : ''}
                     </div>
                     <div class="share-row">
+                        <a class="share-btn share-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://todayfortune.net/&quote=${encodeURIComponent(h.name+': '+h.content.slice(0,80)+'...')}" target="_blank" style="background:#1877F2;">Facebook</a>
                         <a class="share-btn share-twitter" href="https://twitter.com/intent/tweet?text=${encodeURIComponent(h.name+': '+h.content.slice(0,80)+'... #TodayFortune #horoscope todayfortune.net')}" target="_blank">Twitter</a>
                         <a class="share-btn share-threads" href="https://www.threads.net/intent/post?text=${encodeURIComponent(h.name+': '+h.content.slice(0,80)+'... #TodayFortune todayfortune.net')}" target="_blank">Threads</a>
                     </div>
