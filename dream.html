@@ -185,6 +185,7 @@
             </div>
             <div class="share-row">
                 <button class="share-btn share-copy" onclick="copyShareLink()">📋 Copy Share Link</button>
+                <a class="share-btn" id="shareFacebook" style="padding:5px 12px;border-radius:15px;font-size:.75em;text-decoration:none;color:#fff;background:#1877F2" href="#" target="_blank">Facebook</a>
                 <button class="share-btn share-twitter" onclick="shareTwitter()">Share on X</button>
                 <button class="share-btn" style="background:#000;border:1px solid #333" onclick="shareThreads()">Threads</button>
             </div>
@@ -196,7 +197,7 @@
     </footer>
 
     <script>
-        const API_KEY = atob('QUl6YVN5Q0FaUTM0azlXbjg4d1JxSnRvczE4Ui12YXk4R3RSSkQw');
+        const API_KEY = atob('QUl6YVN5Qlg5eHpLOFpuOVdXd2pFLUhZQUdzZ2FVdmlNa2JkSDRn');
         const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
 
         // Auto-fill from query parameter
@@ -252,6 +253,7 @@ The dream: "${dreamText.replace(/"/g, '\\"')}"`;
             document.getElementById('resultAdvice').textContent = r.advice;
             document.getElementById('resultCard').classList.add('active');
             document.getElementById('resultCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            updateFacebookShare();
         }
 
         function copyShareLink() {
@@ -262,6 +264,13 @@ The dream: "${dreamText.replace(/"/g, '\\"')}"`;
                 btn.textContent = '✅ Copied!';
                 setTimeout(() => btn.textContent = '📋 Copy Share Link', 2000);
             });
+        }
+
+        function updateFacebookShare() {
+            const dream = document.getElementById('dreamText').value.trim();
+            const meaning = document.getElementById('resultMeaning').textContent || '';
+            const fb = document.getElementById('shareFacebook');
+            fb.href = `https://www.facebook.com/sharer/sharer.php?u=https://todayfortune.net/dream.html&quote=${encodeURIComponent('Dream Interpretation: ' + meaning.slice(0,80) + '...')}`;
         }
 
         function shareTwitter() {
