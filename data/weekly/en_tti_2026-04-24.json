@@ -1,0 +1,194 @@
+[
+  {
+    "name": "Mouse",
+    "emoji": "🐭",
+    "years": "1960, 1972, 1984, 1996, 2008, 2020",
+    "content": "Today, your quick wit will serve you well in navigating social interactions and seizing minor opportunities. Keep an ear open for new ideas or networking chances that could benefit you later. A small, unexpected financial gain might brighten your day.",
+    "lucky_numbers": [
+      12,
+      28,
+      35,
+      49,
+      67,
+      14
+    ],
+    "lucky_color": "Gold",
+    "advice": "Focus on communication and connections."
+  },
+  {
+    "name": "Cow",
+    "emoji": "🐮",
+    "years": "1961, 1973, 1985, 1997, 2009, 2021",
+    "content": "Your steady and diligent nature will lead to significant progress on a long-standing task. Don't shy away from taking the lead on a project you've been nurturing. Your efforts will be recognized, bringing a sense of accomplishment by day's end.",
+    "lucky_numbers": [
+      3,
+      18,
+      29,
+      44,
+      58,
+      8
+    ],
+    "lucky_color": "Emerald Green",
+    "advice": "Stay persistent and trust your process."
+  },
+  {
+    "name": "Tiger",
+    "emoji": "🐯",
+    "years": "1962, 1974, 1986, 1998, 2010, 2022",
+    "content": "An adventurous spirit will guide you to a thrilling opportunity, possibly involving a calculated risk. Your natural leadership will shine, inspiring those around you. Embrace challenges with confidence, as they lead to personal growth.",
+    "lucky_numbers": [
+      7,
+      21,
+      33,
+      50,
+      62,
+      19
+    ],
+    "lucky_color": "Fiery Red",
+    "advice": "Trust your instincts and seize the day."
+  },
+  {
+    "name": "Rabbit",
+    "emoji": "🐰",
+    "years": "1963, 1975, 1987, 1999, 2011, 2023",
+    "content": "A calm and harmonious atmosphere surrounds you, making it an ideal day for creative pursuits or spending quality time with loved ones. Seek beauty in your surroundings and allow your artistic side to flourish. Your gentle nature will foster strong bonds.",
+    "lucky_numbers": [
+      1,
+      15,
+      26,
+      40,
+      55,
+      6
+    ],
+    "lucky_color": "Sky Blue",
+    "advice": "Seek comfort and creative expression."
+  },
+  {
+    "name": "Dragon",
+    "emoji": "🐉",
+    "years": "1964, 1976, 1988, 2000, 2012, 2024",
+    "content": "Your charisma and confidence are at an all-time high, making it a powerful day for public speaking or presenting new ideas. Expect recognition for your talents, potentially opening doors to exciting new ventures. Don't be afraid to make a grand impression.",
+    "lucky_numbers": [
+      9,
+      23,
+      38,
+      51,
+      69,
+      22
+    ],
+    "lucky_color": "Imperial Purple",
+    "advice": "Shine brightly and embrace the spotlight."
+  },
+  {
+    "name": "Snake",
+    "emoji": "🐍",
+    "years": "1965, 1977, 1989, 2001, 2013, 2025",
+    "content": "Your keen intuition will be your greatest asset today, guiding you through subtle currents and hidden opportunities. Pay close attention to your inner voice and seemingly small details, as they hold significant clues. A moment of quiet reflection will bring clarity.",
+    "lucky_numbers": [
+      5,
+      17,
+      30,
+      42,
+      59,
+      11
+    ],
+    "lucky_color": "Deep Violet",
+    "advice": "Listen to your intuition; wisdom lies within."
+  },
+  {
+    "name": "Horse",
+    "emoji": "🐴",
+    "years": "1966, 1978, 1990, 2002, 2014",
+    "content": "Your energetic and free-spirited nature craves new experiences today. It's an excellent day for outdoor activities, making travel plans, or diving into a new hobby with enthusiasm. Embrace spontaneity, but remember to stay grounded in your responsibilities.",
+    "lucky_numbers": [
+      10,
+      25,
+      37,
+      53,
+      65,
+      16
+    ],
+    "lucky_color": "Orange",
+    "advice": "Embrace new adventures and enjoy the ride."
+  },
+  {
+    "name": "Sheep",
+    "emoji": "🐑",
+    "years": "1967, 1979, 1991, 2003, 2015",
+    "content": "Harmony in relationships will be a central theme, making it a perfect day to nurture your connections with friends and family. Engage in creative expression or seek peaceful moments for personal reflection. Your compassionate nature will bring comfort to others.",
+    "lucky_numbers": [
+      4,
+      19,
+      32,
+      47,
+      60,
+      9
+    ],
+    "lucky_color": "Soft Pink",
+    "advice": "Nurture your relationships and find inner peace."
+  },
+  {
+    "name": "Monkey",
+    "emoji": "🐒",
+    "years": "1968, 1980, 1992, 2004, 2016",
+    "content": "Your cleverness and curiosity are heightened today, making it ripe for problem-solving and intellectual pursuits. Engage in stimulating conversations or learn something new; your mind is particularly sharp. An unexpected insight could lead to a breakthrough.",
+    "lucky_numbers": [
+      13,
+      27,
+      41,
+      56,
+      70,
+      24
+    ],
+    "lucky_color": "Silver",
+    "advice": "Engage your mind and explore new ideas."
+  },
+  {
+    "name": "Rooster",
+    "emoji": "🐔",
+    "years": "1969, 1981, 1993, 2005, 2017",
+    "content": "Your meticulous nature will be highly beneficial today, bringing order and clarity to any ongoing projects. Opportunities to organize, refine, or present your ideas with precision will arise. Attention to detail will earn you praise and progress.",
+    "lucky_numbers": [
+      2,
+      16,
+      31,
+      45,
+      63,
+      7
+    ],
+    "lucky_color": "Crimson Red",
+    "advice": "Organize, refine, and pay attention to details."
+  },
+  {
+    "name": "Dog",
+    "emoji": "🐶",
+    "years": "1970, 1982, 1994, 2006, 2018",
+    "content": "Focus on strengthening your bonds with loved ones and community today. Your loyalty and integrity will be deeply appreciated, fostering trust and mutual support. Lend an ear to a friend in need; your empathy makes a significant difference.",
+    "lucky_numbers": [
+      6,
+      20,
+      34,
+      48,
+      61,
+      10
+    ],
+    "lucky_color": "Forest Green",
+    "advice": "Cherish your connections and uphold your values."
+  },
+  {
+    "name": "Pig",
+    "emoji": "🐷",
+    "years": "1971, 1983, 1995, 2007, 2019",
+    "content": "A day of contentment and appreciation for life's simple pleasures awaits you. Your generous spirit may find joy in helping others or sharing your abundance. Allow yourself to relax and soak in the warmth of your surroundings and relationships.",
+    "lucky_numbers": [
+      8,
+      24,
+      39,
+      54,
+      68,
+      15
+    ],
+    "lucky_color": "Sunshine Yellow",
+    "advice": "Find joy in simple things and share your warmth."
+  }
+]
