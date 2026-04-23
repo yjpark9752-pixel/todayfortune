@@ -1,14 +1,5 @@
 [
   {
-    "date": "2026-04-20",
-    "weekday": "Mon",
-    "weekday_kr": "월",
-    "weekday_ja": "月",
-    "display_en": "Apr 20 (Mon)",
-    "display_ja": "4/20(月)",
-    "display_ko": "4/20(월)"
-  },
-  {
     "date": "2026-04-21",
     "weekday": "Tue",
     "weekday_kr": "화",
@@ -88,5 +79,14 @@
     "display_en": "Apr 29 (Wed)",
     "display_ja": "4/29(水)",
     "display_ko": "4/29(수)"
+  },
+  {
+    "date": "2026-04-30",
+    "weekday": "Thu",
+    "weekday_kr": "목",
+    "weekday_ja": "木",
+    "display_en": "Apr 30 (Thu)",
+    "display_ja": "4/30(木)",
+    "display_ko": "4/30(목)"
   }
 ]
