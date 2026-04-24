@@ -37,5 +37,31 @@
     <p>For questions about this privacy policy, please contact us through our <a href="https://www.youtube.com/@todayfortunenet">YouTube channel</a>.</p>
 
     <p><a href="/">Back to Home</a></p>
+<script>
+function openYT(e, handle) {
+  if (!handle) handle = 'todayfortunenet';
+  var web = 'https://www.youtube.com/@' + handle;
+  var ua = navigator.userAgent || '';
+  if (/Android/i.test(ua)) {
+    e.preventDefault();
+    window.location.href = 'intent://www.youtube.com/@' + handle +
+      '#Intent;scheme=https;package=com.google.android.youtube;S.browser_fallback_url=' +
+      encodeURIComponent(web) + ';end';
+    return false;
+  }
+  if (/iPhone|iPad|iPod/i.test(ua)) {
+    e.preventDefault();
+    var opened = false;
+    var timer = setTimeout(function() { if (!opened) window.location.href = web; }, 1500);
+    window.addEventListener('pagehide', function() { opened = true; clearTimeout(timer); }, { once: true });
+    window.location.href = 'youtube://www.youtube.com/@' + handle;
+    return false;
+  }
+  return true;
+}
+document.querySelectorAll('a[href*="youtube.com/@todayfortunenet"]').forEach(function(a) {
+  a.addEventListener('click', function(e) { openYT(e); });
+});
+</script>
 </body>
 </html>
