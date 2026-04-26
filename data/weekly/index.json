@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-04-22",
-    "weekday": "Wed",
-    "weekday_kr": "수",
-    "weekday_ja": "水",
-    "display_en": "Apr 22 (Wed)",
-    "display_ja": "4/22(水)",
-    "display_ko": "4/22(수)"
-  },
-  {
-    "date": "2026-04-23",
-    "weekday": "Thu",
-    "weekday_kr": "목",
-    "weekday_ja": "木",
-    "display_en": "Apr 23 (Thu)",
-    "display_ja": "4/23(木)",
-    "display_ko": "4/23(목)"
-  },
-  {
     "date": "2026-04-24",
     "weekday": "Fri",
     "weekday_kr": "금",
@@ -88,5 +70,23 @@
     "display_en": "May 01 (Fri)",
     "display_ja": "5/1(金)",
     "display_ko": "5/1(금)"
+  },
+  {
+    "date": "2026-05-02",
+    "weekday": "Sat",
+    "weekday_kr": "토",
+    "weekday_ja": "土",
+    "display_en": "May 02 (Sat)",
+    "display_ja": "5/2(土)",
+    "display_ko": "5/2(토)"
+  },
+  {
+    "date": "2026-05-03",
+    "weekday": "Sun",
+    "weekday_kr": "일",
+    "weekday_ja": "日",
+    "display_en": "May 03 (Sun)",
+    "display_ja": "5/3(日)",
+    "display_ko": "5/3(일)"
   }
 ]
