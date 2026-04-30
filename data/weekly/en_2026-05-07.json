@@ -1,0 +1,194 @@
+[
+  {
+    "name": "Aries",
+    "emoji": "♈",
+    "dates": "Mar 21 - Apr 19",
+    "content": "Today brings a surge of creative energy, pushing you to tackle new challenges with your usual enthusiasm. Don't be afraid to take the lead in group projects or express your innovative ideas. Your direct approach will be appreciated.",
+    "lucky_numbers": [
+      9,
+      27,
+      33,
+      58,
+      62,
+      11
+    ],
+    "lucky_color": "Crimson",
+    "advice": "Embrace your pioneering spirit and initiate new ventures."
+  },
+  {
+    "name": "Taurus",
+    "emoji": "♉",
+    "dates": "Apr 20 - May 20",
+    "content": "As the Sun shines in your sign, focus on personal well-being and grounding activities. Financial matters may require your practical attention, leading to stable, long-term decisions. Enjoy moments of comfort and beauty in your surroundings.",
+    "lucky_numbers": [
+      4,
+      13,
+      22,
+      45,
+      60,
+      7
+    ],
+    "lucky_color": "Emerald Green",
+    "advice": "Prioritize self-care and secure your foundational needs."
+  },
+  {
+    "name": "Gemini",
+    "emoji": "♊",
+    "dates": "May 21 - Jun 20",
+    "content": "Your mind is buzzing with ideas and a desire for connection today. Engage in stimulating conversations and explore new learning opportunities. Be open to unexpected news or a sudden shift in plans that could lead to exciting prospects.",
+    "lucky_numbers": [
+      5,
+      14,
+      23,
+      37,
+      51,
+      16
+    ],
+    "lucky_color": "Sky Blue",
+    "advice": "Communicate openly and stay curious about new information."
+  },
+  {
+    "name": "Cancer",
+    "emoji": "♋",
+    "dates": "Jun 21 - Jul 22",
+    "content": "Focus on your inner world and emotional well-being today. Nurturing your relationships and finding comfort in familiar routines will bring you peace. A quiet moment of reflection can reveal important insights about your path forward.",
+    "lucky_numbers": [
+      2,
+      11,
+      20,
+      44,
+      65,
+      9
+    ],
+    "lucky_color": "Silver",
+    "advice": "Trust your intuition and care for your emotional needs."
+  },
+  {
+    "name": "Leo",
+    "emoji": "♌",
+    "dates": "Jul 23 - Aug 22",
+    "content": "Your natural charisma is highlighted, making it a great day for social interactions and creative expression. Don't shy away from the spotlight; share your talents and inspire others. A bold decision could lead to significant progress.",
+    "lucky_numbers": [
+      1,
+      19,
+      28,
+      40,
+      68,
+      20
+    ],
+    "lucky_color": "Gold",
+    "advice": "Shine brightly and let your leadership qualities emerge."
+  },
+  {
+    "name": "Virgo",
+    "emoji": "♍",
+    "dates": "Aug 23 - Sep 22",
+    "content": "Attention to detail and practical planning will serve you well today, especially in professional matters. Organize your tasks and focus on completing what's essential. A systematic approach will bring satisfaction and efficiency.",
+    "lucky_numbers": [
+      6,
+      15,
+      24,
+      39,
+      57,
+      12
+    ],
+    "lucky_color": "Navy Blue",
+    "advice": "Methodical effort will bring your goals into clear focus."
+  },
+  {
+    "name": "Libra",
+    "emoji": "♎",
+    "dates": "Sep 23 - Oct 22",
+    "content": "Harmonious interactions are key, both in personal and professional spheres. Seek balance in your decisions and be open to compromise. An opportunity for collaboration might arise, bringing mutual benefits.",
+    "lucky_numbers": [
+      7,
+      16,
+      25,
+      42,
+      63,
+      18
+    ],
+    "lucky_color": "Rose Pink",
+    "advice": "Foster diplomacy and seek equilibrium in all relationships."
+  },
+  {
+    "name": "Scorpio",
+    "emoji": "♏",
+    "dates": "Oct 23 - Nov 21",
+    "content": "Today calls for deep introspection and understanding underlying motives. Embrace transformation, allowing yourself to release what no longer serves you. A powerful insight could emerge, guiding you towards profound change.",
+    "lucky_numbers": [
+      8,
+      17,
+      26,
+      48,
+      66,
+      22
+    ],
+    "lucky_color": "Burgundy",
+    "advice": "Dive deep into your truths and embrace renewal."
+  },
+  {
+    "name": "Sagittarius",
+    "emoji": "♐",
+    "dates": "Nov 22 - Dec 21",
+    "content": "Your adventurous spirit is restless, urging you to explore new horizons or expand your knowledge. Seek out opportunities for growth and learning, whether through travel or intellectual pursuits. Optimism fuels your journey forward.",
+    "lucky_numbers": [
+      3,
+      12,
+      21,
+      30,
+      50,
+      15
+    ],
+    "lucky_color": "Purple",
+    "advice": "Embrace curiosity and expand your boundaries."
+  },
+  {
+    "name": "Capricorn",
+    "emoji": "♑",
+    "dates": "Dec 22 - Jan 19",
+    "content": "Focus on your long-term goals and professional ambitions today. Your discipline and hard work will lay the foundation for future success. Take calculated steps and trust in your ability to achieve significant milestones.",
+    "lucky_numbers": [
+      10,
+      29,
+      38,
+      59,
+      69,
+      14
+    ],
+    "lucky_color": "Charcoal Grey",
+    "advice": "Set clear objectives and work diligently towards them."
+  },
+  {
+    "name": "Aquarius",
+    "emoji": "♒",
+    "dates": "Jan 20 - Feb 18",
+    "content": "Innovative ideas and a desire for collective progress will guide your day. Connect with like-minded individuals and contribute to causes you believe in. Your unique perspective can spark positive change.",
+    "lucky_numbers": [
+      11,
+      20,
+      31,
+      55,
+      64,
+      25
+    ],
+    "lucky_color": "Electric Blue",
+    "advice": "Champion your ideals and connect with your community."
+  },
+  {
+    "name": "Pisces",
+    "emoji": "♓",
+    "dates": "Feb 19 - Mar 20",
+    "content": "Your intuition is heightened, offering clear guidance in subtle ways. Allow yourself moments of quiet reflection and creative expression. Dreamy inspirations can lead to surprisingly practical solutions, especially in personal matters.",
+    "lucky_numbers": [
+      18,
+      27,
+      36,
+      54,
+      70,
+      21
+    ],
+    "lucky_color": "Seafoam Green",
+    "advice": "Listen to your inner voice and embrace your compassionate nature."
+  }
+]
