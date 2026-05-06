@@ -1,0 +1,194 @@
+[
+  {
+    "name": "Aries",
+    "emoji": "♈",
+    "dates": "Mar 21 - Apr 19",
+    "content": "Financial matters take center stage today, Aries, urging you to review your budget and long-term security. Practical decisions made now will have lasting positive impacts on your material well-being. Trust your instincts on investments.",
+    "lucky_numbers": [
+      11,
+      23,
+      40,
+      58,
+      65,
+      7
+    ],
+    "lucky_color": "Crimson",
+    "advice": "Ground your financial plans with realism."
+  },
+  {
+    "name": "Taurus",
+    "emoji": "♉",
+    "dates": "Apr 20 - May 20",
+    "content": "Happy birthday month, Taurus! This is a powerful day for personal growth and expressing your authentic self. Unexpected insights about your values could lead to a significant shift in perspective. Embrace these changes wholeheartedly.",
+    "lucky_numbers": [
+      3,
+      19,
+      32,
+      45,
+      61,
+      14
+    ],
+    "lucky_color": "Emerald Green",
+    "advice": "Be open to transforming your self-image."
+  },
+  {
+    "name": "Gemini",
+    "emoji": "♊",
+    "dates": "May 21 - Jun 20",
+    "content": "You might feel a need for introspection and quiet reflection today, Gemini, as subconscious matters surface. Use this time to process emotions and prepare for future endeavors. Rest and solitude will recharge your mental batteries.",
+    "lucky_numbers": [
+      9,
+      21,
+      38,
+      50,
+      69,
+      22
+    ],
+    "lucky_color": "Sky Blue",
+    "advice": "Listen to your inner voice and intuition."
+  },
+  {
+    "name": "Cancer",
+    "emoji": "♋",
+    "dates": "Jun 21 - Jul 22",
+    "content": "Social connections and group activities bring you joy and opportunity today, Cancer. Networking could lead to surprising collaborations or a renewed sense of community. Share your innovative ideas with like-minded individuals.",
+    "lucky_numbers": [
+      4,
+      16,
+      27,
+      41,
+      55,
+      11
+    ],
+    "lucky_color": "Silver",
+    "advice": "Engage with your community and expand your network."
+  },
+  {
+    "name": "Leo",
+    "emoji": "♌",
+    "dates": "Jul 23 - Aug 22",
+    "content": "Your professional life is illuminated, Leo, bringing opportunities for recognition and advancement. Strategic moves in your career could pay off handsomely, so don't shy away from the spotlight. Show your leadership skills.",
+    "lucky_numbers": [
+      1,
+      20,
+      33,
+      49,
+      60,
+      18
+    ],
+    "lucky_color": "Gold",
+    "advice": "Take charge and showcase your talents at work."
+  },
+  {
+    "name": "Virgo",
+    "emoji": "♍",
+    "dates": "Aug 23 - Sep 22",
+    "content": "Expand your horizons today, Virgo, through learning, travel, or exploring new philosophies. A deeper understanding of the world will enrich your perspective and inspire your long-term goals. Embrace the adventure of knowledge.",
+    "lucky_numbers": [
+      8,
+      17,
+      30,
+      52,
+      63,
+      5
+    ],
+    "lucky_color": "Navy Blue",
+    "advice": "Seek new knowledge and broaden your worldview."
+  },
+  {
+    "name": "Libra",
+    "emoji": "♎",
+    "dates": "Sep 23 - Oct 22",
+    "content": "Shared resources and intimate connections are highlighted, Libra, urging you to delve deeper into your partnerships. This is a potent time for financial planning with others or processing profound emotional experiences. Trust the transformative process.",
+    "lucky_numbers": [
+      6,
+      25,
+      39,
+      48,
+      67,
+      13
+    ],
+    "lucky_color": "Rose Pink",
+    "advice": "Strengthen bonds through shared vulnerability and trust."
+  },
+  {
+    "name": "Scorpio",
+    "emoji": "♏",
+    "dates": "Oct 23 - Nov 21",
+    "content": "Your relationships take center stage today, Scorpio, emphasizing harmony and compromise in partnerships. Seek balance and mutual understanding in both personal and professional alliances. Open communication will resolve any lingering tensions.",
+    "lucky_numbers": [
+      2,
+      14,
+      31,
+      44,
+      59,
+      9
+    ],
+    "lucky_color": "Deep Red",
+    "advice": "Foster fairness and mutual respect in all dealings."
+  },
+  {
+    "name": "Sagittarius",
+    "emoji": "♐",
+    "dates": "Nov 22 - Dec 21",
+    "content": "Focus on improving your daily routines and well-being today, Sagittarius. Small adjustments to your work habits or health regimen can yield significant benefits. Prioritize efficiency and self-care for optimal productivity.",
+    "lucky_numbers": [
+      10,
+      28,
+      36,
+      51,
+      64,
+      16
+    ],
+    "lucky_color": "Royal Purple",
+    "advice": "Optimize your daily life for health and effectiveness."
+  },
+  {
+    "name": "Capricorn",
+    "emoji": "♑",
+    "dates": "Dec 22 - Jan 19",
+    "content": "Creativity and joy are abundant for you today, Capricorn. Engage in artistic pursuits, embrace romance, or simply allow yourself to play and express your inner child. This energy can bring unexpected delights and passionate connections.",
+    "lucky_numbers": [
+      7,
+      18,
+      29,
+      43,
+      62,
+      20
+    ],
+    "lucky_color": "Charcoal Grey",
+    "advice": "Indulge your creative spirit and seek out pleasure."
+  },
+  {
+    "name": "Aquarius",
+    "emoji": "♒",
+    "dates": "Jan 20 - Feb 18",
+    "content": "Your home and family life are the focus today, Aquarius, calling for nurturing and attention to your domestic space. Consider home improvement projects or spending quality time with loved ones. Create a secure and comfortable sanctuary.",
+    "lucky_numbers": [
+      5,
+      22,
+      34,
+      47,
+      56,
+      1
+    ],
+    "lucky_color": "Electric Blue",
+    "advice": "Strengthen your roots and enjoy your home life."
+  },
+  {
+    "name": "Pisces",
+    "emoji": "♓",
+    "dates": "Feb 19 - Mar 20",
+    "content": "Communication is key today, Pisces, bringing important conversations or opportunities for short trips. Express your ideas clearly and listen attentively to others. Mental clarity allows for effective problem-solving and fruitful exchanges.",
+    "lucky_numbers": [
+      12,
+      26,
+      35,
+      42,
+      68,
+      24
+    ],
+    "lucky_color": "Seafoam Green",
+    "advice": "Communicate openly and embrace new learning."
+  }
+]
