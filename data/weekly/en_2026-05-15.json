@@ -1,0 +1,194 @@
+[
+  {
+    "name": "Aries",
+    "emoji": "♈",
+    "dates": "Mar 21 - Apr 19",
+    "content": "Your natural drive is exceptionally potent today, but don't overlook the practical details. Focus this energy on tasks that bring long-term security and stability, especially in financial matters. A creative breakthrough could emerge from a surprising conversation.",
+    "lucky_numbers": [
+      9,
+      21,
+      44,
+      58,
+      67,
+      18
+    ],
+    "lucky_color": "Gold",
+    "advice": "Channel your passion into productive channels and trust your instincts."
+  },
+  {
+    "name": "Taurus",
+    "emoji": "♉",
+    "dates": "Apr 20 - May 20",
+    "content": "With the Sun in your sign, your personal power and magnetism are at their peak, drawing positive attention. Focus on self-care and strengthening your personal foundations, though some emotional demands from home might require gentle navigation. Enjoy the comfort of your surroundings.",
+    "lucky_numbers": [
+      3,
+      15,
+      29,
+      36,
+      52,
+      7
+    ],
+    "lucky_color": "Emerald Green",
+    "advice": "Trust your instincts and prioritize your well-being above all else today."
+  },
+  {
+    "name": "Gemini",
+    "emoji": "♊",
+    "dates": "May 21 - Jun 20",
+    "content": "Your mind is incredibly sharp and communication flows effortlessly, opening new intellectual pathways and potential opportunities. While social interactions are stimulating, allow yourself moments of quiet introspection to process burgeoning ideas and insights. A discovery awaits you.",
+    "lucky_numbers": [
+      7,
+      14,
+      23,
+      31,
+      49,
+      12
+    ],
+    "lucky_color": "Yellow",
+    "advice": "Balance your social energy with moments of quiet contemplation for clarity."
+  },
+  {
+    "name": "Cancer",
+    "emoji": "♋",
+    "dates": "Jun 21 - Jul 22",
+    "content": "Your nurturing spirit is particularly attractive today, strengthening bonds with friends and community members. Financial matters might require your attention, potentially bringing a boost in self-worth or new ways to invest in yourself. Embrace collaboration and shared dreams.",
+    "lucky_numbers": [
+      2,
+      11,
+      28,
+      40,
+      61,
+      5
+    ],
+    "lucky_color": "Silver",
+    "advice": "Open your heart to collaboration and shared dreams, and watch them flourish."
+  },
+  {
+    "name": "Leo",
+    "emoji": "♌",
+    "dates": "Jul 23 - Aug 22",
+    "content": "The spotlight is on you today, especially in your career or public life, bringing opportunities for recognition and advancement. Embrace your natural leadership, but be mindful of how you present yourself and be open to feedback. Confidence is your key asset.",
+    "lucky_numbers": [
+      1,
+      19,
+      33,
+      47,
+      65,
+      20
+    ],
+    "lucky_color": "Orange",
+    "advice": "Shine brightly, but remember to listen to others' perspectives for true success."
+  },
+  {
+    "name": "Virgo",
+    "emoji": "♍",
+    "dates": "Aug 23 - Sep 22",
+    "content": "A strong desire for knowledge and new experiences is pushing you to explore different philosophies or plan future travels. Be careful not to overanalyze, as clarity will come with patience and a willingness to embrace the unknown. Trust the bigger picture unfolding.",
+    "lucky_numbers": [
+      6,
+      17,
+      25,
+      38,
+      55,
+      1
+    ],
+    "lucky_color": "Navy Blue",
+    "advice": "Broaden your horizons and trust the journey, not just the destination."
+  },
+  {
+    "name": "Libra",
+    "emoji": "♎",
+    "dates": "Sep 23 - Oct 22",
+    "content": "Deep emotional connections and shared resources are a strong focus, inviting you to explore intimacy or financial partnerships. Balance is key, as your personal desires may need careful alignment with others' needs. Seek harmony in shared ventures.",
+    "lucky_numbers": [
+      10,
+      22,
+      34,
+      41,
+      59,
+      16
+    ],
+    "lucky_color": "Rose Pink",
+    "advice": "Seek harmony in shared ventures and deepen your understanding of others."
+  },
+  {
+    "name": "Scorpio",
+    "emoji": "♏",
+    "dates": "Oct 23 - Nov 21",
+    "content": "Partnerships, both personal and professional, take center stage, offering opportunities for significant growth and transformation. Be prepared for intense dynamics, as power struggles or deep revelations might emerge. Embrace vulnerability to strengthen your bonds.",
+    "lucky_numbers": [
+      8,
+      13,
+      27,
+      39,
+      62,
+      22
+    ],
+    "lucky_color": "Deep Red",
+    "advice": "Embrace vulnerability and allow relationships to evolve authentically."
+  },
+  {
+    "name": "Sagittarius",
+    "emoji": "♐",
+    "dates": "Nov 22 - Dec 21",
+    "content": "Your daily work and health routines become important, urging you to find efficiency and well-being in your everyday life. There might be a pull between your desire for adventure and the practicalities of your responsibilities. Find joy in the small tasks.",
+    "lucky_numbers": [
+      5,
+      20,
+      32,
+      45,
+      68,
+      9
+    ],
+    "lucky_color": "Purple",
+    "advice": "Find joy in the small tasks and prioritize your health and routine."
+  },
+  {
+    "name": "Capricorn",
+    "emoji": "♑",
+    "dates": "Dec 22 - Jan 19",
+    "content": "Today is a wonderful day for creative expression, romance, or enjoying playful moments with loved ones. Allow yourself to relax and embrace joy, finding disciplined ways to nurture your passions and artistic endeavors. A romantic spark could ignite.",
+    "lucky_numbers": [
+      4,
+      16,
+      26,
+      42,
+      60,
+      11
+    ],
+    "lucky_color": "Brown",
+    "advice": "Let your inner child out to play and enjoy the simple pleasures of life."
+  },
+  {
+    "name": "Aquarius",
+    "emoji": "♒",
+    "dates": "Jan 20 - Feb 18",
+    "content": "Your home and family life are a strong focus, perhaps leading to changes or a deeper connection to your roots. This energy supports profound personal transformation, especially concerning your emotional foundations and where you truly belong. Nurture your inner sanctuary.",
+    "lucky_numbers": [
+      12,
+      24,
+      37,
+      50,
+      64,
+      25
+    ],
+    "lucky_color": "Electric Blue",
+    "advice": "Nurture your inner sanctuary and embrace personal evolution from within."
+  },
+  {
+    "name": "Pisces",
+    "emoji": "♓",
+    "dates": "Feb 19 - Mar 20",
+    "content": "Communication flows smoothly, making it an excellent day for connecting with siblings, neighbors, or engaging in short trips and local explorations. You're learning to set healthy boundaries while maintaining your compassionate nature. Your words hold gentle power.",
+    "lucky_numbers": [
+      18,
+      28,
+      43,
+      53,
+      69,
+      19
+    ],
+    "lucky_color": "Sea Green",
+    "advice": "Express your thoughts clearly and listen with an open, empathetic heart."
+  }
+]
